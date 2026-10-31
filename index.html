@@ -117,7 +117,12 @@ nav.main a{text-decoration:none}
 .issues{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin-top:44px}
 .issue img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:top;border-radius:10px;display:block;box-shadow:0 1px 2px rgba(14,18,34,.06),0 10px 26px rgba(14,18,34,.08)}
 .issue small{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:12px}
+.issue{text-decoration:none;display:block}
 .issue p{font-size:15px;font-weight:700;margin-top:3px}
+.issue img{transition:transform .2s,box-shadow .2s}
+.issue:hover img{transform:translateY(-3px);box-shadow:0 1px 2px rgba(14,18,34,.06),0 16px 34px rgba(14,18,34,.14)}
+.issue:hover p{text-decoration:underline;text-underline-offset:3px}
+@media (prefers-reduced-motion:reduce){.issue img{transition:none}.issue:hover img{transform:none}}
 @media (max-width:900px){.issues{grid-template-columns:repeat(3,minmax(0,1fr))}.issues .issue:nth-child(n+4){display:none}}
 @media (max-width:520px){.issues{grid-template-columns:repeat(2,minmax(0,1fr))}.issues .issue:nth-child(3){display:none}}
 .duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:36px}
@@ -233,11 +238,11 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
   <p class="motto">Don’t choose. Design.</p>
   <p class="lead" style="margin-top:16px">A system for people with many interests: how to design one life out of all of them, instead of choosing just one.</p>
   <div class="issues">
-    <div class="issue"><img src="img/issue22.jpg" alt="Issue 22 cover: AI readiness for multipotentials" loading="lazy"><small>Issue #22</small><p>AI readiness</p></div>
-    <div class="issue"><img src="img/issue21.jpg" alt="Issue 21 cover: Collecting myself across the world" loading="lazy"><small>Issue #21</small><p>Collecting myself across the world</p></div>
-    <div class="issue"><img src="img/issue20.jpg" alt="Issue 20 cover: nine skills of perfect execution" loading="lazy"><small>Issue #20</small><p>Execution</p></div>
-    <div class="issue"><img src="img/issue19.jpg" alt="Issue 19 cover: Multipotentials, why now" loading="lazy"><small>Issue #19</small><p>Why now</p></div>
-    <div class="issue"><img src="img/issue18.jpg" alt="Issue 18 cover: Ma, the space where lives meet" loading="lazy"><small>Issue #18</small><p>Ma (間)</p></div>
+    <a class="issue" href="https://multipotentials.substack.com/p/22-dont-wait-for-the-system-ai-readiness" target="_blank" rel="noopener"><img src="img/issue22.jpg" alt="Issue 22 cover: AI readiness for multipotentials" loading="lazy"><small>Issue #22</small><p>AI readiness</p></a>
+    <a class="issue" href="https://multipotentials.substack.com/p/21-collecting-myself-across-the-world" target="_blank" rel="noopener"><img src="img/issue21.jpg" alt="Issue 21 cover: Collecting myself across the world" loading="lazy"><small>Issue #21</small><p>Collecting myself across the world</p></a>
+    <a class="issue" href="https://multipotentials.substack.com/p/20-execution-the-rarest-skill-in" target="_blank" rel="noopener"><img src="img/issue20.jpg" alt="Issue 20 cover: nine skills of perfect execution" loading="lazy"><small>Issue #20</small><p>Execution</p></a>
+    <a class="issue" href="https://multipotentials.substack.com/p/18-multipotentials-why-now" target="_blank" rel="noopener"><img src="img/issue19.jpg" alt="Issue 19 cover: Multipotentials, why now" loading="lazy"><small>Issue #19</small><p>Why now</p></a>
+    <a class="issue" href="https://multipotentials.substack.com/p/18-ma-the-empty-space-where-a-multipotentials" target="_blank" rel="noopener"><img src="img/issue18.jpg" alt="Issue 18 cover: Ma, the space where lives meet" loading="lazy"><small>Issue #18</small><p>Ma (間)</p></a>
   </div>
   <div class="duo">
     <div class="panel" style="background:var(--lav)"><p class="eyebrow" style="color:var(--navy)">Substack · free · twice a month</p><h3>Multipotentials Newsletter</h3><p>Thoughts, sketches, and systems for people who live in many disciplines.</p><div style="margin-top:22px"><a class="btn" href="https://substack.com/@multipotentials" target="_blank" rel="noopener">Subscribe on Substack →</a></div></div>
