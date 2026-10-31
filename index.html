@@ -152,6 +152,21 @@ nav.main a{text-decoration:none}
 .note p{font-size:18px;max-width:60ch}
 @media (max-width:900px){.roles,.roles2{grid-template-columns:1fr}}
 
+
+/* impact orgs */
+.orgs{display:grid;gap:18px;margin-top:40px}
+.orgs.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.orgs.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.org{border-radius:16px;padding:clamp(24px,3vw,34px);min-width:0;display:flex;flex-direction:column}
+.org .dot{width:14px;height:14px}
+.org h3{font-size:clamp(24px,2.4vw,32px);font-weight:800;letter-spacing:-.035em;line-height:1.05;margin-top:22px}
+.orgs.three .org h3{font-size:clamp(22px,2vw,26px)}
+.org .r{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--textblue);margin-top:14px}
+.org p:last-child{font-size:15.5px;color:#33364A;margin-top:12px;line-height:1.5}
+@media (max-width:900px){.orgs.two,.orgs.three{grid-template-columns:1fr}}
+.lead{text-wrap:pretty}
+.head .lead{max-width:44ch}
+
 /* contact */
 .contact{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(28px,5vw,60px);align-items:center}
 .rows div{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 16px;padding:18px 0;border-bottom:1px solid var(--line)}
@@ -188,10 +203,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
 <section class="band" id="projects"><div class="wrap">
   <p class="eyebrow">Projects &amp; initiatives</p>
   <div class="projects">
-    <a class="proj" href="#multipotentials"><p class="eyebrow"><span class="dot" style="background:var(--navy)"></span>Identity</p><h3>Multipotentials</h3><p>A book and a newsletter about designing one life out of many interests</p><span class="go">Explore →</span></a>
-    <a class="proj" href="#research"><p class="eyebrow"><span class="dot" style="background:var(--blue)"></span>Framework</p><h3>The Self-Learning Stack™</h3><p>My original framework for staying irreplaceable in the AI era</p><span class="go">Explore →</span></a>
-    <a class="proj" href="#equality"><p class="eyebrow"><span class="dot" style="background:var(--coral)"></span>Equality</p><h3>Women &amp; youth in tech</h3><p>Diversity, equality and inclusion in the world of technology</p><span class="go">Explore →</span></a>
-    <a class="proj" href="#global"><p class="eyebrow"><span class="dot l"></span>Global</p><h3>Diplomacy &amp; global networks</h3><p>Tech diplomacy, advisory and international alumni leadership</p><span class="go">Explore →</span></a>
+    <a class="proj" href="#multipotentials"><span class="dot" style="background:var(--navy)"></span><h3>Multipotentials</h3><p>A book and a newsletter about designing one life out of many interests</p><span class="go">Explore →</span></a>
+    <a class="proj" href="#research"><span class="dot" style="background:var(--blue)"></span><h3>The Self-Learning Stack™</h3><p>My original framework for staying irreplaceable in the AI era</p><span class="go">Explore →</span></a>
+    <a class="proj" href="#equality"><span class="dot" style="background:var(--coral)"></span><h3>Women &amp; youth in tech</h3><p>Diversity, equality and inclusion in the world of technology</p><span class="go">Explore →</span></a>
+    <a class="proj" href="#global"><span class="dot l"></span><h3>Diplomacy &amp; global networks</h3><p>Tech diplomacy, advisory and international alumni leadership</p><span class="go">Explore →</span></a>
   </div>
 </div></section>
 
@@ -258,21 +273,21 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
 
 <section class="band sec" id="impact" style="background:var(--stone)"><div class="wrap">
   <div class="head" id="equality">
-    <div><p class="eyebrow"><span class="dot" style="background:var(--coral)"></span>Impact · Equality</p><h2 class="h2">Diversity, equality and inclusion in tech</h2></div>
+    <div><p class="eyebrow">Impact · Equality</p><h2 class="h2">Diversity, equality and inclusion in tech</h2></div>
     <p class="lead">Communities and programmes that open technology to women and young people.</p>
   </div>
-  <div class="roles2" style="margin-top:40px">
-    <article class="role"><img src="img/impact1.jpg" alt="Anna with a partner in front of the UN Sustainable Development Goals wall, including Goal 5, gender equality" loading="lazy"><div><p class="eyebrow">Women in Tech Uzbekistan</p><h3>Director</h3><p>Programmes and partnerships that bring more women into technology careers and leadership in Uzbekistan.</p></div></article>
-    <article class="role"><img src="img/impact2.jpg" alt="Women in Tech awards ceremony on stage with participants from many countries" loading="lazy"><div><p class="eyebrow">Women in Tech Global</p><h3>Global Youth Director</h3><p>Global youth initiatives that connect young women in tech across countries.</p></div></article>
+  <div class="orgs two">
+    <article class="org" style="background:var(--peach)"><span class="dot" style=background:var(--coral)></span><h3>Women in Tech Uzbekistan</h3><p class="r">Director</p><p>Programmes and partnerships that bring more women into technology careers and leadership in Uzbekistan.</p></article>
+    <article class="org" style="background:var(--lav)"><span class="dot" style=background:var(--blue)></span><h3>Women in Tech Global</h3><p class="r">Global Youth Director</p><p>Global youth initiatives that connect young women in tech across countries.</p></article>
   </div>
   <div class="head" id="global" style="margin-top:clamp(56px,7vw,88px)">
-    <div><p class="eyebrow"><span class="dot l"></span>Impact · Global</p><h2 class="h2">Diplomacy and global networks</h2></div>
+    <div><p class="eyebrow">Impact · Global</p><h2 class="h2">Diplomacy and global networks</h2></div>
     <p class="lead">Roles that connect countries, institutions and technology communities.</p>
   </div>
-  <div class="roles" style="margin-top:40px">
-    <article class="role"><img src="img/impact3.jpg" alt="Anna speaking at an international event with a microphone" loading="lazy"><div><p class="eyebrow">Tech Diplomacy Global Institute</p><h3>Regional Attaché, Central Asia</h3><p>Technology, international cooperation and diplomacy for the region.</p></div></article>
-    <article class="role"><div><p class="eyebrow">Cambridge Institute for Sustainability Leadership</p><h3>Alumni community lead, Uzbekistan</h3><p>Bringing together Cambridge sustainability leaders in Uzbekistan.</p></div></article>
-    <article class="role"><div><p class="eyebrow">IT Community of Uzbekistan</p><h3>Advisor</h3><p>Supporting the growth of the national tech community.</p></div></article>
+  <div class="orgs three">
+    <article class="org" style="background:var(--cream)"><span class="dot l"></span><h3>Tech Diplomacy Global Institute</h3><p class="r">Regional Attaché, Central Asia</p><p>Technology, international cooperation and diplomacy for the region.</p></article>
+    <article class="org" style="background:var(--paper)"><span class="dot" style=background:var(--navy)></span><h3>Cambridge Institute for Sustainability Leadership</h3><p class="r">Alumni community lead, Uzbekistan</p><p>Bringing together Cambridge sustainability leaders in Uzbekistan.</p></article>
+    <article class="org" style="background:var(--paper)"><span class="dot" style=background:var(--blue)></span><h3>IT Community of Uzbekistan</h3><p class="r">Advisor</p><p>Supporting the growth of the national tech community.</p></article>
   </div>
 </div></section>
 
