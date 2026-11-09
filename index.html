@@ -55,17 +55,10 @@ section[id]{scroll-margin-top:84px}
 .mark{display:inline-flex;gap:4px}
 .mark i{width:9px;height:9px;border-radius:50%;display:block}
 .btn{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:var(--ivory);border:0;border-radius:999px;padding:15px 24px;font:600 15px/1 var(--sans);text-decoration:none;cursor:pointer}
-.btn:hover{transform:translateY(-1px)}
 .link{font-weight:600;font-size:15px;text-decoration:none;border-bottom:1.5px solid currentColor;padding-bottom:3px}
+.ss{width:15px;height:15px;flex:none}
 .soon{display:inline-block;background:var(--lime);color:var(--navy);border-radius:999px;padding:6px 14px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn:hover{transform:none}}
-
-/* quiet hovers */
-.arr{display:inline-block;transition:transform .25s ease}
-.btn:hover .arr,.link:hover .arr,.proj:hover .arr{transform:translateX(4px)}
-.report{transition:transform .3s ease,box-shadow .3s ease}
-.report:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(14,18,34,.08)}
-@media (prefers-reduced-motion:reduce){.arr,.report{transition:none}.btn:hover .arr,.link:hover .arr,.proj:hover .arr,.report:hover{transform:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
 /* header + burger */
 header{position:sticky;top:0;z-index:20;background:var(--ivory);border-bottom:1px solid transparent}
@@ -215,7 +208,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
   <div style="min-width:0">
     <h1>Architect of <span>Human Systems</span></h1>
     <p class="lead">I design systems of learning, leadership and collaboration that help people grow and build a better world.</p>
-    <div class="cta"><a class="btn" href="#projects">See my projects <span class="arr">→</span></a><a class="link" href="#about">About me <span class="arr">→</span></a></div>
+    <div class="cta"><a class="btn" href="#projects">See my projects →</a><a class="link" href="#about">About me →</a></div>
   </div>
   <div class="photo"><img src="img/portrait.jpg" alt="Anna Ambrozevich in a light denim shirt, smiling, outdoors"></div>
 </div></section>
@@ -223,10 +216,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
 <section class="band" id="projects"><div class="wrap">
   <p class="eyebrow">Projects &amp; initiatives</p>
   <div class="projects">
-    <a class="proj" href="#multipotentials"><span class="dot" style="background:var(--navy)"></span><h3>Multipotentials</h3><p>A book and a newsletter about designing one life out of many interests</p><span class="go">Explore <span class="arr">→</span></span></a>
-    <a class="proj" href="#research"><span class="dot" style="background:var(--blue)"></span><h3>The Self-Learning Stack</h3><p>My original framework for staying irreplaceable in the AI era</p><span class="go">Explore <span class="arr">→</span></span></a>
-    <a class="proj" href="#equality"><span class="dot" style="background:var(--coral)"></span><h3>Women &amp; youth in tech</h3><p>Diversity, equality and inclusion in the world of technology</p><span class="go">Explore <span class="arr">→</span></span></a>
-    <a class="proj" href="#global"><span class="dot l"></span><h3>Diplomacy &amp; global networks</h3><p>Tech diplomacy, advisory and international alumni leadership</p><span class="go">Explore <span class="arr">→</span></span></a>
+    <a class="proj" href="#multipotentials"><span class="dot" style="background:var(--navy)"></span><h3>Multipotentials</h3><p>A book and a newsletter about designing one life out of many interests</p><span class="go">Explore →</span></a>
+    <a class="proj" href="#research"><span class="dot" style="background:var(--blue)"></span><h3>The Self-Learning Stack™</h3><p>My original framework for staying irreplaceable in the AI era</p><span class="go">Explore →</span></a>
+    <a class="proj" href="#equality"><span class="dot" style="background:var(--coral)"></span><h3>Women &amp; youth in tech</h3><p>Diversity, equality and inclusion in the world of technology</p><span class="go">Explore →</span></a>
+    <a class="proj" href="#global"><span class="dot l"></span><h3>Diplomacy &amp; global networks</h3><p>Tech diplomacy, advisory and international alumni leadership</p><span class="go">Explore →</span></a>
   </div>
 </div></section>
 
@@ -254,7 +247,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
     <a class="issue" data-goatcounter-click="issue-18" href="https://multipotentials.substack.com/p/18-ma-the-empty-space-where-a-multipotentials" target="_blank" rel="noopener"><img src="img/issue18.jpg" alt="Issue 18 cover: Ma, the space where lives meet" loading="lazy"><small>Issue #18</small><p>Ma (間)</p></a>
   </div>
   <div class="duo">
-    <div class="panel" style="background:var(--lav)"><p class="eyebrow" style="color:var(--navy)">Substack · free · twice a month</p><h3>Multipotentials Newsletter</h3><p>Thoughts, sketches, and systems for people who live in many disciplines.</p><div style="margin-top:22px"><a class="btn" data-goatcounter-click="subscribe-substack" href="https://substack.com/@multipotentials" target="_blank" rel="noopener">Subscribe on Substack <span class="arr">→</span></a></div></div>
+    <div class="panel" style="background:var(--lav)"><p class="eyebrow" style="color:var(--navy)">Substack · free · twice a month</p><h3>Multipotentials Newsletter</h3><p>Thoughts, sketches, and systems for people who live in many disciplines.</p><div style="margin-top:22px"><a class="btn" data-goatcounter-click="subscribe-substack" href="https://substack.com/@multipotentials" target="_blank" rel="noopener"><svg class="ss" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" fill="currentColor"/></svg>Subscribe on Substack →</a></div></div>
     <div class="panel book" style="background:var(--peach)">
       <div class="cover" aria-hidden="true"><small>Anna Ambrozevich</small><b>Multi<br>potentials</b><i>Don’t choose. Design.</i></div>
       <div style="min-width:0"><p class="eyebrow" style="color:var(--navy)">The book</p><h3>A systems approach to a multipotential life</h3><div style="margin-top:18px"><span class="soon">Coming soon</span></div></div>
@@ -264,7 +257,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
 
 <section class="band sec" id="research"><div class="wrap">
   <div class="head">
-    <div><p class="eyebrow">Original framework</p><h2 class="h2">The Self-Learning Stack</h2></div>
+    <div><p class="eyebrow">Original framework</p><h2 class="h2">The Self-Learning Stack™</h2></div>
     <p class="lead">My original framework for staying irreplaceable in the AI era, built on years of combining many roles across industries and learning each of them on my own: three layers of learning on one foundation, brain health.</p>
   </div>
   <div class="reports">
@@ -297,8 +290,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
     <p class="lead">Communities and programmes that open technology to women and young people.</p>
   </div>
   <div class="orgs two">
-    <article class="org" style="background:var(--peach)"><span class="dot" style=background:var(--coral)></span><h3>Women in Tech Uzbekistan</h3><p class="r">Director</p><p>Programmes and partnerships that bring more women into technology careers and leadership in Uzbekistan.</p></article>
-    <article class="org" style="background:var(--lav)"><span class="dot" style=background:var(--blue)></span><h3>Women in Tech Global</h3><p class="r">Global Youth Director</p><p>Global youth initiatives that connect young women in tech across countries.</p></article>
+    <article class="org" style="background:var(--peach)"><span class="dot" style=background:var(--coral)></span><h3>Director</h3><p class="r">Women in Tech Uzbekistan</p><p>Leading the national chapter: programmes and partnerships that bring more women into technology careers and leadership.</p></article>
+    <article class="org" style="background:var(--lav)"><span class="dot" style=background:var(--blue)></span><h3>Global Youth Director</h3><p class="r">Women in Tech</p><p>Leading youth initiatives that connect young women in tech across countries and continents.</p></article>
   </div>
   <div class="head" id="global" style="margin-top:clamp(56px,7vw,88px)">
     <div><p class="eyebrow">Impact · Global</p><h2 class="h2">Diplomacy and global networks</h2></div>
@@ -312,11 +305,12 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
 </div></section>
 
 <section class="band sec" id="contact"><div class="wrap contact">
-  <div><p class="eyebrow">Contact</p><h2 class="h2">Write to me in three lines</h2><p class="lead" style="margin-top:16px">Who you are, what you are designing, and your timeline. I read everything and reply when there is a fit.</p></div>
+  <div><p class="eyebrow">Contact</p><h2 class="h2">Write to me if our themes meet</h2><p class="lead" style="margin-top:16px">Multipotential lives, self-learning in the AI era, women and youth in tech, tech diplomacy. Tell me who you are and what you are working on. I read everything and reply when there is a fit.</p></div>
   <div class="rows">
     <div><small>Email</small><a data-goatcounter-click="contact-email" href="mailto:annaambr@gmail.com" id="email">annaambr@gmail.com</a><button class="copy" type="button" id="copyEmail" data-goatcounter-click="contact-email-copy">Copy</button></div>
     <div><small>LinkedIn</small><a data-goatcounter-click="contact-linkedin" href="https://www.linkedin.com/in/anna-ambrozevich" target="_blank" rel="noopener">Anna Ambrozevich</a></div>
     <div><small>Substack</small><a data-goatcounter-click="contact-substack" href="https://substack.com/@multipotentials" target="_blank" rel="noopener">@multipotentials</a></div>
+    <div><small>Media kit</small><a data-goatcounter-click="contact-media-kit" href="https://drive.google.com/drive/folders/1vhJGcYtiV-UhVO-Ku5uQefq45YydZV1c?usp=drive_link" target="_blank" rel="noopener">Photos for press and events ↗</a></div>
   </div>
 </div></section>
 </main>
