@@ -67,6 +67,13 @@ section[id]{scroll-margin-top:84px}
 .btn:hover .arr,.link:hover .arr,.proj:hover .arr{transform:translateX(4px)}
 @media (prefers-reduced-motion:reduce){.btn,.arr{transition:none}.btn:hover,.btn:hover .arr,.link:hover .arr,.proj:hover .arr{transform:none}}
 
+/* report cards: lift on hover, GPU-only (transform + opacity) */
+.report{position:relative;will-change:transform;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.report::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:0 22px 48px rgba(14,18,34,.16),0 4px 10px rgba(14,18,34,.06);opacity:0;transition:opacity .35s ease;pointer-events:none}
+.report:hover{transform:translateY(-6px)}
+.report:hover::after{opacity:1}
+@media (hover:none),(prefers-reduced-motion:reduce){.report,.report::after{transition:none}.report:hover{transform:none}.report:hover::after{opacity:0}}
+
 /* header + burger */
 header{position:sticky;top:0;z-index:20;background:var(--ivory);border-bottom:1px solid transparent}
 header.scrolled{border-bottom-color:var(--line)}
