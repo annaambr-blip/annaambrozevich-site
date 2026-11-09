@@ -67,12 +67,10 @@ section[id]{scroll-margin-top:84px}
 .btn:hover .arr,.link:hover .arr,.proj:hover .arr{transform:translateX(4px)}
 @media (prefers-reduced-motion:reduce){.btn,.arr{transition:none}.btn:hover,.btn:hover .arr,.link:hover .arr,.proj:hover .arr{transform:none}}
 
-/* report cards: lift on hover, GPU-only (transform + opacity) */
-.report{position:relative;will-change:transform;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
-.report::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:0 22px 48px rgba(14,18,34,.16),0 4px 10px rgba(14,18,34,.06);opacity:0;transition:opacity .35s ease;pointer-events:none}
-.report:hover{transform:translateY(-6px)}
-.report:hover::after{opacity:1}
-@media (hover:none),(prefers-reduced-motion:reduce){.report,.report::after{transition:none}.report:hover{transform:none}.report:hover::after{opacity:0}}
+/* report fans: same hover as Multipotentials issues */
+.report img.fan{transition:transform .2s,box-shadow .2s}
+.report:hover img.fan{transform:translateY(-3px);box-shadow:0 1px 2px rgba(14,18,34,.06),0 16px 34px rgba(14,18,34,.18)}
+@media (prefers-reduced-motion:reduce){.report img.fan{transition:none}.report:hover img.fan{transform:none}}
 
 /* header + burger */
 header{position:sticky;top:0;z-index:20;background:var(--ivory);border-bottom:1px solid transparent}
@@ -298,7 +296,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
     <article class="report" style="background:var(--cream)">
       <img class="fan" src="img/fan-beyond-skills.jpg" alt="Beyond Skills, insight report No. 3: cover and sample pages" loading="lazy">
       <div style="min-width:0">
-        <span class="for">For skills &amp; policy</span>
+        <span class="for">For employers &amp; educators</span>
         <h3>Beyond Skills</h3>
         <p>What the language of skills misses in the age of AI, and how The Self-Learning Stack fills the gaps.</p>
         <ul><li>The stack mapped onto the WEF Global Skills Taxonomy</li><li>Five gaps: judgement, thinking with AI, a method for learning, combination, brain health</li><li>The Stack Profile and worksheets</li></ul>
