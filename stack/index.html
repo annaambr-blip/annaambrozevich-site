@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>The Self-Learning Stack · Anna Ambrozevich</title>
-<meta name="description" content="The Self-Learning Stack: an original framework for staying irreplaceable in the AI era. Three free insight reports by Anna Ambrozevich.">
-<meta property="og:title" content="The Self-Learning Stack · Three free insight reports">
-<meta property="og:description" content="How people keep growing when the world changes faster than we can learn. Three insight reports by Anna Ambrozevich.">
+<meta name="description" content="The Self-Learning Stack: an original framework for staying irreplaceable and building brain capital in the age of AI. An insight report series by Anna Ambrozevich.">
+<meta property="og:title" content="The Self-Learning Stack · Insight report series">
+<meta property="og:description" content="How do we stay irreplaceable in the age of AI, and build brain capital in people and institutions? Insight reports by Anna Ambrozevich.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Anna Ambrozevich">
 <meta property="og:url" content="https://annaambrozevich.com/stack/">
@@ -99,13 +99,13 @@ nav.main a{text-decoration:none}
 @media (max-width:700px){.stats{grid-template-columns:1fr}.stat{border-left:0;padding-left:0;border-top:1px solid var(--line)}.stat:first-child{border-top:0}}
 
 /* the stack */
-.stackgrid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(28px,5vw,64px);align-items:center;margin-top:44px}
-.layers{display:grid;gap:12px}
-.layer{border-radius:16px;padding:22px 26px;display:grid;grid-template-columns:56px minmax(0,1fr);gap:8px 18px;align-items:baseline}
+.stackgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(18px,3vw,32px);align-items:stretch;margin-top:44px}
+.layers{display:grid;gap:8px}
+.layer{border-radius:14px;padding:15px 20px;display:grid;grid-template-columns:56px minmax(0,1fr);gap:8px 18px;align-items:baseline}
 .layer .n{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--navy)}
-.layer h3{font-size:clamp(24px,2.6vw,32px);font-weight:800;letter-spacing:-.035em;line-height:1.05}
+.layer h3{font-size:clamp(20px,2vw,24px);font-weight:800;letter-spacing:-.035em;line-height:1.05}
 .layer h3 em{font-style:italic;font-weight:700;font-size:.62em;letter-spacing:-.01em;color:var(--ink2);margin-left:6px}
-.layer p{grid-column:2;font-size:15.5px;color:#33364A}
+.layer p{grid-column:2;font-size:14.5px;color:#33364A}
 .layer.found{background:var(--navy);color:var(--ivory)}
 .layer.found .n{color:var(--lime)}
 .layer.found h3 em,.layer.found p{color:#C9CCD8}
@@ -154,6 +154,22 @@ nav.main a{text-decoration:none}
 .author p.t{font-size:18px;line-height:1.65;color:#2E313C;margin-top:18px;max-width:58ch}
 @media (max-width:760px){.author{grid-template-columns:1fr}.author img{max-width:320px}}
 
+
+.byline{display:inline-flex;align-items:center;gap:12px;margin-top:26px;text-decoration:none}
+.byline img{width:46px;height:46px;border-radius:50%;object-fit:cover;object-position:50% 25%}
+.byline b{display:block;font-size:16px;font-weight:700;letter-spacing:-.01em}
+.byline small{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:2px}
+.authorcard{display:grid;grid-template-columns:150px minmax(0,1fr);gap:clamp(20px,3vw,36px);align-items:center;background:var(--stone);border-radius:18px;padding:clamp(18px,2.4vw,28px);margin-top:clamp(40px,5vw,64px)}
+.authorcard img{width:150px;height:150px;border-radius:12px;object-fit:cover;object-position:50% 25%;display:block}
+.authorcard h3{font-size:clamp(24px,2.6vw,32px);font-weight:800;letter-spacing:-.035em;line-height:1.05;margin-top:10px}
+.authorcard p:not(.eyebrow){font-size:16px;color:#33364A;margin-top:10px;max-width:78ch}
+@media (max-width:640px){.authorcard{grid-template-columns:1fr}.authorcard img{width:110px;height:110px}}
+.capital{background:var(--lime);border-radius:18px;padding:clamp(24px,3vw,40px)}
+.capital h3{font-size:clamp(48px,6.4vw,84px);font-weight:800;letter-spacing:-.055em;line-height:.95;margin-top:12px}
+.capital h3 em{font-style:italic}
+.capital p:not(.eyebrow){font-size:16.5px;color:var(--navy);margin-top:18px;line-height:1.6}
+.capital blockquote{margin:22px 0 0;padding-top:18px;border-top:1.5px solid var(--navy);font-size:clamp(19px,1.9vw,23px);font-weight:800;letter-spacing:-.03em;line-height:1.18}
+.capital blockquote em{font-style:italic}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:18px;padding-block:28px 36px;font-size:13px;color:var(--muted);border-top:1px solid var(--line)}
 </style>
 <script data-goatcounter="https://annaambrozevich.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
@@ -162,31 +178,36 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
 
 <header class="band" id="hdr"><div class="wrap">
   <a class="logo" href="/">ANNA<br>AMBROZEVICH</a>
-  <nav class="main" aria-label="Page"><a href="#why">Why</a><a href="#stack">The Stack</a><a href="#reports">Reports</a><a href="#author">Author</a></nav>
+  <nav class="main" aria-label="Page"><a href="#series">About</a><a href="#stack">The Stack</a><a href="#reports">Reports</a></nav>
   <a class="back" href="/">← Main site</a>
 </div></header>
 
 <main>
 <section class="band"><div class="wrap hero">
-  <p class="eyebrow"><span class="mark" aria-hidden="true"><i style="background:var(--blue-soft)"></i><i style="background:var(--coral-soft)"></i><i style="background:var(--lime);box-shadow:inset 0 0 0 1.2px var(--navy)"></i><i style="background:var(--navy)"></i></span>Original framework · Three insight reports</p>
+  <p class="eyebrow"><span class="mark" aria-hidden="true"><i style="background:var(--blue-soft)"></i><i style="background:var(--coral-soft)"></i><i style="background:var(--lime);box-shadow:inset 0 0 0 1.2px var(--navy)"></i><i style="background:var(--navy)"></i></span>Original framework · Insight report series</p>
   <h1>The Self-Learning <span>Stack</span></h1>
-  <p class="q">How do people keep growing when the world changes faster than we can learn?</p>
-  <div class="cta"><a class="btn" href="#reports" data-goatcounter-click="stack-hero-reports">Get the three reports, free <span class="arr">→</span></a><a class="link" href="#stack">How the stack works <span class="arr">→</span></a></div>
+  <p class="q">How do we stay irreplaceable in the age of AI, and build brain capital in people and institutions?</p>
+  <a class="byline" href="#series"><img src="../img/portrait.jpg" alt=""><span><b>By Anna Ambrozevich</b><small>Architect of Human Systems</small></span></a>
+  <div class="cta"><a class="btn" href="#reports" data-goatcounter-click="stack-hero-reports">Get the reports <span class="arr">→</span></a><a class="link" href="#stack">How the stack works <span class="arr">→</span></a></div>
 </div></section>
 
-<section class="band sec" id="why" style="background:var(--paper)"><div class="wrap">
+<section class="band sec" id="series" style="background:var(--paper)"><div class="wrap">
   <div class="why">
-    <div><p class="eyebrow">Why now</p><h2 class="h2">The question isn’t <em>what</em> to learn. It’s <em>how</em></h2></div>
+    <div><p class="eyebrow">What this is</p><h2 class="h2">Insight reports, <em>not</em> courses</h2></div>
     <div class="why-text">
-      <p>AI now automates thinking, not just routine, and the tools change every week. “Learn it once” no longer works.</p>
-      <p>This is not about lifelong learning, where someone else designs the course for you. It is about <b>self-learning</b>: designing your own system. Buying a great course is easy. Turning it into real capability is not.</p>
-      <p>The Self-Learning Stack is that system. It is built on years of combining many roles across industries and learning each of them on my own.</p>
+      <p>The Self-Learning Stack series is a set of research-based insight reports, written in the format of global think-tank reports: evidence, an original framework, exhibits and worksheets you can use on your own. They are free to download as PDFs.</p>
+      <p>Each report takes the same framework to a different level: <b>the person</b> who wants to stay irreplaceable, <b>the institution</b> that designs learning for others, <b>the language of skills</b> that connects them. The series will keep growing.</p>
+      <p>The idea behind it is self-responsibility. Not lifelong learning that someone else designs for you, but <b>self-learning</b>: your own system for turning information into capability, while AI rewrites work.</p>
     </div>
   </div>
-  <div class="stats">
-    <div class="stat"><b>39%</b><p>of workers’ core skills are expected to change by 2030</p><small>WEF, Future of Jobs 2025</small></div>
-    <div class="stat"><b>~40%</b><p>of jobs worldwide are exposed to AI, around 60% in advanced economies</p><small>IMF, 2024</small></div>
-    <div class="stat"><b>~5 yrs</b><p>is the half-life of a professional skill</p><small>Deloitte, Human Capital Trends</small></div>
+  <div class="authorcard">
+    <img src="../img/portrait.jpg" alt="Anna Ambrozevich in a light denim shirt, smiling, outdoors" loading="lazy">
+    <div>
+      <p class="eyebrow">The author</p>
+      <h3>Anna Ambrozevich</h3>
+      <p>Architect of Human Systems. Fifteen years in MarTech, CRM and customer experience at PepsiCo, Alibaba Group, Philip Morris International and Otto Group, then more than ten roles across technology consulting, education, research and global non-profit leadership, including Women in Tech and tech diplomacy in Central Asia. I design systems of learning and leadership that work without me in the room.</p>
+      <div class="cta" style="margin-top:18px"><a class="link" href="/" data-goatcounter-click="stack-to-main">More about me <span class="arr">→</span></a><a class="link" href="https://www.linkedin.com/in/anna-ambrozevich" target="_blank" rel="noopener" data-goatcounter-click="stack-linkedin">LinkedIn <span class="arr">→</span></a></div>
+    </div>
   </div>
 </div></section>
 
@@ -201,27 +222,26 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
       <div class="layer" style="background:var(--peach)"><span class="n">02</span><h3>Meta-skills <em>make you better</em></h3><p>Learning agility, sense-making, critical and systems thinking, grown through Input, Process, Output.</p></div>
       <div class="layer" style="background:var(--cream)"><span class="n">03</span><h3>Self-strategy <em>makes you irreplaceable</em></h3><p>Domain expertise, self-knowledge and AI literacy: knowing where you are going.</p></div>
       <div class="layer found"><span class="n">FDN</span><h3>Brain health <em>keeps it all running</em></h3><p>Sleep, movement, stress and focus: the base every other layer depends on.</p></div>
-      <div class="equals">Together <b>= your brain capital</b></div>
     </div>
-    <div class="principle">
-      <p class="eyebrow">The principle</p>
+    <div class="capital">
+      <p class="eyebrow" style="color:var(--navy)">Together they build</p>
+      <h3>Brain <em>capital</em></h3>
+      <p>The economic value of a healthy, adaptive brain: the one asset AI amplifies but can’t replace. For a person, it decides whether you stay irreplaceable. For a university or a company, it decides whether its people keep growing. For a country, it is the base of the brain economy.</p>
       <blockquote>Anything you can fully describe, AI will soon do. <em>Your edge is what you can’t write down</em></blockquote>
-      <p>Tools tell you how to run. Meta-skills make you run better. Self-strategy tells you where. Brain health keeps you running.</p>
     </div>
   </div>
 </div></section>
 
 <section class="band sec" id="reports" style="background:var(--paper)"><div class="wrap">
   <div class="head">
-    <div><p class="eyebrow">The Self-Learning Stack series</p><h2 class="h2">Three insight reports</h2></div>
-    <p class="lead">One for every learner. One for those who design learning for others. One for the language that connects them. All three are free.</p>
+    <div><p class="eyebrow">The Self-Learning Stack series</p><h2 class="h2">Insight reports</h2></div>
+    <p class="lead">One for every learner. One for those who design learning for others. One for the language of skills that connects them. More to come.</p>
   </div>
 
   <div class="bundle">
-    <div><h3>Get all three reports</h3><p>Free PDFs, delivered to your inbox.</p></div>
-    <a class="btn lime" data-buy="bundle" data-goatcounter-click="stack-get-bundle">Get all three, free <span class="arr">→</span></a>
+    <div><h3>Get the whole series</h3><p>PDFs delivered to your inbox, plus new reports as they come out.</p></div>
+    <a class="btn lime" data-buy="bundle" data-goatcounter-click="stack-get-bundle">Get the series <span class="arr">→</span></a>
   </div>
-
   <div class="reports">
     <article class="report" style="background:var(--lav)">
       <img class="fan" src="../img/fan-staying-irreplaceable.jpg" alt="Staying Irreplaceable, insight report No. 1: cover and sample pages" loading="lazy">
@@ -231,7 +251,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
         <h3>Staying Irreplaceable</h3>
         <p>How to keep learning when AI rewrites work: three layers, one foundation and a 90-day plan.</p>
         <ul><li>Learning sprints, learning circles, the 3-mention rule</li><li>Meta-skills and a personal self-strategy</li><li>Worksheets and a 90-day plan</li></ul>
-        <div class="act"><a class="btn" data-buy="r1" data-goatcounter-click="stack-get-r1">Get it free <span class="arr">→</span></a><span class="pages">50 pages · PDF</span></div>
+        <div class="act"><a class="btn" data-buy="r1" data-goatcounter-click="stack-get-r1">Download <span class="arr">→</span></a><span class="pages">50 pages · PDF</span></div>
       </div>
     </article>
     <article class="report" style="background:var(--peach)">
@@ -242,7 +262,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
         <h3>Building Brain Capital</h3>
         <p>A blueprint for universities, academies and corporate L&amp;D that want to grow people who keep learning, and prove it.</p>
         <ul><li>The tech university and corporate academy of the future</li><li>Community chapters and a venture lab, step by step</li><li>A maturity model, five indicators and a toolkit</li></ul>
-        <div class="act"><a class="btn" data-buy="r2" data-goatcounter-click="stack-get-r2">Get it free <span class="arr">→</span></a><span class="pages">40 pages · PDF</span></div>
+        <div class="act"><a class="btn" data-buy="r2" data-goatcounter-click="stack-get-r2">Download <span class="arr">→</span></a><span class="pages">40 pages · PDF</span></div>
       </div>
     </article>
     <article class="report" style="background:var(--cream)">
@@ -253,7 +273,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
         <h3>Beyond Skills</h3>
         <p>What the language of skills misses in the age of AI, and how The Self-Learning Stack fills the gaps.</p>
         <ul><li>The stack mapped onto the WEF Global Skills Taxonomy</li><li>Five gaps: judgement, thinking with AI, a method for learning, combination, brain health</li><li>The Stack Profile and worksheets</li></ul>
-        <div class="act"><a class="btn" data-buy="r3" data-goatcounter-click="stack-get-r3">Get it free <span class="arr">→</span></a><span class="pages">PDF</span></div>
+        <div class="act"><a class="btn" data-buy="r3" data-goatcounter-click="stack-get-r3">Download <span class="arr">→</span></a><span class="pages">PDF</span></div>
       </div>
     </article>
   </div>
@@ -271,15 +291,6 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
   </div>
 </div></section>
 
-<section class="band sec" id="author" style="background:var(--stone)"><div class="wrap author">
-  <img src="../img/portrait.jpg" alt="Anna Ambrozevich in a light denim shirt, smiling, outdoors" loading="lazy">
-  <div>
-    <p class="eyebrow">The author</p>
-    <h2 class="h2">Anna Ambrozevich</h2>
-    <p class="t">Architect of Human Systems. I design systems of learning, leadership and collaboration that people and organisations can use without me in the room. The Self-Learning Stack is one of them. Multipotentials, my book and newsletter, is another.</p>
-    <div class="cta"><a class="btn" href="/" data-goatcounter-click="stack-to-main">Visit my main site <span class="arr">→</span></a><a class="link" href="https://www.linkedin.com/in/anna-ambrozevich" target="_blank" rel="noopener" data-goatcounter-click="stack-linkedin">Follow on LinkedIn <span class="arr">→</span></a></div>
-  </div>
-</div></section>
 </main>
 
 <footer class="band"><div class="wrap">
