@@ -78,7 +78,12 @@ header.scrolled{border-bottom-color:var(--line)}
 header .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:18px}
 .logo{font-weight:800;font-size:17px;line-height:.95;letter-spacing:-.03em;text-decoration:none}
 nav.main{display:flex;gap:30px;font-size:15px;font-weight:500}
-nav.main a{text-decoration:none}
+nav.main a{text-decoration:none;padding-bottom:4px;border-bottom:2px solid transparent;transition:border-color .2s}
+nav.main a:nth-child(1):hover,nav.main a:nth-child(1).cur{border-color:var(--blue)}
+nav.main a:nth-child(2):hover,nav.main a:nth-child(2).cur{border-color:var(--coral)}
+nav.main a:nth-child(3):hover,nav.main a:nth-child(3).cur{border-color:var(--lime)}
+nav.main a:nth-child(4):hover,nav.main a:nth-child(4).cur{border-color:var(--blue)}
+nav.main a:nth-child(5):hover,nav.main a:nth-child(5).cur{border-color:var(--coral)}
 .social{display:flex;gap:20px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
 .social a{text-decoration:none}
 .burger{display:none;width:44px;height:44px;border:1.5px solid var(--navy);border-radius:999px;background:transparent;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px}
@@ -206,11 +211,11 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
 
 <header class="band" id="hdr"><div class="wrap" style="position:relative">
   <a class="logo" href="#top">ANNA<br>AMBROZEVICH</a>
-  <nav class="main" aria-label="Main"><a href="#about">About</a><a href="#multipotentials">Multipotentials</a><a href="#research">Self-Learning Stack</a><a href="#impact">Impact</a><a href="#contact">Contact</a></nav>
+  <nav class="main" aria-label="Main"><a href="#about">About</a><a href="#multipotentials">Multipotentials</a><a href="/stack/">Self-Learning Stack</a><a href="#impact">Impact</a><a href="#contact">Contact</a></nav>
   <div class="social"><a data-goatcounter-click="header-linkedin" href="https://www.linkedin.com/in/anna-ambrozevich" target="_blank" rel="noopener">LinkedIn</a><a data-goatcounter-click="header-substack" href="https://substack.com/@multipotentials" target="_blank" rel="noopener">Substack</a></div>
   <button class="burger" type="button" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
   <nav class="menu" id="menu" aria-label="Mobile">
-    <a href="#about">About</a><a href="#multipotentials">Multipotentials</a><a href="#research">Self-Learning Stack</a><a href="#impact">Impact</a><a href="#contact">Contact</a>
+    <a href="#about">About</a><a href="#multipotentials">Multipotentials</a><a href="/stack/">Self-Learning Stack</a><a href="#impact">Impact</a><a href="#contact">Contact</a>
     <div class="msocial"><a data-goatcounter-click="menu-linkedin" href="https://www.linkedin.com/in/anna-ambrozevich" target="_blank" rel="noopener">LinkedIn</a><a data-goatcounter-click="menu-substack" href="https://substack.com/@multipotentials" target="_blank" rel="noopener">Substack</a></div>
   </nav>
 </div></header>
