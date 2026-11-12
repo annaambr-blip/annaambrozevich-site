@@ -207,6 +207,22 @@ nav.main a:nth-child(5):hover,nav.main a:nth-child(5).cur{border-color:var(--cor
 .capital blockquote{margin:22px 0 0;padding-top:18px;border-top:1.5px solid var(--navy);font-size:clamp(19px,1.9vw,23px);font-weight:800;letter-spacing:-.03em;line-height:1.18}
 .capital blockquote em{font-style:italic}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:18px;padding-block:28px 36px;font-size:13px;color:var(--muted);border-top:1px solid var(--line)}
+
+.stackx{max-width:900px;margin:48px auto 0;display:grid;gap:10px}
+.stackx .grp{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 2px 13%}
+.stackx .row{display:grid;grid-template-columns:minmax(0,38%) minmax(0,1fr);border-radius:14px;overflow:hidden;min-height:96px}
+.stackx .r1{margin-left:13%}
+.stackx .r2{margin-left:6.5%}
+.stackx .lbl{padding:18px 22px;display:flex;flex-direction:column;justify-content:center;gap:6px}
+.stackx .lbl b{font-size:clamp(24px,2.8vw,34px);font-weight:800;letter-spacing:-.04em;line-height:1}
+.stackx .n,.stackx .total span{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+.stackx .tx{padding:18px 24px;display:flex;align-items:center;font-size:clamp(19px,2vw,24px);font-weight:700;letter-spacing:-.025em}
+.stackx .found{background:var(--navy);color:var(--ivory);border-radius:14px;padding:18px 24px;display:flex;align-items:center;gap:16px}
+.stackx .found .n{color:var(--lime)}
+.stackx .found b{font-size:clamp(20px,2.2vw,26px);font-weight:800;letter-spacing:-.03em}
+.stackx .total{border:1.5px solid var(--navy);border-radius:14px;padding:18px 24px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 20px}
+.stackx .total b{font-size:clamp(22px,2.6vw,30px);font-weight:800;letter-spacing:-.04em}
+@media (max-width:640px){.stackx .r1,.stackx .r2{margin-left:0}.stackx .grp{margin-left:0}.stackx .row{grid-template-columns:1fr;min-height:0}}
 </style>
 <script data-goatcounter="https://annaambrozevich.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
@@ -257,18 +273,13 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
     <div><p class="eyebrow">The framework</p><h2 class="h2">Three layers, one foundation</h2></div>
     <p class="lead">Stop chasing every new tool: that is the lowest, most replaceable layer. Build a system for how you learn, and you stay irreplaceable.</p>
   </div>
-  <div class="pyr">
-    <div class="skills">
-      <p class="grp">Brain skills</p>
-      <div class="bar" style="width:62%;border-color:var(--blue)"><span class="n">01</span><h3>Tools <em>keep you current</em></h3><p>Learning sprints, learning through people and the 3-mention rule.</p><i style="background:var(--blue)"></i></div>
-      <div class="bar" style="width:78%;border-color:var(--coral)"><span class="n">02</span><h3>Meta-skills <em>make you better</em></h3><p>Learning agility, sense-making, critical and systems thinking.</p><i style="background:var(--coral)"></i></div>
-      <div class="bar" style="width:94%;border-color:var(--navy)"><span class="n">03</span><h3>Self-strategy <em>makes you irreplaceable</em></h3><p>Domain expertise, self-knowledge and AI literacy: knowing where you are going.</p><i style="background:var(--lime);box-shadow:inset 0 0 0 1.5px var(--navy)"></i></div>
-    </div>
-    <span class="op">+</span>
-    <div class="bar found"><span class="n">FDN</span><h3>Brain health <em>keeps it all running</em></h3><p>Sleep, movement, stress and focus: the base every layer depends on.</p></div>
-    <span class="op">=</span>
-    <p class="formula"><b>Brain capital</b></p>
-    <p class="fnote">Brain skills + brain health. The one asset AI amplifies but can’t replace. <em>Your edge is what you can’t write down.</em></p>
+  <div class="stackx" role="img" aria-label="The Self-Learning Stack: Tools keep you current, Meta-skills make you better, Self-strategy makes you irreplaceable. Together these brain skills, on a foundation of brain health, equal your brain capital.">
+    <p class="grp">Brain skills</p>
+    <div class="row r1"><div class="lbl" style="background:var(--blue-soft)"><span class="n">Layer 01</span><b>Tools</b></div><div class="tx" style="background:var(--lav)">Keep you current</div></div>
+    <div class="row r2"><div class="lbl" style="background:var(--coral-soft)"><span class="n">Layer 02</span><b>Meta-skills</b></div><div class="tx" style="background:var(--peach)">Make you better</div></div>
+    <div class="row r3"><div class="lbl" style="background:var(--lime)"><span class="n">Layer 03</span><b>Self-strategy</b></div><div class="tx" style="background:var(--cream)">Makes you irreplaceable</div></div>
+    <div class="found"><span class="n">Foundation</span><b>Brain health</b></div>
+    <div class="total"><b>= Your brain capital</b><span>The one asset AI can’t replace</span></div>
   </div>
 </div></section>
 
