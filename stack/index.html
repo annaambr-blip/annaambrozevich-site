@@ -74,8 +74,9 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;gap:2
 .logo{font-weight:800;font-size:17px;line-height:.95;letter-spacing:-.03em;text-decoration:none}
 nav.main{display:flex;gap:30px;font-size:15px;font-weight:500}
 nav.main a{text-decoration:none}
-.back{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none}
-@media (max-width:760px){nav.main{display:none}}
+nav.main a.cur{border-bottom:2px solid var(--lime)}
+.back{display:none;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none}
+@media (max-width:760px){nav.main{display:none}.back{display:inline}}
 
 /* hero */
 .hero{padding-block:clamp(24px,5vw,56px) clamp(48px,7vw,88px)}
@@ -118,11 +119,25 @@ nav.main a{text-decoration:none}
 @media (max-width:900px){.stackgrid{grid-template-columns:1fr}}
 @media (max-width:480px){.layer{grid-template-columns:1fr}.layer p{grid-column:1}}
 
+/* pyramid */
+.pyr{display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:44px}
+.bar{position:relative;background:var(--paper);border:2px solid;border-radius:14px;padding:16px 26px;display:grid;grid-template-columns:48px minmax(0,1fr);gap:4px 16px;align-items:baseline}
+.bar .n{font-family:var(--mono);font-size:12px;letter-spacing:.14em}
+.bar h3{font-size:clamp(20px,2vw,26px);font-weight:800;letter-spacing:-.035em;line-height:1.05}
+.bar h3 em{font-style:italic;font-weight:700;font-size:.62em;letter-spacing:-.01em;color:var(--ink2);margin-left:6px}
+.bar p{grid-column:2;font-size:14.5px;color:#33364A}
+.bar>i{position:absolute;right:-12px;top:50%;margin-top:-11px;width:22px;height:22px;border-radius:50%}
+.bar.found{width:100%;background:var(--lime);border-color:var(--lime)}
+.formula{margin-top:22px;font-size:clamp(20px,2.4vw,30px);font-weight:800;letter-spacing:-.035em;text-align:center}
+.formula b{background:linear-gradient(transparent 62%,var(--lime) 62%,var(--lime) 92%,transparent 92%)}
+.fnote{margin-top:8px;font-size:16px;color:var(--muted);text-align:center}
+.fnote em{font-style:italic;color:var(--navy);font-weight:600}
+@media (max-width:700px){.bar{width:100%!important;grid-template-columns:1fr;padding:14px 18px}.bar p{grid-column:1}.bar>i{right:-8px}}
 /* reports */
-.bundle{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:18px 32px;background:var(--navy);color:var(--ivory);border-radius:18px;padding:clamp(22px,3vw,32px) clamp(22px,3vw,36px);margin-top:40px}
+.bundle{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:18px 32px;background:var(--lime);color:var(--navy);border-radius:18px;padding:clamp(22px,3vw,32px) clamp(22px,3vw,36px);margin-top:40px}
 .bundle h3{font-size:clamp(24px,2.6vw,32px);font-weight:800;letter-spacing:-.035em;line-height:1.05}
-.bundle p{color:#C9CCD8;margin-top:8px;font-size:16px}
-.bundle .btn[aria-disabled="true"]{color:var(--ivory);border-color:var(--ivory)}
+.bundle p{color:var(--ink2);margin-top:8px;font-size:16px}
+.bundle .btn[aria-disabled="true"]{color:var(--navy);border-color:var(--navy)}
 .reports{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:18px}
 .report{border-radius:18px;padding:clamp(14px,1.6vw,18px) clamp(14px,1.6vw,18px) clamp(22px,3vw,30px);display:flex;flex-direction:column;gap:24px;min-width:0}
 .report>div{padding-inline:clamp(8px,1.6vw,16px);display:flex;flex-direction:column;flex:1}
@@ -178,7 +193,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
 
 <header class="band" id="hdr"><div class="wrap">
   <a class="logo" href="/">ANNA<br>AMBROZEVICH</a>
-  <nav class="main" aria-label="Page"><a href="#series">About</a><a href="#stack">The Stack</a><a href="#reports">Reports</a></nav>
+  <nav class="main" aria-label="Main"><a href="/#about">About</a><a href="/#multipotentials">Multipotentials</a><a href="/stack/" aria-current="page" class="cur">Self-Learning Stack</a><a href="/#impact">Impact</a><a href="/#contact">Contact</a></nav>
   <a class="back" href="/">← Main site</a>
 </div></header>
 
@@ -195,9 +210,9 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
   <div class="why">
     <div><p class="eyebrow">What this is</p><h2 class="h2">Insight reports, <em>not</em> courses</h2></div>
     <div class="why-text">
-      <p>The Self-Learning Stack series is a set of research-based insight reports, written in the format of global think-tank reports: evidence, an original framework, exhibits and worksheets you can use on your own. They are free to download as PDFs.</p>
-      <p>Each report takes the same framework to a different level: <b>the person</b> who wants to stay irreplaceable, <b>the institution</b> that designs learning for others, <b>the language of skills</b> that connects them. The series will keep growing.</p>
-      <p>The idea behind it is self-responsibility. Not lifelong learning that someone else designs for you, but <b>self-learning</b>: your own system for turning information into capability, while AI rewrites work.</p>
+      <p>I started the Self-Learning Stack for myself. Over fifteen years and more than ten roles I kept learning new fields from scratch: CRM in global corporations, customer success in IT consulting, community leadership, tech diplomacy. Nobody designed that learning for me, so I had to build my own system.</p>
+      <p>When AI began rewriting work, I heard the same question everywhere, from students, companies and universities: <b>what do I learn now, and how do I keep up without burning out?</b> These reports are my answer, written in the format of global think-tank reports: evidence, an original framework, exhibits and worksheets you can use on your own.</p>
+      <p>Each report takes the framework to a different level: <b>the person</b>, <b>the institution</b> and <b>the language of skills</b> that connects them. The series will keep growing.</p>
     </div>
   </div>
   <div class="authorcard">
@@ -216,19 +231,13 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
     <div><p class="eyebrow">The framework</p><h2 class="h2">Three layers, one foundation</h2></div>
     <p class="lead">Stop chasing every new tool: that is the lowest, most replaceable layer. Build a system for how you learn, and you stay irreplaceable.</p>
   </div>
-  <div class="stackgrid">
-    <div class="layers">
-      <div class="layer" style="background:var(--lav)"><span class="n">01</span><h3>Tools <em>keep you current</em></h3><p>Learning sprints, learning through people, social learning and the 3-mention rule.</p></div>
-      <div class="layer" style="background:var(--peach)"><span class="n">02</span><h3>Meta-skills <em>make you better</em></h3><p>Learning agility, sense-making, critical and systems thinking, grown through Input, Process, Output.</p></div>
-      <div class="layer" style="background:var(--cream)"><span class="n">03</span><h3>Self-strategy <em>makes you irreplaceable</em></h3><p>Domain expertise, self-knowledge and AI literacy: knowing where you are going.</p></div>
-      <div class="layer found"><span class="n">FDN</span><h3>Brain health <em>keeps it all running</em></h3><p>Sleep, movement, stress and focus: the base every other layer depends on.</p></div>
-    </div>
-    <div class="capital">
-      <p class="eyebrow" style="color:var(--navy)">Together they build</p>
-      <h3>Brain <em>capital</em></h3>
-      <p>The economic value of a healthy, adaptive brain: the one asset AI amplifies but can’t replace. For a person, it decides whether you stay irreplaceable. For a university or a company, it decides whether its people keep growing. For a country, it is the base of the brain economy.</p>
-      <blockquote>Anything you can fully describe, AI will soon do. <em>Your edge is what you can’t write down</em></blockquote>
-    </div>
+  <div class="pyr">
+    <div class="bar" style="width:62%;border-color:var(--blue)"><span class="n">01</span><h3>Tools <em>keep you current</em></h3><p>Learning sprints, learning through people and the 3-mention rule.</p><i style="background:var(--blue)"></i></div>
+    <div class="bar" style="width:78%;border-color:var(--coral)"><span class="n">02</span><h3>Meta-skills <em>make you better</em></h3><p>Learning agility, sense-making, critical and systems thinking.</p><i style="background:var(--coral)"></i></div>
+    <div class="bar" style="width:94%;border-color:var(--navy)"><span class="n">03</span><h3>Self-strategy <em>makes you irreplaceable</em></h3><p>Domain expertise, self-knowledge and AI literacy: knowing where you are going.</p><i style="background:var(--lime);box-shadow:inset 0 0 0 1.5px var(--navy)"></i></div>
+    <div class="bar found"><span class="n">FDN</span><h3>Brain health <em>keeps it all running</em></h3><p>Sleep, movement, stress and focus: the base every layer depends on.</p></div>
+    <p class="formula">Tools + Meta-skills + Self-strategy = <b>Brain capital</b></p>
+    <p class="fnote">The one asset AI amplifies but can’t replace. <em>Your edge is what you can’t write down.</em></p>
   </div>
 </div></section>
 
@@ -269,7 +278,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
       <img class="fan" src="../img/fan-beyond-skills.jpg" alt="Beyond Skills, insight report No. 3: cover and sample pages" loading="lazy">
       <div>
         <span class="no">Report No. 3</span>
-        <span class="for">For employers &amp; educators</span>
+        <span class="for">For everyone</span>
         <h3>Beyond Skills</h3>
         <p>What the language of skills misses in the age of AI, and how The Self-Learning Stack fills the gaps.</p>
         <ul><li>The stack mapped onto the WEF Global Skills Taxonomy</li><li>Five gaps: judgement, thinking with AI, a method for learning, combination, brain health</li><li>The Stack Profile and worksheets</li></ul>
