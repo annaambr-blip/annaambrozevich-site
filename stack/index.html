@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>The Self-Learning Stack · Anna Ambrozevich</title>
+<meta name="description" content="The Self-Learning Stack: an original framework for staying irreplaceable in the AI era. Three free insight reports by Anna Ambrozevich.">
+<meta property="og:title" content="The Self-Learning Stack · Three free insight reports">
+<meta property="og:description" content="How people keep growing when the world changes faster than we can learn. Three insight reports by Anna Ambrozevich.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Anna Ambrozevich">
+<meta property="og:url" content="https://annaambrozevich.com/stack/">
+<meta property="og:image" content="https://annaambrozevich.com/img/og-research.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://annaambrozevich.com/stack/">
+<link rel="preload" href="../fonts/inter-tight-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:'Inter Tight';font-weight:400;font-display:swap;src:url(../fonts/inter-tight-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Inter Tight';font-weight:500;font-display:swap;src:url(../fonts/inter-tight-latin-500-normal.woff2) format('woff2')}
+@font-face{font-family:'Inter Tight';font-weight:600;font-display:swap;src:url(../fonts/inter-tight-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Inter Tight';font-weight:700;font-display:swap;src:url(../fonts/inter-tight-latin-700-normal.woff2) format('woff2')}
+@font-face{font-family:'Inter Tight';font-weight:800;font-display:swap;src:url(../fonts/inter-tight-latin-800-normal.woff2) format('woff2')}
+@font-face{font-family:'Inter Tight';font-style:italic;font-weight:500;font-display:swap;src:url(../fonts/inter-tight-latin-500-italic.woff2) format('woff2')}
+@font-face{font-family:'Inter Tight';font-style:italic;font-weight:700;font-display:swap;src:url(../fonts/inter-tight-latin-700-italic.woff2) format('woff2')}
+@font-face{font-family:'Inter Tight';font-style:italic;font-weight:800;font-display:swap;src:url(../fonts/inter-tight-latin-800-italic.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-weight:400;font-display:swap;src:url(../fonts/ibm-plex-mono-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-weight:500;font-display:swap;src:url(../fonts/ibm-plex-mono-latin-500-normal.woff2) format('woff2')}
+:root{
+  --ivory:#F6F3EC; --paper:#FBFAF6; --navy:#0E1222; --lime:#D4FF3A; --blue:#6F86FF; --coral:#FF7A59;
+  --blue-soft:#A9B6FF; --coral-soft:#FFB09C;
+  --lav:#E3E7FB; --cream:#F1F6D8; --peach:#FFE6DD; --stone:#EEECE6;
+  --ink2:#3E414C; --muted:#5C606C; --line:#D9D3C6; --textblue:#3F51C4;
+  --sans:'Inter Tight',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,'SFMono-Regular',Menlo,monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ivory);color:var(--navy);font-family:var(--sans);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{text-wrap:balance}
+img{max-width:100%}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+section[id]{scroll-margin-top:84px}
+.band{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:clamp(0px,3vw,24px)}
+.sec{padding-block:clamp(56px,8vw,104px)}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:10px}
+.h2{font-size:clamp(34px,5vw,60px);font-weight:800;letter-spacing:-.045em;line-height:1.02;margin-top:14px}
+.h2 em{font-style:italic}
+.lead{font-size:clamp(17px,1.6vw,19px);line-height:1.6;color:var(--muted);max-width:54ch;text-wrap:pretty}
+.head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px 48px}
+.head .lead{max-width:44ch}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:var(--ivory);border:0;border-radius:999px;padding:15px 24px;font:600 15px/1 var(--sans);text-decoration:none;cursor:pointer;transition:transform .2s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn.lime{background:var(--lime);color:var(--navy)}
+.btn[aria-disabled="true"]{background:transparent;color:var(--navy);border:1.5px solid var(--navy);cursor:default}
+.btn[aria-disabled="true"]:hover{transform:none}
+.link{font-weight:600;font-size:15px;text-decoration:none;border-bottom:1.5px solid currentColor;padding-bottom:3px}
+.arr{display:inline-block;transition:transform .25s ease}
+.btn:hover .arr,.link:hover .arr{transform:translateX(4px)}
+.soon{display:inline-block;background:var(--lime);color:var(--navy);border-radius:999px;padding:6px 14px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.mark{display:inline-flex;gap:4px}
+.mark i{width:9px;height:9px;border-radius:50%;display:block}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.arr{transition:none}.btn:hover,.btn:hover .arr,.link:hover .arr{transform:none}}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:var(--ivory);border-bottom:1px solid transparent}
+header.scrolled{border-bottom-color:var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:18px}
+.logo{font-weight:800;font-size:17px;line-height:.95;letter-spacing:-.03em;text-decoration:none}
+nav.main{display:flex;gap:30px;font-size:15px;font-weight:500}
+nav.main a{text-decoration:none}
+.back{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none}
+@media (max-width:760px){nav.main{display:none}}
+
+/* hero */
+.hero{padding-block:clamp(24px,5vw,56px) clamp(48px,7vw,88px)}
+.hero h1{font-size:clamp(48px,8.4vw,112px);font-weight:800;letter-spacing:-.055em;line-height:.92;margin-top:20px}
+.hero h1 em{font-style:italic}
+.hero h1 span{background:linear-gradient(transparent 68%,var(--lime) 68%,var(--lime) 92%,transparent 92%)}
+.hero .q{font-size:clamp(20px,2.4vw,28px);font-weight:500;font-style:italic;letter-spacing:-.02em;line-height:1.3;color:var(--ink2);margin-top:28px;max-width:30ch}
+.cta{display:flex;flex-wrap:wrap;gap:16px 26px;align-items:center;margin-top:34px}
+
+/* why */
+.why{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,6vw,72px)}
+.why-text{display:grid;gap:16px;font-size:18px;line-height:1.65;color:#2E313C;max-width:58ch;padding-top:30px}
+.why-text b{color:var(--navy)}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1.5px solid var(--navy);margin-top:clamp(40px,5vw,64px)}
+.stat{padding:22px 22px 6px;border-left:1px solid var(--line)}
+.stat:first-child{border-left:0;padding-left:0}
+.stat b{display:block;font-size:clamp(40px,5vw,60px);font-weight:800;letter-spacing:-.05em;line-height:1}
+.stat p{font-size:15px;color:var(--muted);margin-top:10px;max-width:30ch}
+.stat small{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+@media (max-width:900px){.why{grid-template-columns:1fr}.why-text{padding-top:0}}
+@media (max-width:700px){.stats{grid-template-columns:1fr}.stat{border-left:0;padding-left:0;border-top:1px solid var(--line)}.stat:first-child{border-top:0}}
+
+/* the stack */
+.stackgrid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(28px,5vw,64px);align-items:center;margin-top:44px}
+.layers{display:grid;gap:12px}
+.layer{border-radius:16px;padding:22px 26px;display:grid;grid-template-columns:56px minmax(0,1fr);gap:8px 18px;align-items:baseline}
+.layer .n{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--navy)}
+.layer h3{font-size:clamp(24px,2.6vw,32px);font-weight:800;letter-spacing:-.035em;line-height:1.05}
+.layer h3 em{font-style:italic;font-weight:700;font-size:.62em;letter-spacing:-.01em;color:var(--ink2);margin-left:6px}
+.layer p{grid-column:2;font-size:15.5px;color:#33364A}
+.layer.found{background:var(--navy);color:var(--ivory)}
+.layer.found .n{color:var(--lime)}
+.layer.found h3 em,.layer.found p{color:#C9CCD8}
+.equals{display:flex;align-items:center;gap:14px;margin-top:6px;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.equals b{font-family:var(--sans);font-size:22px;letter-spacing:-.03em;text-transform:none;background:linear-gradient(transparent 68%,var(--lime) 68%,var(--lime) 92%,transparent 92%)}
+.principle{background:var(--paper);border-radius:16px;padding:clamp(24px,3vw,36px)}
+.principle blockquote{margin:14px 0 0;font-size:clamp(24px,2.6vw,32px);font-weight:800;letter-spacing:-.035em;line-height:1.12}
+.principle blockquote em{font-style:italic}
+.principle p{color:var(--muted);margin-top:16px;font-size:16px}
+@media (max-width:900px){.stackgrid{grid-template-columns:1fr}}
+@media (max-width:480px){.layer{grid-template-columns:1fr}.layer p{grid-column:1}}
+
+/* reports */
+.bundle{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:18px 32px;background:var(--navy);color:var(--ivory);border-radius:18px;padding:clamp(22px,3vw,32px) clamp(22px,3vw,36px);margin-top:40px}
+.bundle h3{font-size:clamp(24px,2.6vw,32px);font-weight:800;letter-spacing:-.035em;line-height:1.05}
+.bundle p{color:#C9CCD8;margin-top:8px;font-size:16px}
+.bundle .btn[aria-disabled="true"]{color:var(--ivory);border-color:var(--ivory)}
+.reports{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:18px}
+.report{border-radius:18px;padding:clamp(14px,1.6vw,18px) clamp(14px,1.6vw,18px) clamp(22px,3vw,30px);display:flex;flex-direction:column;gap:24px;min-width:0}
+.report>div{padding-inline:clamp(8px,1.6vw,16px);display:flex;flex-direction:column;flex:1}
+.report img.fan{width:100%;aspect-ratio:2/1;object-fit:cover;border-radius:12px;display:block;transition:transform .2s,box-shadow .2s}
+.report:hover img.fan{transform:translateY(-3px);box-shadow:0 1px 2px rgba(14,18,34,.06),0 16px 34px rgba(14,18,34,.18)}
+.report .no{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.report .for{display:inline-block;align-self:flex-start;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;background:var(--paper);border-radius:999px;padding:5px 12px;margin-top:10px}
+.report h3{font-size:clamp(26px,2.6vw,34px);font-weight:800;letter-spacing:-.035em;line-height:1.02;margin-top:12px}
+.report p{color:#33364A;margin-top:12px;font-size:16px}
+.report ul{list-style:none;padding:0;margin:14px 0 0}
+.report li{font-size:14.5px;padding:7px 0;border-bottom:1px solid rgba(14,18,34,.12)}
+.report .act{margin-top:auto;padding-top:24px;display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
+.report .pages{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){.report img.fan{transition:none}.report:hover img.fan{transform:none}}
+@media (max-width:1100px){.reports{grid-template-columns:1fr}}
+
+/* origin */
+.origin{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:40px}
+.card{border-radius:16px;padding:clamp(24px,3vw,32px);min-width:0}
+.card .k{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--textblue)}
+.card h3{font-size:clamp(22px,2.2vw,28px);font-weight:800;letter-spacing:-.035em;line-height:1.08;margin-top:16px}
+.card p{font-size:15.5px;color:#33364A;margin-top:10px}
+@media (max-width:900px){.origin{grid-template-columns:1fr}}
+
+/* author */
+.author{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
+.author img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 28%;border-radius:6px;display:block}
+.author .h2{font-size:clamp(30px,3.6vw,46px)}
+.author p.t{font-size:18px;line-height:1.65;color:#2E313C;margin-top:18px;max-width:58ch}
+@media (max-width:760px){.author{grid-template-columns:1fr}.author img{max-width:320px}}
+
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:18px;padding-block:28px 36px;font-size:13px;color:var(--muted);border-top:1px solid var(--line)}
+</style>
+<script data-goatcounter="https://annaambrozevich.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</head>
+<body>
+
+<header class="band" id="hdr"><div class="wrap">
+  <a class="logo" href="/">ANNA<br>AMBROZEVICH</a>
+  <nav class="main" aria-label="Page"><a href="#why">Why</a><a href="#stack">The Stack</a><a href="#reports">Reports</a><a href="#author">Author</a></nav>
+  <a class="back" href="/">← Main site</a>
+</div></header>
+
+<main>
+<section class="band"><div class="wrap hero">
+  <p class="eyebrow"><span class="mark" aria-hidden="true"><i style="background:var(--blue-soft)"></i><i style="background:var(--coral-soft)"></i><i style="background:var(--lime);box-shadow:inset 0 0 0 1.2px var(--navy)"></i><i style="background:var(--navy)"></i></span>Original framework · Three insight reports</p>
+  <h1>The Self-Learning <span>Stack</span></h1>
+  <p class="q">How do people keep growing when the world changes faster than we can learn?</p>
+  <div class="cta"><a class="btn" href="#reports" data-goatcounter-click="stack-hero-reports">Get the three reports, free <span class="arr">→</span></a><a class="link" href="#stack">How the stack works <span class="arr">→</span></a></div>
+</div></section>
+
+<section class="band sec" id="why" style="background:var(--paper)"><div class="wrap">
+  <div class="why">
+    <div><p class="eyebrow">Why now</p><h2 class="h2">The question isn’t <em>what</em> to learn. It’s <em>how</em></h2></div>
+    <div class="why-text">
+      <p>AI now automates thinking, not just routine, and the tools change every week. “Learn it once” no longer works.</p>
+      <p>This is not about lifelong learning, where someone else designs the course for you. It is about <b>self-learning</b>: designing your own system. Buying a great course is easy. Turning it into real capability is not.</p>
+      <p>The Self-Learning Stack is that system. It is built on years of combining many roles across industries and learning each of them on my own.</p>
+    </div>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>39%</b><p>of workers’ core skills are expected to change by 2030</p><small>WEF, Future of Jobs 2025</small></div>
+    <div class="stat"><b>~40%</b><p>of jobs worldwide are exposed to AI, around 60% in advanced economies</p><small>IMF, 2024</small></div>
+    <div class="stat"><b>~5 yrs</b><p>is the half-life of a professional skill</p><small>Deloitte, Human Capital Trends</small></div>
+  </div>
+</div></section>
+
+<section class="band sec" id="stack"><div class="wrap">
+  <div class="head">
+    <div><p class="eyebrow">The framework</p><h2 class="h2">Three layers, one foundation</h2></div>
+    <p class="lead">Stop chasing every new tool: that is the lowest, most replaceable layer. Build a system for how you learn, and you stay irreplaceable.</p>
+  </div>
+  <div class="stackgrid">
+    <div class="layers">
+      <div class="layer" style="background:var(--lav)"><span class="n">01</span><h3>Tools <em>keep you current</em></h3><p>Learning sprints, learning through people, social learning and the 3-mention rule.</p></div>
+      <div class="layer" style="background:var(--peach)"><span class="n">02</span><h3>Meta-skills <em>make you better</em></h3><p>Learning agility, sense-making, critical and systems thinking, grown through Input, Process, Output.</p></div>
+      <div class="layer" style="background:var(--cream)"><span class="n">03</span><h3>Self-strategy <em>makes you irreplaceable</em></h3><p>Domain expertise, self-knowledge and AI literacy: knowing where you are going.</p></div>
+      <div class="layer found"><span class="n">FDN</span><h3>Brain health <em>keeps it all running</em></h3><p>Sleep, movement, stress and focus: the base every other layer depends on.</p></div>
+      <div class="equals">Together <b>= your brain capital</b></div>
+    </div>
+    <div class="principle">
+      <p class="eyebrow">The principle</p>
+      <blockquote>Anything you can fully describe, AI will soon do. <em>Your edge is what you can’t write down</em></blockquote>
+      <p>Tools tell you how to run. Meta-skills make you run better. Self-strategy tells you where. Brain health keeps you running.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="band sec" id="reports" style="background:var(--paper)"><div class="wrap">
+  <div class="head">
+    <div><p class="eyebrow">The Self-Learning Stack series</p><h2 class="h2">Three insight reports</h2></div>
+    <p class="lead">One for every learner. One for those who design learning for others. One for the language that connects them. All three are free.</p>
+  </div>
+
+  <div class="bundle">
+    <div><h3>Get all three reports</h3><p>Free PDFs, delivered to your inbox.</p></div>
+    <a class="btn lime" data-buy="bundle" data-goatcounter-click="stack-get-bundle">Get all three, free <span class="arr">→</span></a>
+  </div>
+
+  <div class="reports">
+    <article class="report" style="background:var(--lav)">
+      <img class="fan" src="../img/fan-staying-irreplaceable.jpg" alt="Staying Irreplaceable, insight report No. 1: cover and sample pages" loading="lazy">
+      <div>
+        <span class="no">Report No. 1</span>
+        <span class="for">For everyone</span>
+        <h3>Staying Irreplaceable</h3>
+        <p>How to keep learning when AI rewrites work: three layers, one foundation and a 90-day plan.</p>
+        <ul><li>Learning sprints, learning circles, the 3-mention rule</li><li>Meta-skills and a personal self-strategy</li><li>Worksheets and a 90-day plan</li></ul>
+        <div class="act"><a class="btn" data-buy="r1" data-goatcounter-click="stack-get-r1">Get it free <span class="arr">→</span></a><span class="pages">50 pages · PDF</span></div>
+      </div>
+    </article>
+    <article class="report" style="background:var(--peach)">
+      <img class="fan" src="../img/fan-building-brain-capital.jpg" alt="Building Brain Capital, insight report No. 2: cover and sample pages" loading="lazy">
+      <div>
+        <span class="no">Report No. 2</span>
+        <span class="for">For institutions</span>
+        <h3>Building Brain Capital</h3>
+        <p>A blueprint for universities, academies and corporate L&amp;D that want to grow people who keep learning, and prove it.</p>
+        <ul><li>The tech university and corporate academy of the future</li><li>Community chapters and a venture lab, step by step</li><li>A maturity model, five indicators and a toolkit</li></ul>
+        <div class="act"><a class="btn" data-buy="r2" data-goatcounter-click="stack-get-r2">Get it free <span class="arr">→</span></a><span class="pages">40 pages · PDF</span></div>
+      </div>
+    </article>
+    <article class="report" style="background:var(--cream)">
+      <img class="fan" src="../img/fan-beyond-skills.jpg" alt="Beyond Skills, insight report No. 3: cover and sample pages" loading="lazy">
+      <div>
+        <span class="no">Report No. 3</span>
+        <span class="for">For employers &amp; educators</span>
+        <h3>Beyond Skills</h3>
+        <p>What the language of skills misses in the age of AI, and how The Self-Learning Stack fills the gaps.</p>
+        <ul><li>The stack mapped onto the WEF Global Skills Taxonomy</li><li>Five gaps: judgement, thinking with AI, a method for learning, combination, brain health</li><li>The Stack Profile and worksheets</li></ul>
+        <div class="act"><a class="btn" data-buy="r3" data-goatcounter-click="stack-get-r3">Get it free <span class="arr">→</span></a><span class="pages">PDF</span></div>
+      </div>
+    </article>
+  </div>
+</div></section>
+
+<section class="band sec" id="origin"><div class="wrap">
+  <div class="head">
+    <div><p class="eyebrow">Where it comes from</p><h2 class="h2">Built in practice, tested in the room</h2></div>
+    <p class="lead">The stack grew out of my own learning across many roles, and it keeps being tested with real audiences.</p>
+  </div>
+  <div class="origin">
+    <div class="card" style="background:var(--lav)"><p class="k">Research</p><h3>Grounded in global evidence</h3><p>World Economic Forum, IMF, Deloitte and brain-capital research, translated into a system a person can run.</p></div>
+    <div class="card" style="background:var(--peach)"><p class="k">Practice</p><h3>Ten roles, one method</h3><p>Fifteen years in global corporations, then more than ten roles across industries, each learned on my own. And years of work with young people in tech.</p></div>
+    <div class="card" style="background:var(--cream)"><p class="k">The room</p><h3>100+ people at the European Business University</h3><p>The first public talk on the stack. The question in the room was clear: what comes after tools?</p></div>
+  </div>
+</div></section>
+
+<section class="band sec" id="author" style="background:var(--stone)"><div class="wrap author">
+  <img src="../img/portrait.jpg" alt="Anna Ambrozevich in a light denim shirt, smiling, outdoors" loading="lazy">
+  <div>
+    <p class="eyebrow">The author</p>
+    <h2 class="h2">Anna Ambrozevich</h2>
+    <p class="t">Architect of Human Systems. I design systems of learning, leadership and collaboration that people and organisations can use without me in the room. The Self-Learning Stack is one of them. Multipotentials, my book and newsletter, is another.</p>
+    <div class="cta"><a class="btn" href="/" data-goatcounter-click="stack-to-main">Visit my main site <span class="arr">→</span></a><a class="link" href="https://www.linkedin.com/in/anna-ambrozevich" target="_blank" rel="noopener" data-goatcounter-click="stack-linkedin">Follow on LinkedIn <span class="arr">→</span></a></div>
+  </div>
+</div></section>
+</main>
+
+<footer class="band"><div class="wrap">
+  <div><p style="font-weight:800;color:var(--navy);line-height:.95">ANNA<br>AMBROZEVICH</p><p style="margin-top:8px">Architect of Human Systems</p></div>
+  <p>The Self-Learning Stack · © 2026</p>
+  <p>Tashkent, Uzbekistan · Working globally</p>
+</div></footer>
+
+<script>
+(function(){
+  // Gumroad links go here when the products are live. Empty = "Coming soon".
+  var GUMROAD = { bundle: "", r1: "", r2: "", r3: "" };
+  document.querySelectorAll('[data-buy]').forEach(function(a){
+    var url = GUMROAD[a.getAttribute('data-buy')];
+    if (url) { a.href = url; return; }
+    a.removeAttribute('href');
+    a.setAttribute('aria-disabled','true');
+    a.innerHTML = 'Coming soon';
+  });
+  var h=document.getElementById('hdr');
+  window.addEventListener('scroll',function(){h.classList.toggle('scrolled',window.scrollY>8);},{passive:true});
+})();
+</script>
+</body>
+</html>
