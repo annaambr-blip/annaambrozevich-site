@@ -123,6 +123,7 @@ nav.main a:nth-child(5):hover,nav.main a:nth-child(5).cur{border-color:var(--cor
 .proj h3{font-size:22px;font-weight:800;letter-spacing:-.03em;line-height:1.12;margin-top:12px}
 .proj p{font-size:15px;color:var(--muted);margin-top:8px;line-height:1.5;flex:1}
 .proj .go{font-size:14px;font-weight:600;margin-top:14px}
+.vision .proj:hover h3{text-decoration:none}
 .proj:hover h3{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:4px}
 @media (max-width:900px){.projects{grid-template-columns:repeat(2,minmax(0,1fr))}.proj{padding-left:20px}.proj:nth-child(3){border-left:0;padding-left:0}.proj:nth-child(n+3){border-top:1px solid var(--line)}}
 @media (max-width:520px){.projects{grid-template-columns:1fr}.proj{border-left:0;padding-left:0}.proj+.proj{border-top:1px solid var(--line)}}
@@ -161,6 +162,8 @@ nav.main a:nth-child(5):hover,nav.main a:nth-child(5).cur{border-color:var(--cor
 @media (max-width:420px){.book{flex-direction:column;align-items:flex-start}}
 
 /* research */
+.reports .report{padding:18px}
+.reports .fan{max-height:180px;object-fit:cover}
 .reports{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:40px}
 .report{border-radius:18px;padding:clamp(14px,1.6vw,18px) clamp(14px,1.6vw,18px) clamp(22px,3vw,30px);display:grid;grid-template-columns:minmax(0,1fr);gap:24px;align-items:start;align-content:start}
 .report>div{padding-inline:clamp(8px,1.6vw,16px)}
@@ -235,29 +238,27 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
   <div style="min-width:0">
     <h1>Architect of <span>Human Systems</span></h1>
     <p class="lead">I design systems of learning, leadership and collaboration that help people grow and build a better world.</p>
-    <div class="cta"><a class="btn" href="#projects">See my projects <span class="arr">→</span></a><a class="link" href="#about">About me <span class="arr">→</span></a></div>
+    <div class="cta"><a class="btn" href="#multipotentials">See my projects <span class="arr">→</span></a><a class="link" href="#about">About me <span class="arr">→</span></a></div>
   </div>
   <div class="photo"><img src="img/portrait.jpg" alt="Anna Ambrozevich in a light denim shirt, smiling, outdoors"></div>
 </div></section>
 
-<section class="band" id="projects"><div class="wrap">
-  <p class="eyebrow">Projects &amp; initiatives</p>
-  <div class="projects">
-    <a class="proj" href="#multipotentials"><span class="dot" style="background:var(--navy)"></span><h3>Multipotentials</h3><p>A book and a newsletter about designing one life out of many interests</p><span class="go">Explore <span class="arr">→</span></span></a>
-    <a class="proj" href="#research"><span class="dot" style="background:var(--blue)"></span><h3>The Self-Learning Stack™</h3><p>My original framework for staying irreplaceable in the AI era</p><span class="go">Explore <span class="arr">→</span></span></a>
-    <a class="proj" href="#equality"><span class="dot" style="background:var(--coral)"></span><h3>Women &amp; youth in tech</h3><p>Diversity, equality and inclusion in the world of technology</p><span class="go">Explore <span class="arr">→</span></span></a>
-    <a class="proj" href="#global"><span class="dot l"></span><h3>Diplomacy &amp; global networks</h3><p>Tech diplomacy, advisory and international alumni leadership</p><span class="go">Explore <span class="arr">→</span></span></a>
-  </div>
-</div></section>
 
 <section class="band sec" id="about"><div class="wrap">
   <div class="about">
-    <div><p class="eyebrow">About</p><h2 class="h2">I work on one question: how do people keep growing when the world changes faster than we can learn?</h2></div>
+    <div><p class="eyebrow">About</p><h2 class="h2">I think about the future, and design the <em>human systems</em> it needs</h2></div>
     <div class="about-text">
-      <p>I design systems rather than courses: frameworks for identity, learning and leadership that people and organisations can use without me in the room.</p>
-      <p>Today I combine more than ten roles across industries: technology consulting, education, research, international communities and leadership roles in global non-profit organisations.</p>
+      <p>My work sits where learning, community and technology meet. I look at where the world is going and design the structures people need to grow into it: ways of learning, communities and leadership that make real innovation possible.</p>
+      <p>Today I hold more than ten roles across technology, education, research and global communities. They are not separate careers. Each one is a piece of the same picture.</p>
       <p>Before that I spent more than 15 years in MarTech, CRM and customer experience at <b>PepsiCo, Alibaba Group, Philip Morris International and Otto Group</b>. Based in Tashkent, working globally. I write more than I speak.</p>
     </div>
+  </div>
+  <p class="eyebrow" style="margin-top:clamp(48px,6vw,72px)">The future I work towards</p>
+  <div class="projects vision">
+    <div class="proj"><span class="dot" style="background:var(--navy)"></span><h3>People who keep learning</h3><p>Learning that doesn’t stop at a degree and doesn’t burn people out</p></div>
+    <div class="proj"><span class="dot" style="background:var(--blue)"></span><h3>Fluent with AI</h3><p>People who use AI to think better, not to think less</p></div>
+    <div class="proj"><span class="dot" style="background:var(--coral)"></span><h3>Open to everyone</h3><p>Technology and leadership with room for women and young people</p></div>
+    <div class="proj"><span class="dot l"></span><h3>More than one thing</h3><p>Lives and careers designed across many roles, without choosing one</p></div>
   </div>
 </div></section>
 
@@ -279,7 +280,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
 <section class="band sec" id="research"><div class="wrap">
   <div class="head">
     <div><p class="eyebrow">Original framework</p><h2 class="h2">The Self-Learning Stack™</h2></div>
-    <div><p class="lead">My original framework for staying irreplaceable in the AI era, built on years of combining many roles across industries and learning each of them on my own: three layers of learning on one foundation, brain health.</p><p style="margin-top:20px"><a class="link" href="stack/" data-goatcounter-click="research-to-stack">Explore the framework and reports <span class="arr">→</span></a></p></div>
+    <div><p class="lead">A framework I developed from my own experience of learning new fields again and again across many roles: three layers of learning on one foundation, brain health. On top of it I write insight reports on how people and institutions stay irreplaceable in the age of AI.</p><p style="margin-top:20px"><a class="link" href="stack/" data-goatcounter-click="research-to-stack">Explore the framework and reports <span class="arr">→</span></a></p></div>
   </div>
   <div class="reports">
     <article class="report" style="background:var(--lav)">
@@ -288,7 +289,6 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
         <span class="for">For everyone</span>
         <h3>Staying Irreplaceable</h3>
         <p>How to keep learning when AI rewrites work: three layers, one foundation and a 90-day plan.</p>
-        <ul><li>Learning sprints, learning circles, the 3-mention rule</li><li>Meta-skills and a personal self-strategy</li><li>Worksheets and a 90-day plan</li></ul>
         <span class="soon">Coming soon</span>
       </div>
     </article>
@@ -298,7 +298,6 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
         <span class="for">For institutions</span>
         <h3>Building Brain Capital</h3>
         <p>A blueprint for universities, academies and corporate L&amp;D that want to grow people who keep learning, and prove it.</p>
-        <ul><li>The tech university and corporate academy of the future</li><li>Community chapters and a venture lab, step by step</li><li>A maturity model, five indicators and a toolkit for leadership teams</li></ul>
         <span class="soon">Coming soon</span>
       </div>
     </article>
@@ -308,7 +307,6 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
         <span class="for">For everyone</span>
         <h3>Beyond Skills</h3>
         <p>What the language of skills misses in the age of AI, and how The Self-Learning Stack fills the gaps.</p>
-        <ul><li>The stack mapped onto the WEF Global Skills Taxonomy</li><li>Five gaps: judgement, thinking with AI, a method for learning, combination, brain health</li><li>The Stack Profile and worksheets</li></ul>
         <span class="soon">Coming soon</span>
       </div>
     </article>
@@ -317,21 +315,21 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
 
 <section class="band sec" id="impact" style="background:var(--stone)"><div class="wrap">
   <div class="head" id="equality">
-    <div><p class="eyebrow">Impact · Equality</p><h2 class="h2">Diversity, equality and inclusion in tech</h2></div>
-    <p class="lead">Communities and programmes that open technology to women and young people.</p>
+    <div><p class="eyebrow">Impact · Community</p><h2 class="h2">Communities for diversity, equality and inclusion in tech</h2></div>
+    <p class="lead">I build communities that open technology to women and young people, starting in Uzbekistan and connecting them with the world.</p>
   </div>
-  <div class="orgs two">
+  <div class="orgs three">
     <article class="org" style="background:var(--peach)"><span class="dot" style=background:var(--coral)></span><h3>Director</h3><p class="r">Women in Tech Uzbekistan</p><p>Leading the national chapter: programmes and partnerships that bring more women into technology careers and leadership.</p></article>
     <article class="org" style="background:var(--lav)"><span class="dot" style=background:var(--blue)></span><h3>Global Youth Director</h3><p class="r">Women in Tech</p><p>Leading youth initiatives that connect young women in tech across countries and continents.</p></article>
+    <article class="org" style="background:var(--cream)"><span class="dot l"></span><h3>Advisor</h3><p class="r">IT Community of Uzbekistan</p><p>Supporting the growth of the national tech community.</p></article>
   </div>
   <div class="head" id="global" style="margin-top:clamp(56px,7vw,88px)">
     <div><p class="eyebrow">Impact · Global</p><h2 class="h2">Diplomacy and global networks</h2></div>
     <p class="lead">Roles that connect countries, institutions and technology communities.</p>
   </div>
-  <div class="orgs three">
-    <article class="org" style="background:var(--cream)"><span class="dot l"></span><h3>Tech Diplomacy Global Institute</h3><p class="r">Regional Attaché, Central Asia</p><p>Technology, international cooperation and diplomacy for the region.</p></article>
-    <article class="org" style="background:var(--paper)"><span class="dot" style=background:var(--navy)></span><h3>Cambridge Institute for Sustainability Leadership</h3><p class="r">Alumni community lead, Uzbekistan</p><p>Bringing together Cambridge sustainability leaders in Uzbekistan.</p></article>
-    <article class="org" style="background:var(--paper)"><span class="dot" style=background:var(--blue)></span><h3>IT Community of Uzbekistan</h3><p class="r">Advisor</p><p>Supporting the growth of the national tech community.</p></article>
+  <div class="orgs two">
+    <article class="org" style="background:var(--paper)"><span class="dot" style=background:var(--blue)></span><h3>Regional Attaché, Central Asia</h3><p class="r">Tech Diplomacy Global Institute</p><p>Technology, international cooperation and diplomacy for the region.</p></article>
+    <article class="org" style="background:var(--paper)"><span class="dot" style=background:var(--navy)></span><h3>Alumni community lead, Uzbekistan</h3><p class="r">Cambridge Institute for Sustainability Leadership</p><p>Bringing together Cambridge sustainability leaders in Uzbekistan.</p></article>
   </div>
 </div></section>
 
