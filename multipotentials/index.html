@@ -2,25 +2,356 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Multipotentials · Anna Ambrozevich</title>
-<meta name="description" content="Thoughts, sketches, and systems for people who live in many disciplines. Don’t choose. Design.">
+<meta name="description" content="Multipotentials: a free newsletter and an upcoming book by Anna Ambrozevich. Thoughts, sketches and systems for people who live in many disciplines. Don’t choose. Design.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Anna Ambrozevich">
 <meta property="og:title" content="Multipotentials · Anna Ambrozevich">
-<meta property="og:description" content="Thoughts, sketches, and systems for people who live in many disciplines. Don’t choose. Design.">
+<meta property="og:description" content="Thoughts, sketches and systems for people who live in many disciplines. Don’t choose. Design.">
 <meta property="og:url" content="https://annaambrozevich.com/multipotentials/">
 <meta property="og:image" content="https://annaambrozevich.com/img/og-multipotentials.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="canonical" href="https://substack.com/@multipotentials">
-<style>body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#F6F3EC;color:#0E1222;font:17px/1.5 system-ui,-apple-system,sans-serif;padding:16px}a{color:#0E1222;font-weight:600}</style>
-<script>(function(){var d="https://substack.com/@multipotentials",done=false;function go(){if(!done){done=true;location.replace(d)}}try{var i=new Image();i.onload=i.onerror=go;i.src="https://annaambrozevich.goatcounter.com/count?p=/multipotentials/&t="+encodeURIComponent(document.title)+"&r="+encodeURIComponent(document.referrer)+"&rnd="+Math.random()}catch(e){}setTimeout(go,600)})();</script>
+<link rel="canonical" href="https://annaambrozevich.com/multipotentials/">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/img/favicon-192.png">
 <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="preload" href="../fonts/inter-tight-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:'Inter Tight';font-weight:400;font-display:swap;src:url(../fonts/inter-tight-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Inter Tight';font-weight:500;font-display:swap;src:url(../fonts/inter-tight-latin-500-normal.woff2) format('woff2')}
+@font-face{font-family:'Inter Tight';font-weight:600;font-display:swap;src:url(../fonts/inter-tight-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Inter Tight';font-weight:700;font-display:swap;src:url(../fonts/inter-tight-latin-700-normal.woff2) format('woff2')}
+@font-face{font-family:'Inter Tight';font-weight:800;font-display:swap;src:url(../fonts/inter-tight-latin-800-normal.woff2) format('woff2')}
+@font-face{font-family:'Inter Tight';font-style:italic;font-weight:500;font-display:swap;src:url(../fonts/inter-tight-latin-500-italic.woff2) format('woff2')}
+@font-face{font-family:'Inter Tight';font-style:italic;font-weight:700;font-display:swap;src:url(../fonts/inter-tight-latin-700-italic.woff2) format('woff2')}
+@font-face{font-family:'Inter Tight';font-style:italic;font-weight:800;font-display:swap;src:url(../fonts/inter-tight-latin-800-italic.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-weight:400;font-display:swap;src:url(../fonts/ibm-plex-mono-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'IBM Plex Mono';font-weight:500;font-display:swap;src:url(../fonts/ibm-plex-mono-latin-500-normal.woff2) format('woff2')}
+:root{
+  --ivory:#F6F3EC; --paper:#FBFAF6; --navy:#0E1222; --lime:#D4FF3A; --blue:#6F86FF; --coral:#FF7A59;
+  --blue-soft:#A9B6FF; --coral-soft:#FFB09C;
+  --lav:#E3E7FB; --cream:#F1F6D8; --peach:#FFE6DD; --stone:#EEECE6;
+  --ink2:#3E414C; --muted:#5C606C; --line:#D9D3C6; --textblue:#3F51C4;
+  --sans:'Inter Tight',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,'SFMono-Regular',Menlo,monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ivory);color:var(--navy);font-family:var(--sans);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{text-wrap:balance}
+img{max-width:100%}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+section[id]{scroll-margin-top:84px}
+.band{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:clamp(0px,3vw,24px)}
+.sec{padding-block:clamp(56px,8vw,104px)}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:10px}
+.h2{font-size:clamp(34px,5vw,60px);font-weight:800;letter-spacing:-.045em;line-height:1.02;margin-top:14px}
+.h2 em{font-style:italic}
+.lead{font-size:clamp(17px,1.6vw,19px);line-height:1.6;color:var(--muted);max-width:54ch;text-wrap:pretty}
+.head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px 48px}
+.head .lead{max-width:44ch}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:var(--ivory);border:0;border-radius:999px;padding:15px 24px;font:600 15px/1 var(--sans);text-decoration:none;cursor:pointer;transition:transform .2s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn.lime{background:var(--lime);color:var(--navy)}
+.btn[aria-disabled="true"]{background:transparent;color:var(--navy);border:1.5px solid var(--navy);cursor:default}
+.btn[aria-disabled="true"]:hover{transform:none}
+.link{font-weight:600;font-size:15px;text-decoration:none;border-bottom:1.5px solid currentColor;padding-bottom:3px}
+.arr{display:inline-block;transition:transform .25s ease}
+.btn:hover .arr,.link:hover .arr{transform:translateX(4px)}
+.soon{display:inline-block;background:var(--lime);color:var(--navy);border-radius:999px;padding:6px 14px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.mark{display:inline-flex;gap:4px}
+.mark i{width:9px;height:9px;border-radius:50%;display:block}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.arr{transition:none}.btn:hover,.btn:hover .arr,.link:hover .arr{transform:none}}
+
+/* header + burger */
+header{position:sticky;top:0;z-index:20;background:var(--ivory);border-bottom:1px solid transparent}
+header.scrolled{border-bottom-color:var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:18px}
+.logo{font-weight:800;font-size:17px;line-height:.95;letter-spacing:-.03em;text-decoration:none}
+nav.main{display:flex;gap:30px;font-size:15px;font-weight:500}
+nav.main a{text-decoration:none;padding-bottom:4px;border-bottom:2px solid transparent;transition:border-color .2s}
+nav.main a:nth-child(1):hover,nav.main a:nth-child(1).cur{border-color:var(--blue)}
+nav.main a:nth-child(2):hover,nav.main a:nth-child(2).cur{border-color:var(--coral)}
+nav.main a:nth-child(3):hover,nav.main a:nth-child(3).cur{border-color:var(--lime)}
+nav.main a:nth-child(4):hover,nav.main a:nth-child(4).cur{border-color:var(--blue)}
+nav.main a:nth-child(5):hover,nav.main a:nth-child(5).cur{border-color:var(--coral)}
+.social{display:flex;gap:20px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.social a{text-decoration:none}
+.burger{display:none;width:44px;height:44px;border:1.5px solid var(--navy);border-radius:999px;background:transparent;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px}
+.burger span{display:block;width:18px;height:2px;background:var(--navy);border-radius:2px;transition:transform .2s}
+.burger[aria-expanded="true"] span:first-child{transform:translateY(3.5px) rotate(45deg)}
+.burger[aria-expanded="true"] span:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+.menu{display:none}
+@media (max-width:960px){
+  nav.main,.social{display:none}
+  .burger{display:inline-flex}
+  .menu{position:absolute;left:0;right:0;top:100%;background:var(--ivory);border-bottom:1px solid var(--line);padding:8px max(16px,env(safe-area-inset-right,0px)) 24px max(16px,env(safe-area-inset-left,0px))}
+  .menu.open{display:block}
+  .menu a{display:block;padding:14px 0;border-bottom:1px solid var(--line);font-size:20px;font-weight:700;letter-spacing:-.02em;text-decoration:none}
+  .menu>a{display:flex;align-items:center;gap:12px}
+  .menu>a::before{content:"";width:10px;height:10px;border-radius:50%;flex:none;background:var(--blue)}
+  .menu>a:nth-of-type(2)::before{background:var(--coral)}
+  .menu>a:nth-of-type(3)::before{background:var(--lime);box-shadow:inset 0 0 0 1.5px var(--navy)}
+  .menu>a:nth-of-type(4)::before{background:var(--blue)}
+  .menu>a:nth-of-type(5)::before{background:var(--coral)}
+  .menu .msocial{display:flex;gap:22px;margin-top:18px;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+  .menu .msocial a{display:inline;border:0;padding:0;font-size:12px;font-weight:500}
+}
+
+/* hero */
+.hero{padding-block:clamp(24px,5vw,56px) clamp(48px,7vw,88px)}
+.hero h1{font-size:clamp(48px,8.4vw,112px);font-weight:800;letter-spacing:-.055em;line-height:.92;margin-top:20px}
+.hero h1 em{font-style:italic}
+.hero h1 span{background:linear-gradient(transparent 68%,var(--lime) 68%,var(--lime) 92%,transparent 92%)}
+.hero .q{font-size:clamp(20px,2.4vw,28px);font-weight:500;letter-spacing:-.02em;line-height:1.3;color:var(--ink2);margin-top:28px;max-width:30ch}
+.cta{display:flex;flex-wrap:wrap;gap:16px 26px;align-items:center;margin-top:34px}
+
+/* why */
+.why{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,6vw,72px)}
+.why-text{display:grid;gap:16px;font-size:18px;line-height:1.65;color:#2E313C;max-width:58ch;padding-top:30px}
+.why-text b{color:var(--navy)}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1.5px solid var(--navy);margin-top:clamp(40px,5vw,64px)}
+.stat{padding:22px 22px 6px;border-left:1px solid var(--line)}
+.stat:first-child{border-left:0;padding-left:0}
+.stat b{display:block;font-size:clamp(40px,5vw,60px);font-weight:800;letter-spacing:-.05em;line-height:1}
+.stat p{font-size:15px;color:var(--muted);margin-top:10px;max-width:30ch}
+.stat small{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+@media (max-width:900px){.why{grid-template-columns:1fr}.why-text{padding-top:0}}
+@media (max-width:700px){.stats{grid-template-columns:1fr}.stat{border-left:0;padding-left:0;border-top:1px solid var(--line)}.stat:first-child{border-top:0}}
+
+/* the stack */
+.stackgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(18px,3vw,32px);align-items:stretch;margin-top:44px}
+.layers{display:grid;gap:8px}
+.layer{border-radius:14px;padding:15px 20px;display:grid;grid-template-columns:56px minmax(0,1fr);gap:8px 18px;align-items:baseline}
+.layer .n{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--navy)}
+.layer h3{font-size:clamp(20px,2vw,24px);font-weight:800;letter-spacing:-.035em;line-height:1.05}
+.layer h3 em{font-style:italic;font-weight:700;font-size:.62em;letter-spacing:-.01em;color:var(--ink2);margin-left:6px}
+.layer p{grid-column:2;font-size:14.5px;color:#33364A}
+.layer.found{background:var(--navy);color:var(--ivory)}
+.layer.found .n{color:var(--lime)}
+.layer.found h3 em,.layer.found p{color:#C9CCD8}
+.equals{display:flex;align-items:center;gap:14px;margin-top:6px;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.equals b{font-family:var(--sans);font-size:22px;letter-spacing:-.03em;text-transform:none;background:linear-gradient(transparent 68%,var(--lime) 68%,var(--lime) 92%,transparent 92%)}
+.principle{background:var(--paper);border-radius:16px;padding:clamp(24px,3vw,36px)}
+.principle blockquote{margin:14px 0 0;font-size:clamp(24px,2.6vw,32px);font-weight:800;letter-spacing:-.035em;line-height:1.12}
+.principle blockquote em{font-style:italic}
+.principle p{color:var(--muted);margin-top:16px;font-size:16px}
+@media (max-width:900px){.stackgrid{grid-template-columns:1fr}}
+@media (max-width:480px){.layer{grid-template-columns:1fr}.layer p{grid-column:1}}
+
+/* pyramid */
+.pyr{display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:44px}
+.bar{position:relative;background:var(--paper);border:2px solid;border-radius:14px;padding:16px 26px;display:grid;grid-template-columns:48px minmax(0,1fr);gap:4px 16px;align-items:baseline}
+.bar .n{font-family:var(--mono);font-size:12px;letter-spacing:.14em}
+.bar h3{font-size:clamp(20px,2vw,26px);font-weight:800;letter-spacing:-.035em;line-height:1.05}
+.bar h3 em{font-style:italic;font-weight:700;font-size:.62em;letter-spacing:-.01em;color:var(--ink2);margin-left:6px}
+.bar p{grid-column:2;font-size:14.5px;color:#33364A}
+.bar>i{position:absolute;right:-12px;top:50%;margin-top:-11px;width:22px;height:22px;border-radius:50%}
+.bar.found{width:100%;background:var(--cream);border-color:#B9D63A}
+.skills{width:100%;display:flex;flex-direction:column;align-items:center;gap:10px;border:1.5px dashed var(--line);border-radius:18px;padding:16px 16px 18px}
+.grp{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--textblue);align-self:flex-start}
+.op{font-size:30px;font-weight:800;line-height:1;color:var(--muted)}
+.formula{margin-top:0;font-size:clamp(28px,3.4vw,44px);font-weight:800;letter-spacing:-.035em;text-align:center}
+.formula b{background:linear-gradient(transparent 62%,var(--lime) 62%,var(--lime) 92%,transparent 92%)}
+.fnote{margin-top:8px;font-size:16px;color:var(--muted);text-align:center}
+.fnote em{font-style:italic;color:var(--navy);font-weight:600}
+@media (max-width:700px){.bar{width:100%!important;grid-template-columns:1fr;padding:14px 18px}.bar p{grid-column:1}.bar>i{right:-8px}}
+/* reports */
+.bundle{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px 28px;background:var(--stone);color:var(--navy);border-radius:16px;padding:20px 26px;margin:28px auto 0;max-width:760px}
+.bundle h3{font-size:22px;font-weight:800;letter-spacing:-.03em;line-height:1.1}
+.bundle p{color:var(--muted);margin-top:4px;font-size:15px}
+.bundle .btn[aria-disabled="true"]{color:var(--navy);border-color:var(--navy)}
+.reports{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:40px}
+.report{border-radius:18px;padding:clamp(14px,1.6vw,18px) clamp(14px,1.6vw,18px) clamp(22px,3vw,30px);display:flex;flex-direction:column;gap:24px;min-width:0}
+.report>div{padding-inline:clamp(8px,1.6vw,16px);display:flex;flex-direction:column;flex:1}
+.report img.fan{width:100%;aspect-ratio:2/1;object-fit:cover;border-radius:12px;display:block;transition:transform .2s,box-shadow .2s}
+.report:hover img.fan{transform:translateY(-3px);box-shadow:0 1px 2px rgba(14,18,34,.06),0 16px 34px rgba(14,18,34,.18)}
+.report .no{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.report .for{display:inline-block;align-self:flex-start;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;background:var(--paper);border-radius:999px;padding:5px 12px;margin-top:10px}
+.report h3{font-size:clamp(26px,2.6vw,34px);font-weight:800;letter-spacing:-.035em;line-height:1.02;margin-top:12px}
+.report p{color:#33364A;margin-top:12px;font-size:16px}
+.report ul{list-style:none;padding:0;margin:14px 0 0}
+.report li{font-size:14.5px;padding:7px 0;border-bottom:1px solid rgba(14,18,34,.12)}
+.report .act{margin-top:auto;padding-top:24px;display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
+.report .pages{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){.report img.fan{transition:none}.report:hover img.fan{transform:none}}
+@media (max-width:1100px){.reports{grid-template-columns:1fr}}
+
+/* origin */
+.origin{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:40px}
+.card{border-radius:16px;padding:clamp(24px,3vw,32px);min-width:0}
+.card .k{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--textblue)}
+.card h3{font-size:clamp(22px,2.2vw,28px);font-weight:800;letter-spacing:-.035em;line-height:1.08;margin-top:16px}
+.card p{font-size:15.5px;color:#33364A;margin-top:10px}
+@media (max-width:900px){.origin{grid-template-columns:1fr}}
+
+/* author */
+.author{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
+.author img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 28%;border-radius:6px;display:block}
+.author .h2{font-size:clamp(30px,3.6vw,46px)}
+.author p.t{font-size:18px;line-height:1.65;color:#2E313C;margin-top:18px;max-width:58ch}
+@media (max-width:760px){.author{grid-template-columns:1fr}.author img{max-width:320px}}
+
+
+.byline{display:inline-flex;align-items:center;gap:12px;margin-top:26px;text-decoration:none}
+.byline img{width:46px;height:46px;border-radius:50%;object-fit:cover;object-position:50% 25%}
+.byline b{display:block;font-size:16px;font-weight:700;letter-spacing:-.01em}
+.byline small{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:2px}
+.authorcard{display:grid;grid-template-columns:150px minmax(0,1fr);gap:clamp(20px,3vw,36px);align-items:center;background:var(--stone);border-radius:18px;padding:clamp(18px,2.4vw,28px);margin-top:clamp(40px,5vw,64px)}
+.authorcard img{width:150px;height:150px;border-radius:12px;object-fit:cover;object-position:50% 25%;display:block}
+.authorcard h3{font-size:clamp(24px,2.6vw,32px);font-weight:800;letter-spacing:-.035em;line-height:1.05;margin-top:10px}
+.authorcard p:not(.eyebrow){font-size:16px;color:#33364A;margin-top:10px;max-width:78ch}
+@media (max-width:640px){.authorcard{grid-template-columns:1fr}.authorcard img{width:110px;height:110px}}
+.capital{background:var(--lime);border-radius:18px;padding:clamp(24px,3vw,40px)}
+.capital h3{font-size:clamp(48px,6.4vw,84px);font-weight:800;letter-spacing:-.055em;line-height:.95;margin-top:12px}
+.capital h3 em{font-style:italic}
+.capital p:not(.eyebrow){font-size:16.5px;color:var(--navy);margin-top:18px;line-height:1.6}
+.capital blockquote{margin:22px 0 0;padding-top:18px;border-top:1.5px solid var(--navy);font-size:clamp(19px,1.9vw,23px);font-weight:800;letter-spacing:-.03em;line-height:1.18}
+.capital blockquote em{font-style:italic}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:18px;padding-block:28px 36px;font-size:13px;color:var(--muted);border-top:1px solid var(--line)}
+
+.stackx{max-width:900px;margin:48px auto 0;display:grid;gap:10px}
+.stackx .grp{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 2px 13%}
+.stackx .row{display:grid;grid-template-columns:minmax(0,38%) minmax(0,1fr);border-radius:14px;overflow:hidden;min-height:96px}
+.stackx .r1{margin-left:13%}
+.stackx .r2{margin-left:6.5%}
+.stackx .lbl{padding:18px 22px;display:flex;flex-direction:column;justify-content:center;gap:6px}
+.stackx .lbl b{font-size:clamp(24px,2.8vw,34px);font-weight:800;letter-spacing:-.04em;line-height:1}
+.stackx .n,.stackx .total span{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+.stackx .tx{padding:18px 24px;display:flex;align-items:center;font-size:clamp(19px,2vw,24px);font-weight:700;letter-spacing:-.025em}
+.stackx .found{background:var(--navy);color:var(--ivory);border-radius:14px;padding:18px 24px;display:flex;align-items:center;gap:16px}
+.stackx .found .n{color:var(--lime)}
+.stackx .found b{font-size:clamp(20px,2.2vw,26px);font-weight:800;letter-spacing:-.03em}
+.stackx .total{border:1.5px solid var(--navy);border-radius:14px;padding:18px 24px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 20px}
+.stackx .total b{font-size:clamp(22px,2.6vw,30px);font-weight:800;letter-spacing:-.04em}
+@media (max-width:640px){.stackx .r1,.stackx .r2{margin-left:0}.stackx .grp{margin-left:0}.stackx .row{grid-template-columns:1fr;min-height:0}}
+
+.ss{width:15px;height:15px;flex:none}
+.hero .motto{font-size:clamp(24px,3vw,36px);font-weight:800;font-style:italic;letter-spacing:-.035em;margin-top:18px}
+.issues{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:22px 16px;margin-top:40px}
+.issue{text-decoration:none;display:block;min-width:0}
+.issue img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:10px;display:block;box-shadow:0 1px 2px rgba(14,18,34,.06),0 10px 26px rgba(14,18,34,.08);transition:transform .2s,box-shadow .2s}
+.issue:hover img{transform:translateY(-3px);box-shadow:0 1px 2px rgba(14,18,34,.06),0 16px 34px rgba(14,18,34,.14)}
+.issue small{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:12px}
+.issue p{font-size:15px;font-weight:700;margin-top:3px;line-height:1.3}
+.issue:hover p{text-decoration:underline;text-underline-offset:3px}
+@media (max-width:1000px){.issues{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:560px){.issues{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (prefers-reduced-motion:reduce){.issue img{transition:none}.issue:hover img{transform:none}}
+.sub{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:18px 32px;background:var(--blue);color:var(--ivory);border-radius:18px;padding:clamp(22px,3vw,34px) clamp(22px,3vw,38px);margin-top:44px}
+.sub h3{font-size:clamp(24px,2.6vw,32px);font-weight:800;letter-spacing:-.035em;line-height:1.05}
+.sub p{margin-top:6px;font-size:16px;opacity:.9}
+.sub .btn{background:var(--lime);color:var(--navy)}
+.bookwrap{display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
+.cover{width:100%;aspect-ratio:2/3;background:var(--lime);border-radius:4px;position:relative;box-shadow:0 22px 50px rgba(14,18,34,.22),inset 5px 0 8px -5px rgba(0,0,0,.25);overflow:hidden}
+.cover small{position:absolute;left:8%;top:6%;font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase}
+.cover b{position:absolute;left:7%;top:12%;font-size:46px;font-weight:800;letter-spacing:-.06em;line-height:.86}
+.cover i{position:absolute;left:8%;top:39%;font-size:15px;font-weight:800;letter-spacing:-.03em}
+.cover .d{position:absolute;left:8%;right:8%;top:68%;display:flex;justify-content:space-between}
+.cover .d span{width:17%;aspect-ratio:1;border-radius:50%}
+.parts{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.parts span{border-radius:999px;padding:7px 14px;font-weight:800;font-style:italic;font-size:15px}
+@media (max-width:700px){.bookwrap{grid-template-columns:1fr}.cover{max-width:220px}}
+</style>
+<script data-goatcounter="https://annaambrozevich.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
-<body><p>Opening Multipotentials on Substack… <a href="https://substack.com/@multipotentials">Continue</a></p></body>
+<body>
+
+<header class="band" id="hdr"><div class="wrap" style="position:relative">
+  <a class="logo" href="/">ANNA<br>AMBROZEVICH</a>
+  <nav class="main" aria-label="Main"><a href="/#about">About</a><a href="/multipotentials/" class="cur" aria-current="page">Multipotentials</a><a href="/stack/">Self-Learning Stack</a><a href="/#impact">Impact</a><a href="/#contact">Contact</a></nav>
+  <div class="social"><a data-goatcounter-click="header-linkedin" href="https://www.linkedin.com/in/anna-ambrozevich" target="_blank" rel="noopener">LinkedIn</a><a data-goatcounter-click="header-substack" href="https://substack.com/@multipotentials" target="_blank" rel="noopener">Substack</a></div>
+  <button class="burger" type="button" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+  <nav class="menu" id="menu" aria-label="Mobile">
+    <a href="/#about">About</a><a href="/multipotentials/" class="cur" aria-current="page">Multipotentials</a><a href="/stack/">Self-Learning Stack</a><a href="/#impact">Impact</a><a href="/#contact">Contact</a>
+    <div class="msocial"><a data-goatcounter-click="menu-linkedin" href="https://www.linkedin.com/in/anna-ambrozevich" target="_blank" rel="noopener">LinkedIn</a><a data-goatcounter-click="menu-substack" href="https://substack.com/@multipotentials" target="_blank" rel="noopener">Substack</a></div>
+  </nav>
+</div></header>
+
+<main>
+<section class="band"><div class="wrap hero">
+  <p class="eyebrow"><span class="mark" aria-hidden="true"><i style="background:var(--navy)"></i><i style="background:var(--blue)"></i><i style="background:var(--coral)"></i><i style="background:var(--lime);box-shadow:inset 0 0 0 1.2px var(--navy)"></i></span>Newsletter · Book</p>
+  <h1>Multi<span>potentials</span></h1>
+  <p class="motto">Don’t choose. Design.</p>
+  <p class="q">Thoughts, sketches and systems for people who live in many disciplines, and refuse to choose just one.</p>
+  <a class="byline" href="/#about"><img src="../img/portrait.jpg" alt=""><span><b>By Anna Ambrozevich</b><small>Architect of Human Systems</small></span></a>
+  <div class="cta"><a class="btn" href="https://substack.com/@multipotentials" target="_blank" rel="noopener" data-goatcounter-click="mp-hero-subscribe"><svg class="ss" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" fill="currentColor"/></svg>Subscribe on Substack <span class="arr">→</span></a><a class="link" href="#issues">Read the issues <span class="arr">→</span></a></div>
+</div></section>
+
+<section class="band sec" style="background:var(--paper)"><div class="wrap">
+  <div class="why">
+    <div><p class="eyebrow">Why I write it</p><h2 class="h2">A life of many roles <em>needs a system</em></h2></div>
+    <div class="why-text">
+      <p>My whole life I kept hearing the same advice: choose one thing. One profession, one direction, one label. Today I hold more than ten roles, and I stopped apologising for it.</p>
+      <p>Multipotentials is where I share how I actually make this work: how I plan across roles, learn without burning out, decide what to let go and keep the whole system alive. <b>Free, twice a month.</b></p>
+      <p>You’re not too many things. You just need a design that can hold all of them.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="band sec" id="issues"><div class="wrap">
+  <div class="head"><div><p class="eyebrow">All issues</p><h2 class="h2">Read the newsletter</h2></div><p class="lead">Every issue opens on Substack. Newest first.</p></div>
+  <div class="issues">
+<a class="issue" data-goatcounter-click="mp-issue-oy" href="https://multipotentials.substack.com/p/one-year-of-multipotentials" target="_blank" rel="noopener"><img src="../img/mp/issue-oy.jpg" alt="" loading="lazy"><small>Special</small><p>One year of Multipotentials</p></a>
+<a class="issue" data-goatcounter-click="mp-issue-24" href="https://multipotentials.substack.com/p/24-to-see-is-to-think-visual-systems" target="_blank" rel="noopener"><img src="../img/mp/issue-24.jpg" alt="" loading="lazy"><small>Issue #24</small><p>To see is to think</p></a>
+<a class="issue" data-goatcounter-click="mp-issue-23" href="https://multipotentials.substack.com/p/23-staying-irreplaceable-a-self-learning" target="_blank" rel="noopener"><img src="../img/mp/issue-23.jpg" alt="" loading="lazy"><small>Issue #23</small><p>Staying irreplaceable</p></a>
+<a class="issue" data-goatcounter-click="mp-issue-22" href="https://multipotentials.substack.com/p/22-dont-wait-for-the-system-ai-readiness" target="_blank" rel="noopener"><img src="../img/mp/issue-22.jpg" alt="" loading="lazy"><small>Issue #22</small><p>Don’t wait for the system</p></a>
+<a class="issue" data-goatcounter-click="mp-issue-21" href="https://multipotentials.substack.com/p/21-collecting-myself-across-the-world" target="_blank" rel="noopener"><img src="../img/mp/issue-21.jpg" alt="" loading="lazy"><small>Issue #21</small><p>Collecting myself across the world</p></a>
+<a class="issue" data-goatcounter-click="mp-issue-20" href="https://multipotentials.substack.com/p/20-execution-the-rarest-skill-in" target="_blank" rel="noopener"><img src="../img/mp/issue-20.jpg" alt="" loading="lazy"><small>Issue #20</small><p>Execution, the rarest skill</p></a>
+<a class="issue" data-goatcounter-click="mp-issue-19" href="https://multipotentials.substack.com/p/18-multipotentials-why-now" target="_blank" rel="noopener"><img src="../img/mp/issue-19.jpg" alt="" loading="lazy"><small>Issue #19</small><p>Why now</p></a>
+<a class="issue" data-goatcounter-click="mp-issue-18" href="https://multipotentials.substack.com/p/18-ma-the-empty-space-where-a-multipotentials" target="_blank" rel="noopener"><img src="../img/mp/issue-18.jpg" alt="" loading="lazy"><small>Issue #18</small><p>Ma, the empty space between</p></a>
+<a class="issue" data-goatcounter-click="mp-issue-17" href="https://multipotentials.substack.com/p/17-instruments-not-verdicts-how-a" target="_blank" rel="noopener"><img src="../img/mp/issue-17.jpg" alt="" loading="lazy"><small>Issue #17</small><p>Instruments, not verdicts</p></a>
+<a class="issue" data-goatcounter-click="mp-issue-16" href="https://multipotentials.substack.com/p/16-deciding-whats-worth-doing" target="_blank" rel="noopener"><img src="../img/mp/issue-16.jpg" alt="" loading="lazy"><small>Issue #16</small><p>Deciding what’s worth doing</p></a>
+<a class="issue" data-goatcounter-click="mp-issue-15" href="https://multipotentials.substack.com/p/15-the-foundation-beneath-a-multipotential" target="_blank" rel="noopener"><img src="../img/mp/issue-15.jpg" alt="" loading="lazy"><small>Issue #15</small><p>The foundation beneath a multipotential life</p></a>
+<a class="issue" data-goatcounter-click="mp-issue-14" href="https://multipotentials.substack.com/p/14-how-structure-flow-and-stillness" target="_blank" rel="noopener"><img src="../img/mp/issue-14.jpg" alt="" loading="lazy"><small>Issue #14</small><p>Structure, flow and stillness</p></a>
+<a class="issue" data-goatcounter-click="mp-issue-13" href="https://multipotentials.substack.com/p/13-self-learning-in-the-age-of-ai" target="_blank" rel="noopener"><img src="../img/mp/issue-13.jpg" alt="" loading="lazy"><small>Issue #13</small><p>Self-learning in the age of AI</p></a>
+<a class="issue" data-goatcounter-click="mp-issue-12" href="https://multipotentials.substack.com/p/12-letting-go-evolving-or-continuing" target="_blank" rel="noopener"><img src="../img/mp/issue-12.jpg" alt="" loading="lazy"><small>Issue #12</small><p>Let go, evolve or continue</p></a>
+<a class="issue" data-goatcounter-click="mp-issue-11" href="https://multipotentials.substack.com/p/10-the-word-pattern-that-shapes-your" target="_blank" rel="noopener"><img src="../img/mp/issue-11.jpg" alt="" loading="lazy"><small>Issue #11</small><p>One consistent thread</p></a>
+<a class="issue" data-goatcounter-click="mp-issue-10" href="https://multipotentials.substack.com/p/10-multipotential-thinking-in-an" target="_blank" rel="noopener"><img src="../img/mp/issue-10.jpg" alt="" loading="lazy"><small>Issue #10</small><p>Four futures, one skillset</p></a>
+<a class="issue" data-goatcounter-click="mp-issue-09" href="https://multipotentials.substack.com/p/9-multipotentials-2025-wrap-up-and" target="_blank" rel="noopener"><img src="../img/mp/issue-09.jpg" alt="" loading="lazy"><small>Issue #9</small><p>From fragments to systems</p></a>
+<a class="issue" data-goatcounter-click="mp-issue-08" href="https://multipotentials.substack.com/p/8-planning-across-disciplines-a-3" target="_blank" rel="noopener"><img src="../img/mp/issue-08.jpg" alt="" loading="lazy"><small>Issue #8</small><p>A roadmap, not a ladder</p></a>
+<a class="issue" data-goatcounter-click="mp-issue-07" href="https://multipotentials.substack.com/p/7-writing-as-a-thinking-tool-for" target="_blank" rel="noopener"><img src="../img/mp/issue-07.jpg" alt="" loading="lazy"><small>Issue #7</small><p>Writing as a thinking tool</p></a>
+<a class="issue" data-goatcounter-click="mp-issue-06" href="https://multipotentials.substack.com/p/6-tsundoku-and-the-reading-life-of" target="_blank" rel="noopener"><img src="../img/mp/issue-06.jpg" alt="" loading="lazy"><small>Issue #6</small><p>Tsundoku</p></a>
+<a class="issue" data-goatcounter-click="mp-issue-05" href="https://multipotentials.substack.com/p/5-learning-in-rhythm-building-a-learning" target="_blank" rel="noopener"><img src="../img/mp/issue-05.jpg" alt="" loading="lazy"><small>Issue #5</small><p>Learning in rhythm</p></a>
+<a class="issue" data-goatcounter-click="mp-issue-04" href="https://multipotentials.substack.com/p/4-time-focus-and-the-digital-office" target="_blank" rel="noopener"><img src="../img/mp/issue-04.jpg" alt="" loading="lazy"><small>Issue #4</small><p>Design your flow</p></a>
+<a class="issue" data-goatcounter-click="mp-issue-03" href="https://multipotentials.substack.com/p/3-designing-your-multipotential-role" target="_blank" rel="noopener"><img src="../img/mp/issue-03.jpg" alt="" loading="lazy"><small>Issue #3</small><p>Your role constellation</p></a>
+<a class="issue" data-goatcounter-click="mp-issue-02" href="https://multipotentials.substack.com/p/2-how-to-build-a-personal-brand-as" target="_blank" rel="noopener"><img src="../img/mp/issue-02.jpg" alt="" loading="lazy"><small>Issue #2</small><p>Visible without shrinking</p></a>
+<a class="issue" data-goatcounter-click="mp-issue-01" href="https://multipotentials.substack.com/p/1-multipotential-and-why-i-refuse" target="_blank" rel="noopener"><img src="../img/mp/issue-01.jpg" alt="" loading="lazy"><small>Issue #1</small><p>Why I refuse to choose</p></a>
+  </div>
+  <div class="sub"><div><h3>Get the next issue in your inbox</h3><p>Free, twice a month, no noise.</p></div><a class="btn" href="https://substack.com/@multipotentials" target="_blank" rel="noopener" data-goatcounter-click="mp-subscribe-bottom"><svg class="ss" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" fill="currentColor"/></svg>Subscribe <span class="arr">→</span></a></div>
+</div></section>
+
+<section class="band sec" id="book" style="background:var(--paper)"><div class="wrap bookwrap">
+  <div class="cover" aria-hidden="true"><small>Anna Ambrozevich</small><b>Multi-<br>potentials</b><i>Don’t choose. Design.</i><div class="d"><span style="background:var(--navy)"></span><span style="background:var(--blue)"></span><span style="box-shadow:inset 0 0 0 4px var(--coral)"></span><span style="background:var(--lime);box-shadow:inset 0 0 0 1.5px var(--navy)"></span></div></div>
+  <div><p class="eyebrow">The book · coming soon</p><h2 class="h2">A system for living across roles, <em>interests and possibilities</em></h2>
+  <p class="lead" style="margin-top:18px">The newsletter, rethought as one book in six parts, with new chapters on connection and a toolkit you can use on your own.</p>
+  <div class="parts"><span style="background:var(--lime);color:var(--navy)">Why</span><span style="background:var(--blue);color:var(--ivory)">See</span><span style="background:var(--coral);color:var(--navy)">Build</span><span style="background:var(--lime);color:var(--navy)">Choose</span><span style="background:var(--blue);color:var(--ivory)">Connect</span><span style="background:var(--coral);color:var(--navy)">Evolve</span></div>
+  <div class="cta"><span class="soon">Coming soon</span><a class="link" href="https://substack.com/@multipotentials" target="_blank" rel="noopener" data-goatcounter-click="mp-book-subscribe">Subscribe to hear first <span class="arr">→</span></a></div></div>
+</div></section>
+</main>
+
+<footer class="band"><div class="wrap">
+  <div><p style="font-weight:800;color:var(--navy);line-height:.95">ANNA<br>AMBROZEVICH</p><p style="margin-top:8px">Architect of Human Systems</p></div>
+  <p>Multipotentials · © 2026</p>
+  <p>Tashkent, Uzbekistan · Working globally</p>
+</div></footer>
+
+<script>
+(function(){
+  var b=document.getElementById('burger'),m=document.getElementById('menu'),h=document.getElementById('hdr');
+  function set(o){m.classList.toggle('open',o);b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Close menu':'Open menu');}
+  b.addEventListener('click',function(){set(!m.classList.contains('open'));});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
+  window.addEventListener('scroll',function(){h.classList.toggle('scrolled',window.scrollY>8);},{passive:true});
+})();
+</script>
+</body>
 </html>

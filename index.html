@@ -135,8 +135,8 @@ nav.main a:nth-child(5):hover,nav.main a:nth-child(5).cur{border-color:var(--cor
 @media (max-width:900px){.about{grid-template-columns:1fr}.about-text{padding-top:0}}
 
 /* multipotentials */
-.mp h2{font-size:clamp(52px,9vw,96px);font-weight:800;letter-spacing:-.055em;line-height:.92;margin-top:18px}
-.mp .motto{font-size:clamp(22px,2.6vw,30px);font-weight:700;font-style:italic;letter-spacing:-.03em;margin-top:12px}
+.mp h2{font-size:clamp(34px,5vw,60px);font-weight:800;letter-spacing:-.055em;line-height:.92;margin-top:18px}
+.mp .motto{font-size:clamp(19px,2vw,24px);font-weight:700;font-style:italic;letter-spacing:-.03em;margin-top:12px}
 .issues{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin-top:44px}
 .issue img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:top;border-radius:10px;display:block;box-shadow:0 1px 2px rgba(14,18,34,.06),0 10px 26px rgba(14,18,34,.08)}
 .issue small{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:12px}
@@ -148,7 +148,7 @@ nav.main a:nth-child(5):hover,nav.main a:nth-child(5).cur{border-color:var(--cor
 @media (prefers-reduced-motion:reduce){.issue img{transition:none}.issue:hover img{transform:none}}
 @media (max-width:900px){.issues{grid-template-columns:repeat(3,minmax(0,1fr))}.issues .issue:nth-child(n+4){display:none}}
 @media (max-width:520px){.issues{grid-template-columns:repeat(2,minmax(0,1fr))}.issues .issue:nth-child(3){display:none}}
-.duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:36px}
+.duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:28px}
 .panel{border-radius:16px;padding:clamp(22px,3vw,32px);min-width:0}
 .panel h3{font-size:clamp(24px,2.4vw,30px);font-weight:800;letter-spacing:-.03em;line-height:1.08;margin-top:10px}
 .panel p{color:#33364A;margin-top:10px;font-size:16px}
@@ -221,11 +221,11 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
 
 <header class="band" id="hdr"><div class="wrap" style="position:relative">
   <a class="logo" href="#top">ANNA<br>AMBROZEVICH</a>
-  <nav class="main" aria-label="Main"><a href="#about">About</a><a href="#multipotentials">Multipotentials</a><a href="/stack/">Self-Learning Stack</a><a href="#impact">Impact</a><a href="#contact">Contact</a></nav>
+  <nav class="main" aria-label="Main"><a href="#about">About</a><a href="/multipotentials/">Multipotentials</a><a href="/stack/">Self-Learning Stack</a><a href="#impact">Impact</a><a href="#contact">Contact</a></nav>
   <div class="social"><a data-goatcounter-click="header-linkedin" href="https://www.linkedin.com/in/anna-ambrozevich" target="_blank" rel="noopener">LinkedIn</a><a data-goatcounter-click="header-substack" href="https://substack.com/@multipotentials" target="_blank" rel="noopener">Substack</a></div>
   <button class="burger" type="button" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
   <nav class="menu" id="menu" aria-label="Mobile">
-    <a href="#about">About</a><a href="#multipotentials">Multipotentials</a><a href="/stack/">Self-Learning Stack</a><a href="#impact">Impact</a><a href="#contact">Contact</a>
+    <a href="#about">About</a><a href="/multipotentials/">Multipotentials</a><a href="/stack/">Self-Learning Stack</a><a href="#impact">Impact</a><a href="#contact">Contact</a>
     <div class="msocial"><a data-goatcounter-click="menu-linkedin" href="https://www.linkedin.com/in/anna-ambrozevich" target="_blank" rel="noopener">LinkedIn</a><a data-goatcounter-click="menu-substack" href="https://substack.com/@multipotentials" target="_blank" rel="noopener">Substack</a></div>
   </nav>
 </div></header>
@@ -266,18 +266,12 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
   <h2>Multipotentials</h2>
   <p class="motto">Don’t choose. Design.</p>
   <p class="lead" style="margin-top:16px">A system for people with many interests: how to design one life out of all of them, instead of choosing just one.</p>
-  <div class="issues">
-    <a class="issue" data-goatcounter-click="issue-23" href="https://multipotentials.substack.com/p/23-staying-irreplaceable-a-self-learning" target="_blank" rel="noopener"><img src="img/issue23.jpg" alt="Issue 23 cover: Staying irreplaceable, a self-learning system for the AI age" loading="lazy"><small>Issue #23</small><p>Staying irreplaceable</p></a>
-    <a class="issue" data-goatcounter-click="issue-22" href="https://multipotentials.substack.com/p/22-dont-wait-for-the-system-ai-readiness" target="_blank" rel="noopener"><img src="img/issue22.jpg" alt="Issue 22 cover: AI readiness for multipotentials" loading="lazy"><small>Issue #22</small><p>AI readiness</p></a>
-    <a class="issue" data-goatcounter-click="issue-21" href="https://multipotentials.substack.com/p/21-collecting-myself-across-the-world" target="_blank" rel="noopener"><img src="img/issue21.jpg" alt="Issue 21 cover: Collecting myself across the world" loading="lazy"><small>Issue #21</small><p>Collecting myself across the world</p></a>
-    <a class="issue" data-goatcounter-click="issue-20" href="https://multipotentials.substack.com/p/20-execution-the-rarest-skill-in" target="_blank" rel="noopener"><img src="img/issue20.jpg" alt="Issue 20 cover: nine skills of perfect execution" loading="lazy"><small>Issue #20</small><p>Execution</p></a>
-    <a class="issue" data-goatcounter-click="issue-19" href="https://multipotentials.substack.com/p/18-multipotentials-why-now" target="_blank" rel="noopener"><img src="img/issue19.jpg" alt="Issue 19 cover: Multipotentials, why now" loading="lazy"><small>Issue #19</small><p>Why now</p></a>
-  </div>
+  <p style="margin-top:18px"><a class="link" href="multipotentials/" data-goatcounter-click="main-to-mp">All issues and the book <span class="arr">→</span></a></p>
   <div class="duo">
     <div class="panel" style="background:var(--lav)"><p class="eyebrow" style="color:var(--navy)">Substack · free · twice a month</p><h3>Multipotentials Newsletter</h3><p>Thoughts, sketches, and systems for people who live in many disciplines.</p><div style="margin-top:22px"><a class="btn" data-goatcounter-click="subscribe-substack" href="https://substack.com/@multipotentials" target="_blank" rel="noopener"><svg class="ss" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" fill="currentColor"/></svg>Subscribe on Substack <span class="arr">→</span></a></div></div>
     <div class="panel book" style="background:var(--peach)">
       <div class="cover" aria-hidden="true"><small>Anna Ambrozevich</small><b>Multi<br>potentials</b><i>Don’t choose. Design.</i></div>
-      <div style="min-width:0"><p class="eyebrow" style="color:var(--navy)">The book</p><h3>A systems approach to a multipotential life</h3><div style="margin-top:18px"><span class="soon">Coming soon</span></div></div>
+      <div style="min-width:0"><p class="eyebrow" style="color:var(--navy)">The book</p><h3>A system for living across roles, interests and possibilities</h3><div style="margin-top:18px"><span class="soon">Coming soon</span></div></div>
     </div>
   </div>
 </div></section>
