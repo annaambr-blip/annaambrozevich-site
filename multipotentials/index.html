@@ -250,8 +250,14 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
 .sub h3{font-size:clamp(24px,2.6vw,32px);font-weight:800;letter-spacing:-.035em;line-height:1.05}
 .sub p{margin-top:6px;font-size:16px;opacity:.9}
 .sub .btn{background:var(--lime);color:var(--navy)}
+#book .lead{color:var(--navy)}
+.prev{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);margin-top:14px;opacity:.7}
+.latest{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
+.limg img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px;display:block;box-shadow:0 1px 2px rgba(14,18,34,.06),0 14px 34px rgba(14,18,34,.12);transition:transform .2s,box-shadow .2s}
+.limg:hover img{transform:translateY(-3px)}
+@media (max-width:700px){.latest{grid-template-columns:1fr}.limg{max-width:320px}}
 .bookwrap{display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
-.cover{width:100%;aspect-ratio:2/3;background:var(--lime);border-radius:4px;position:relative;box-shadow:0 22px 50px rgba(14,18,34,.22),inset 5px 0 8px -5px rgba(0,0,0,.25);overflow:hidden}
+.cover{width:100%;aspect-ratio:2/3;background:var(--ivory);border-radius:4px;position:relative;box-shadow:0 22px 50px rgba(14,18,34,.22),inset 5px 0 8px -5px rgba(0,0,0,.25);overflow:hidden}
 .cover small{position:absolute;left:8%;top:6%;font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase}
 .cover b{position:absolute;left:7%;top:12%;font-size:46px;font-weight:800;letter-spacing:-.06em;line-height:.86}
 .cover i{position:absolute;left:8%;top:39%;font-size:15px;font-weight:800;letter-spacing:-.03em}
@@ -283,7 +289,15 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
   <p class="motto">Don’t choose. Design.</p>
   <p class="q">Thoughts, sketches and systems for people who live in many disciplines, and refuse to choose just one.</p>
   <a class="byline" href="/#about"><img src="../img/portrait.jpg" alt=""><span><b>By Anna Ambrozevich</b><small>Architect of Human Systems</small></span></a>
-  <div class="cta"><a class="btn" href="https://substack.com/@multipotentials" target="_blank" rel="noopener" data-goatcounter-click="mp-hero-subscribe"><svg class="ss" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" fill="currentColor"/></svg>Subscribe on Substack <span class="arr">→</span></a><a class="link" href="#issues">Read the issues <span class="arr">→</span></a></div>
+  <div class="cta"><a class="btn" href="https://substack.com/@multipotentials" target="_blank" rel="noopener" data-goatcounter-click="mp-hero-subscribe"><svg class="ss" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" fill="currentColor"/></svg>Subscribe on Substack <span class="arr">→</span></a><a class="link" href="#book">About the book <span class="arr">→</span></a></div>
+</div></section>
+
+<section class="band sec" id="book" style="background:var(--lime)"><div class="wrap bookwrap">
+  <div class="coverbox"><div class="cover" aria-hidden="true"><small>Anna Ambrozevich</small><b>Multi-<br>potentials</b><i>Don’t choose. Design.</i><div class="d"><span style="background:var(--navy)"></span><span style="background:var(--blue)"></span><span style="box-shadow:inset 0 0 0 4px var(--coral)"></span><span style="background:var(--lime);box-shadow:inset 0 0 0 1.5px var(--navy)"></span></div></div><p class="prev">Cover preview</p></div>
+  <div><p class="eyebrow" style="color:var(--navy)">The book · coming soon</p><h2 class="h2">A system for living across roles, <em>interests and possibilities</em></h2>
+  <p class="lead" style="margin-top:18px">The newsletter, rethought as one book in six parts, with new chapters on connection and a toolkit you can use on your own.</p>
+  <div class="parts"><span style="background:var(--ivory);color:var(--navy)">Why</span><span style="background:var(--blue);color:var(--ivory)">See</span><span style="background:var(--coral);color:var(--navy)">Build</span><span style="background:var(--ivory);color:var(--navy)">Choose</span><span style="background:var(--blue);color:var(--ivory)">Connect</span><span style="background:var(--coral);color:var(--navy)">Evolve</span></div>
+  <div class="cta"><span class="soon" style="background:var(--navy);color:var(--lime)">Coming soon</span><a class="link" href="https://substack.com/@multipotentials" target="_blank" rel="noopener" data-goatcounter-click="mp-book-subscribe">Subscribe to hear first <span class="arr">→</span></a></div></div>
 </div></section>
 
 <section class="band sec" style="background:var(--paper)"><div class="wrap">
@@ -297,45 +311,14 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
   </div>
 </div></section>
 
-<section class="band sec" id="issues"><div class="wrap">
-  <div class="head"><div><p class="eyebrow">All issues</p><h2 class="h2">Read the newsletter</h2></div><p class="lead">Every issue opens on Substack. Newest first.</p></div>
-  <div class="issues">
-<a class="issue" data-goatcounter-click="mp-issue-oy" href="https://multipotentials.substack.com/p/one-year-of-multipotentials" target="_blank" rel="noopener"><img src="../img/mp/issue-oy.jpg" alt="" loading="lazy"><small>Special</small><p>One year of Multipotentials</p></a>
-<a class="issue" data-goatcounter-click="mp-issue-24" href="https://multipotentials.substack.com/p/24-to-see-is-to-think-visual-systems" target="_blank" rel="noopener"><img src="../img/mp/issue-24.jpg" alt="" loading="lazy"><small>Issue #24</small><p>To see is to think</p></a>
-<a class="issue" data-goatcounter-click="mp-issue-23" href="https://multipotentials.substack.com/p/23-staying-irreplaceable-a-self-learning" target="_blank" rel="noopener"><img src="../img/mp/issue-23.jpg" alt="" loading="lazy"><small>Issue #23</small><p>Staying irreplaceable</p></a>
-<a class="issue" data-goatcounter-click="mp-issue-22" href="https://multipotentials.substack.com/p/22-dont-wait-for-the-system-ai-readiness" target="_blank" rel="noopener"><img src="../img/mp/issue-22.jpg" alt="" loading="lazy"><small>Issue #22</small><p>Don’t wait for the system</p></a>
-<a class="issue" data-goatcounter-click="mp-issue-21" href="https://multipotentials.substack.com/p/21-collecting-myself-across-the-world" target="_blank" rel="noopener"><img src="../img/mp/issue-21.jpg" alt="" loading="lazy"><small>Issue #21</small><p>Collecting myself across the world</p></a>
-<a class="issue" data-goatcounter-click="mp-issue-20" href="https://multipotentials.substack.com/p/20-execution-the-rarest-skill-in" target="_blank" rel="noopener"><img src="../img/mp/issue-20.jpg" alt="" loading="lazy"><small>Issue #20</small><p>Execution, the rarest skill</p></a>
-<a class="issue" data-goatcounter-click="mp-issue-19" href="https://multipotentials.substack.com/p/18-multipotentials-why-now" target="_blank" rel="noopener"><img src="../img/mp/issue-19.jpg" alt="" loading="lazy"><small>Issue #19</small><p>Why now</p></a>
-<a class="issue" data-goatcounter-click="mp-issue-18" href="https://multipotentials.substack.com/p/18-ma-the-empty-space-where-a-multipotentials" target="_blank" rel="noopener"><img src="../img/mp/issue-18.jpg" alt="" loading="lazy"><small>Issue #18</small><p>Ma, the empty space between</p></a>
-<a class="issue" data-goatcounter-click="mp-issue-17" href="https://multipotentials.substack.com/p/17-instruments-not-verdicts-how-a" target="_blank" rel="noopener"><img src="../img/mp/issue-17.jpg" alt="" loading="lazy"><small>Issue #17</small><p>Instruments, not verdicts</p></a>
-<a class="issue" data-goatcounter-click="mp-issue-16" href="https://multipotentials.substack.com/p/16-deciding-whats-worth-doing" target="_blank" rel="noopener"><img src="../img/mp/issue-16.jpg" alt="" loading="lazy"><small>Issue #16</small><p>Deciding what’s worth doing</p></a>
-<a class="issue" data-goatcounter-click="mp-issue-15" href="https://multipotentials.substack.com/p/15-the-foundation-beneath-a-multipotential" target="_blank" rel="noopener"><img src="../img/mp/issue-15.jpg" alt="" loading="lazy"><small>Issue #15</small><p>The foundation beneath a multipotential life</p></a>
-<a class="issue" data-goatcounter-click="mp-issue-14" href="https://multipotentials.substack.com/p/14-how-structure-flow-and-stillness" target="_blank" rel="noopener"><img src="../img/mp/issue-14.jpg" alt="" loading="lazy"><small>Issue #14</small><p>Structure, flow and stillness</p></a>
-<a class="issue" data-goatcounter-click="mp-issue-13" href="https://multipotentials.substack.com/p/13-self-learning-in-the-age-of-ai" target="_blank" rel="noopener"><img src="../img/mp/issue-13.jpg" alt="" loading="lazy"><small>Issue #13</small><p>Self-learning in the age of AI</p></a>
-<a class="issue" data-goatcounter-click="mp-issue-12" href="https://multipotentials.substack.com/p/12-letting-go-evolving-or-continuing" target="_blank" rel="noopener"><img src="../img/mp/issue-12.jpg" alt="" loading="lazy"><small>Issue #12</small><p>Let go, evolve or continue</p></a>
-<a class="issue" data-goatcounter-click="mp-issue-11" href="https://multipotentials.substack.com/p/10-the-word-pattern-that-shapes-your" target="_blank" rel="noopener"><img src="../img/mp/issue-11.jpg" alt="" loading="lazy"><small>Issue #11</small><p>One consistent thread</p></a>
-<a class="issue" data-goatcounter-click="mp-issue-10" href="https://multipotentials.substack.com/p/10-multipotential-thinking-in-an" target="_blank" rel="noopener"><img src="../img/mp/issue-10.jpg" alt="" loading="lazy"><small>Issue #10</small><p>Four futures, one skillset</p></a>
-<a class="issue" data-goatcounter-click="mp-issue-09" href="https://multipotentials.substack.com/p/9-multipotentials-2025-wrap-up-and" target="_blank" rel="noopener"><img src="../img/mp/issue-09.jpg" alt="" loading="lazy"><small>Issue #9</small><p>From fragments to systems</p></a>
-<a class="issue" data-goatcounter-click="mp-issue-08" href="https://multipotentials.substack.com/p/8-planning-across-disciplines-a-3" target="_blank" rel="noopener"><img src="../img/mp/issue-08.jpg" alt="" loading="lazy"><small>Issue #8</small><p>A roadmap, not a ladder</p></a>
-<a class="issue" data-goatcounter-click="mp-issue-07" href="https://multipotentials.substack.com/p/7-writing-as-a-thinking-tool-for" target="_blank" rel="noopener"><img src="../img/mp/issue-07.jpg" alt="" loading="lazy"><small>Issue #7</small><p>Writing as a thinking tool</p></a>
-<a class="issue" data-goatcounter-click="mp-issue-06" href="https://multipotentials.substack.com/p/6-tsundoku-and-the-reading-life-of" target="_blank" rel="noopener"><img src="../img/mp/issue-06.jpg" alt="" loading="lazy"><small>Issue #6</small><p>Tsundoku</p></a>
-<a class="issue" data-goatcounter-click="mp-issue-05" href="https://multipotentials.substack.com/p/5-learning-in-rhythm-building-a-learning" target="_blank" rel="noopener"><img src="../img/mp/issue-05.jpg" alt="" loading="lazy"><small>Issue #5</small><p>Learning in rhythm</p></a>
-<a class="issue" data-goatcounter-click="mp-issue-04" href="https://multipotentials.substack.com/p/4-time-focus-and-the-digital-office" target="_blank" rel="noopener"><img src="../img/mp/issue-04.jpg" alt="" loading="lazy"><small>Issue #4</small><p>Design your flow</p></a>
-<a class="issue" data-goatcounter-click="mp-issue-03" href="https://multipotentials.substack.com/p/3-designing-your-multipotential-role" target="_blank" rel="noopener"><img src="../img/mp/issue-03.jpg" alt="" loading="lazy"><small>Issue #3</small><p>Your role constellation</p></a>
-<a class="issue" data-goatcounter-click="mp-issue-02" href="https://multipotentials.substack.com/p/2-how-to-build-a-personal-brand-as" target="_blank" rel="noopener"><img src="../img/mp/issue-02.jpg" alt="" loading="lazy"><small>Issue #2</small><p>Visible without shrinking</p></a>
-<a class="issue" data-goatcounter-click="mp-issue-01" href="https://multipotentials.substack.com/p/1-multipotential-and-why-i-refuse" target="_blank" rel="noopener"><img src="../img/mp/issue-01.jpg" alt="" loading="lazy"><small>Issue #1</small><p>Why I refuse to choose</p></a>
-  </div>
-  <div class="sub"><div><h3>Get the next issue in your inbox</h3><p>Free, twice a month, no noise.</p></div><a class="btn" href="https://substack.com/@multipotentials" target="_blank" rel="noopener" data-goatcounter-click="mp-subscribe-bottom"><svg class="ss" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" fill="currentColor"/></svg>Subscribe <span class="arr">→</span></a></div>
+<section class="band sec" id="issues"><div class="wrap latest">
+  <a class="limg" href="https://multipotentials.substack.com/p/24-to-see-is-to-think-visual-systems" target="_blank" rel="noopener" data-goatcounter-click="mp-latest"><img src="../img/mp/issue-24.jpg" alt="Issue 24 cover: To see is to think, visual systems for a multipotential mind"></a>
+  <div><p class="eyebrow">Latest issue · #24</p><h2 class="h2">To see is <em>to think</em></h2>
+  <p class="lead" style="margin-top:14px">Visual systems for a multipotential mind: how AI and design systems help me move between many creative worlds.</p>
+  <div class="cta"><a class="btn" href="https://multipotentials.substack.com/p/24-to-see-is-to-think-visual-systems" target="_blank" rel="noopener" data-goatcounter-click="mp-latest-read">Read the issue <span class="arr">→</span></a><a class="link" href="https://multipotentials.substack.com/archive" target="_blank" rel="noopener" data-goatcounter-click="mp-archive">All issues on Substack <span class="arr">→</span></a></div></div>
 </div></section>
 
-<section class="band sec" id="book" style="background:var(--paper)"><div class="wrap bookwrap">
-  <div class="cover" aria-hidden="true"><small>Anna Ambrozevich</small><b>Multi-<br>potentials</b><i>Don’t choose. Design.</i><div class="d"><span style="background:var(--navy)"></span><span style="background:var(--blue)"></span><span style="box-shadow:inset 0 0 0 4px var(--coral)"></span><span style="background:var(--lime);box-shadow:inset 0 0 0 1.5px var(--navy)"></span></div></div>
-  <div><p class="eyebrow">The book · coming soon</p><h2 class="h2">A system for living across roles, <em>interests and possibilities</em></h2>
-  <p class="lead" style="margin-top:18px">The newsletter, rethought as one book in six parts, with new chapters on connection and a toolkit you can use on your own.</p>
-  <div class="parts"><span style="background:var(--lime);color:var(--navy)">Why</span><span style="background:var(--blue);color:var(--ivory)">See</span><span style="background:var(--coral);color:var(--navy)">Build</span><span style="background:var(--lime);color:var(--navy)">Choose</span><span style="background:var(--blue);color:var(--ivory)">Connect</span><span style="background:var(--coral);color:var(--navy)">Evolve</span></div>
-  <div class="cta"><span class="soon">Coming soon</span><a class="link" href="https://substack.com/@multipotentials" target="_blank" rel="noopener" data-goatcounter-click="mp-book-subscribe">Subscribe to hear first <span class="arr">→</span></a></div></div>
-</div></section>
+
 </main>
 
 <footer class="band"><div class="wrap">

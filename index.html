@@ -123,6 +123,9 @@ nav.main a:nth-child(5):hover,nav.main a:nth-child(5).cur{border-color:var(--cor
 .proj h3{font-size:22px;font-weight:800;letter-spacing:-.03em;line-height:1.12;margin-top:12px}
 .proj p{font-size:15px;color:var(--muted);margin-top:8px;line-height:1.5;flex:1}
 .proj .go{font-size:14px;font-weight:600;margin-top:14px}
+.logos{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 26px;margin-top:22px;padding-top:16px;border-top:1px solid var(--line)}
+.logos small{width:100%;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.logos span{font-size:clamp(17px,1.7vw,21px);font-weight:800;letter-spacing:-.03em;color:#6A6E7C}
 .vision .proj:hover h3{text-decoration:none}
 .proj:hover h3{text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:4px}
 @media (max-width:900px){.projects{grid-template-columns:repeat(2,minmax(0,1fr))}.proj{padding-left:20px}.proj:nth-child(3){border-left:0;padding-left:0}.proj:nth-child(n+3){border-top:1px solid var(--line)}}
@@ -250,7 +253,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
     <div class="about-text">
       <p>My work sits where learning, community and technology meet. I look at where the world is going and design the structures people need to grow into it: ways of learning, communities and leadership that make real innovation possible.</p>
       <p>Today I hold more than ten roles across technology, education, research and global communities. They are not separate careers. Each one is a piece of the same picture.</p>
-      <p>Before that I spent more than 15 years in MarTech, CRM and customer experience at <b>PepsiCo, Alibaba Group, Philip Morris International and Otto Group</b>. Based in Tashkent, working globally. I write more than I speak.</p>
+      <p>A biotechnologist by training, I studied at the University of Cambridge and the European Business University, then spent more than 15 years in MarTech, CRM and customer experience at global companies. Based in Tashkent, working globally. I write more than I speak.</p>
+      <div class="logos" aria-label="Previously at"><small>Previously at</small><span>PepsiCo</span><span>Alibaba Group</span><span>Philip Morris International</span><span>Otto Group</span></div>
     </div>
   </div>
   <p class="eyebrow" style="margin-top:clamp(48px,6vw,72px)">The future I work towards</p>
