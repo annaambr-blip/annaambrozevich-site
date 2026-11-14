@@ -250,14 +250,18 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
 .sub h3{font-size:clamp(24px,2.6vw,32px);font-weight:800;letter-spacing:-.035em;line-height:1.05}
 .sub p{margin-top:6px;font-size:16px;opacity:.9}
 .sub .btn{background:var(--lime);color:var(--navy)}
-#book .lead{color:var(--navy)}
+.quotes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:22px}
+.qt{margin:0;background:var(--paper);border-radius:16px;padding:24px 24px 22px;border-top:3px solid var(--lime)}
+.qt blockquote{margin:0;font-size:18px;font-weight:700;letter-spacing:-.02em;line-height:1.35}
+.qt figcaption{margin-top:16px}.qt b{display:block;font-size:15px}.qt small{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+@media (max-width:860px){.quotes{grid-template-columns:1fr}}
 .prev{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);margin-top:14px;opacity:.7}
 .latest{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
 .limg img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px;display:block;box-shadow:0 1px 2px rgba(14,18,34,.06),0 14px 34px rgba(14,18,34,.12);transition:transform .2s,box-shadow .2s}
 .limg:hover img{transform:translateY(-3px)}
 @media (max-width:700px){.latest{grid-template-columns:1fr}.limg{max-width:320px}}
 .bookwrap{display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
-.cover{width:100%;aspect-ratio:2/3;background:var(--ivory);border-radius:4px;position:relative;box-shadow:0 22px 50px rgba(14,18,34,.22),inset 5px 0 8px -5px rgba(0,0,0,.25);overflow:hidden}
+.cover{width:100%;aspect-ratio:2/3;background:var(--lime);border-radius:4px;position:relative;box-shadow:0 22px 50px rgba(14,18,34,.22),inset 5px 0 8px -5px rgba(0,0,0,.25);overflow:hidden}
 .cover small{position:absolute;left:8%;top:6%;font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase}
 .cover b{position:absolute;left:7%;top:12%;font-size:46px;font-weight:800;letter-spacing:-.06em;line-height:.86}
 .cover i{position:absolute;left:8%;top:39%;font-size:15px;font-weight:800;letter-spacing:-.03em}
@@ -289,16 +293,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
   <p class="motto">Don’t choose. Design.</p>
   <p class="q">Thoughts, sketches and systems for people who live in many disciplines, and refuse to choose just one.</p>
   <a class="byline" href="/#about"><img src="../img/portrait.jpg" alt=""><span><b>By Anna Ambrozevich</b><small>Architect of Human Systems</small></span></a>
-  <div class="cta"><a class="btn" href="https://substack.com/@multipotentials" target="_blank" rel="noopener" data-goatcounter-click="mp-hero-subscribe"><svg class="ss" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" fill="currentColor"/></svg>Subscribe on Substack <span class="arr">→</span></a><a class="link" href="#book">About the book <span class="arr">→</span></a></div>
+  <div class="cta"><a class="btn" href="https://substack.com/@multipotentials" target="_blank" rel="noopener" data-goatcounter-click="mp-hero-subscribe"><svg class="ss" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" fill="currentColor"/></svg>Subscribe on Substack <span class="arr">→</span></a><a class="link" href="#issues">Latest issue <span class="arr">→</span></a></div>
 </div></section>
 
-<section class="band sec" id="book" style="background:var(--lime)"><div class="wrap bookwrap">
-  <div class="coverbox"><div class="cover" aria-hidden="true"><small>Anna Ambrozevich</small><b>Multi-<br>potentials</b><i>Don’t choose. Design.</i><div class="d"><span style="background:var(--navy)"></span><span style="background:var(--blue)"></span><span style="box-shadow:inset 0 0 0 4px var(--coral)"></span><span style="background:var(--lime);box-shadow:inset 0 0 0 1.5px var(--navy)"></span></div></div><p class="prev">Cover preview</p></div>
-  <div><p class="eyebrow" style="color:var(--navy)">The book · coming soon</p><h2 class="h2">A system for living across roles, <em>interests and possibilities</em></h2>
-  <p class="lead" style="margin-top:18px">The newsletter, rethought as one book in six parts, with new chapters on connection and a toolkit you can use on your own.</p>
-  <div class="parts"><span style="background:var(--ivory);color:var(--navy)">Why</span><span style="background:var(--blue);color:var(--ivory)">See</span><span style="background:var(--coral);color:var(--navy)">Build</span><span style="background:var(--ivory);color:var(--navy)">Choose</span><span style="background:var(--blue);color:var(--ivory)">Connect</span><span style="background:var(--coral);color:var(--navy)">Evolve</span></div>
-  <div class="cta"><span class="soon" style="background:var(--navy);color:var(--lime)">Coming soon</span><a class="link" href="https://substack.com/@multipotentials" target="_blank" rel="noopener" data-goatcounter-click="mp-book-subscribe">Subscribe to hear first <span class="arr">→</span></a></div></div>
-</div></section>
+
 
 <section class="band sec" style="background:var(--paper)"><div class="wrap">
   <div class="why">
@@ -316,6 +314,22 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
   <div><p class="eyebrow">Latest issue · #24</p><h2 class="h2">To see is <em>to think</em></h2>
   <p class="lead" style="margin-top:14px">Visual systems for a multipotential mind: how AI and design systems help me move between many creative worlds.</p>
   <div class="cta"><a class="btn" href="https://multipotentials.substack.com/p/24-to-see-is-to-think-visual-systems" target="_blank" rel="noopener" data-goatcounter-click="mp-latest-read">Read the issue <span class="arr">→</span></a><a class="link" href="https://multipotentials.substack.com/archive" target="_blank" rel="noopener" data-goatcounter-click="mp-archive">All issues on Substack <span class="arr">→</span></a></div></div>
+</div></section>
+
+<section class="band sec" id="readers" hidden><div class="wrap">
+  <p class="eyebrow">From readers</p>
+  <div class="quotes">
+    <figure class="qt"><blockquote>[Reader quote 1]</blockquote><figcaption><b>[Name]</b><small>[Role, country]</small></figcaption></figure>
+    <figure class="qt"><blockquote>[Reader quote 2]</blockquote><figcaption><b>[Name]</b><small>[Role, country]</small></figcaption></figure>
+    <figure class="qt"><blockquote>[Reader quote 3]</blockquote><figcaption><b>[Name]</b><small>[Role, country]</small></figcaption></figure>
+  </div>
+</div></section>
+
+<section class="band sec" id="book" style="background:var(--paper)"><div class="wrap bookwrap">
+  <div class="coverbox"><div class="cover" aria-hidden="true"><small>Anna Ambrozevich</small><b>Multi-<br>potentials</b><i>Don’t choose. Design.</i><div class="d"><span style="background:var(--navy)"></span><span style="background:var(--blue)"></span><span style="box-shadow:inset 0 0 0 4px var(--coral)"></span><span style="background:var(--lime);box-shadow:inset 0 0 0 1.5px var(--navy)"></span></div></div><p class="prev">Cover preview</p></div>
+  <div><p class="eyebrow">The book · coming soon</p><h2 class="h2">A system for living across roles, <em>interests and possibilities</em></h2>
+  <p class="lead" style="margin-top:18px">The newsletter, rethought as one book in six parts, with new chapters on connection and a toolkit you can use on your own.</p>
+  <div class="cta"><span class="soon">Coming soon</span><a class="link" href="https://substack.com/@multipotentials" target="_blank" rel="noopener" data-goatcounter-click="mp-book-subscribe">Subscribe to hear first <span class="arr">→</span></a></div></div>
 </div></section>
 
 
