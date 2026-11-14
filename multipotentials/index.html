@@ -250,6 +250,20 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
 .sub h3{font-size:clamp(24px,2.6vw,32px);font-weight:800;letter-spacing:-.035em;line-height:1.05}
 .sub p{margin-top:6px;font-size:16px;opacity:.9}
 .sub .btn{background:var(--lime);color:var(--navy)}
+.fmt{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.fcard{background:var(--paper);border-radius:18px;padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;min-width:0}
+#formats{background:var(--stone)}
+.fcard h3{font-size:clamp(24px,2.5vw,32px);font-weight:800;letter-spacing:-.035em;line-height:1.08;margin-top:10px}
+.fcard>p,.fcard .bk p{color:#33364A;margin-top:10px;font-size:16px}
+.fcard .cta{margin-top:auto;padding-top:24px}
+.latestmini{display:flex;gap:14px;align-items:center;margin-top:20px;text-decoration:none;background:var(--ivory);border-radius:12px;padding:10px}
+.latestmini img{width:64px;height:64px;border-radius:8px;object-fit:cover}
+.latestmini small{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.latestmini b{font-size:16px}.latestmini:hover b{text-decoration:underline;text-underline-offset:3px}
+.bk{display:flex;gap:22px;align-items:center;margin-top:16px}
+.bk .cover{width:120px;flex:none}
+.bk .cover b{font-size:21px}.bk .cover i{font-size:7.5px;top:40%}.bk .cover small{font-size:5px}
+@media (max-width:860px){.fmt{grid-template-columns:1fr}}
 .quotes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:22px}
 .qt{margin:0;background:var(--paper);border-radius:16px;padding:24px 24px 22px;border-top:3px solid var(--lime)}
 .qt blockquote{margin:0;font-size:18px;font-weight:700;letter-spacing:-.02em;line-height:1.35}
@@ -293,27 +307,42 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
   <p class="motto">Don’t choose. Design.</p>
   <p class="q">Thoughts, sketches and systems for people who live in many disciplines, and refuse to choose just one.</p>
   <a class="byline" href="/#about"><img src="../img/portrait.jpg" alt=""><span><b>By Anna Ambrozevich</b><small>Architect of Human Systems</small></span></a>
-  <div class="cta"><a class="btn" href="https://substack.com/@multipotentials" target="_blank" rel="noopener" data-goatcounter-click="mp-hero-subscribe"><svg class="ss" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" fill="currentColor"/></svg>Subscribe on Substack <span class="arr">→</span></a><a class="link" href="#issues">Latest issue <span class="arr">→</span></a></div>
+  <div class="cta"><a class="btn" href="https://substack.com/@multipotentials" target="_blank" rel="noopener" data-goatcounter-click="mp-hero-subscribe"><svg class="ss" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" fill="currentColor"/></svg>Subscribe on Substack <span class="arr">→</span></a><a class="link" href="#formats">Newsletter and book <span class="arr">→</span></a></div>
 </div></section>
 
 
 
 <section class="band sec" style="background:var(--paper)"><div class="wrap">
   <div class="why">
-    <div><p class="eyebrow">Why I write it</p><h2 class="h2">A life of many roles <em>needs a system</em></h2></div>
+    <div><p class="eyebrow">About the project</p><h2 class="h2">My roles are not scattered. <em>They are a system</em></h2></div>
     <div class="why-text">
-      <p>My whole life I kept hearing the same advice: choose one thing. One profession, one direction, one label. Today I hold more than ten roles, and I stopped apologising for it.</p>
-      <p>Multipotentials is where I share how I actually make this work: how I plan across roles, learn without burning out, decide what to let go and keep the whole system alive. <b>Free, twice a month.</b></p>
-      <p>You’re not too many things. You just need a design that can hold all of them.</p>
+      <p>For most of my life, I heard the same advice: choose one thing. One profession. One niche. One label.</p>
+      <p>I tried. For years, I tried to fit myself into a single shape. It never held.</p>
+      <p>Today I live across more than ten roles, in technology, education, communities and international work. And one quiet day, I finally saw it clearly: this was never a lack of focus. I am a multipotential. My roles are not scattered. They are a system.</p>
+      <p>That’s when this project began.</p>
+      <p>Multipotentials is a long-term research project, and its subject is me. I notice a tension, a rhythm or a pattern in my own life, I find a way to live inside it, and I share what works.</p>
+      <p>For now, this research lives in two places: a regular newsletter on Substack, and a book I’m writing right now. More will grow from it over time.</p>
+      <p><b>It’s not a guide written from the outside. It’s a system built and tested from the inside.</b></p>
     </div>
   </div>
 </div></section>
 
-<section class="band sec" id="issues"><div class="wrap latest">
-  <a class="limg" href="https://multipotentials.substack.com/p/24-to-see-is-to-think-visual-systems" target="_blank" rel="noopener" data-goatcounter-click="mp-latest"><img src="../img/mp/issue-24.jpg" alt="Issue 24 cover: To see is to think, visual systems for a multipotential mind"></a>
-  <div><p class="eyebrow">Latest issue · #24</p><h2 class="h2">To see is <em>to think</em></h2>
-  <p class="lead" style="margin-top:14px">Visual systems for a multipotential mind: how AI and design systems help me move between many creative worlds.</p>
-  <div class="cta"><a class="btn" href="https://multipotentials.substack.com/p/24-to-see-is-to-think-visual-systems" target="_blank" rel="noopener" data-goatcounter-click="mp-latest-read">Read the issue <span class="arr">→</span></a><a class="link" href="https://multipotentials.substack.com/archive" target="_blank" rel="noopener" data-goatcounter-click="mp-archive">All issues on Substack <span class="arr">→</span></a></div></div>
+<section class="band sec" id="formats"><div class="wrap">
+  <div class="fmt">
+    <article class="fcard" id="issues">
+      <p class="eyebrow">The newsletter</p>
+      <h3>Regular episodes on living across many roles</h3>
+      <p>How to plan the week, map your roles, learn in rhythm, and decide what to let go. Free, for everyone.</p>
+      <a class="latestmini" href="https://multipotentials.substack.com/p/24-to-see-is-to-think-visual-systems" target="_blank" rel="noopener" data-goatcounter-click="mp-latest"><img src="../img/mp/issue-24.jpg" alt=""><span><small>Latest · #24</small><b>To see is to think</b></span></a>
+      <div class="cta"><a class="btn" href="https://substack.com/@multipotentials" target="_blank" rel="noopener" data-goatcounter-click="mp-newsletter-subscribe"><svg class="ss" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" fill="currentColor"/></svg>Subscribe on Substack <span class="arr">→</span></a></div>
+    </article>
+    <article class="fcard" id="book">
+      <p class="eyebrow">The book</p>
+      <div class="bk"><div class="cover" aria-hidden="true"><small>Anna Ambrozevich</small><b>Multi-<br>potentials</b><i>Don’t choose. Design.</i><div class="d"><span style="background:var(--navy)"></span><span style="background:var(--blue)"></span><span style="box-shadow:inset 0 0 0 4px var(--coral)"></span><span style="background:var(--ivory);box-shadow:inset 0 0 0 1.5px var(--navy)"></span></div></div>
+      <div><h3><i>Multipotentials</i></h3><p>Everything I’ve learned so far, brought together into one system for a life of many roles. Coming soon.</p></div></div>
+      <div class="cta"><a class="btn" href="https://substack.com/@multipotentials" target="_blank" rel="noopener" data-goatcounter-click="mp-book-notify">Get notified <span class="arr">→</span></a></div>
+    </article>
+  </div>
 </div></section>
 
 <section class="band sec" id="readers" hidden><div class="wrap">
@@ -323,13 +352,6 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
     <figure class="qt"><blockquote>[Reader quote 2]</blockquote><figcaption><b>[Name]</b><small>[Role, country]</small></figcaption></figure>
     <figure class="qt"><blockquote>[Reader quote 3]</blockquote><figcaption><b>[Name]</b><small>[Role, country]</small></figcaption></figure>
   </div>
-</div></section>
-
-<section class="band sec" id="book" style="background:var(--paper)"><div class="wrap bookwrap">
-  <div class="coverbox"><div class="cover" aria-hidden="true"><small>Anna Ambrozevich</small><b>Multi-<br>potentials</b><i>Don’t choose. Design.</i><div class="d"><span style="background:var(--navy)"></span><span style="background:var(--blue)"></span><span style="box-shadow:inset 0 0 0 4px var(--coral)"></span><span style="background:var(--lime);box-shadow:inset 0 0 0 1.5px var(--navy)"></span></div></div><p class="prev">Cover preview</p></div>
-  <div><p class="eyebrow">The book · coming soon</p><h2 class="h2">A system for living across roles, <em>interests and possibilities</em></h2>
-  <p class="lead" style="margin-top:18px">The newsletter, rethought as one book in six parts, with new chapters on connection and a toolkit you can use on your own.</p>
-  <div class="cta"><span class="soon">Coming soon</span><a class="link" href="https://substack.com/@multipotentials" target="_blank" rel="noopener" data-goatcounter-click="mp-book-subscribe">Subscribe to hear first <span class="arr">→</span></a></div></div>
 </div></section>
 
 
