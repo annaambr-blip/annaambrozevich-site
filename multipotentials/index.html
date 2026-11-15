@@ -235,6 +235,19 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
 @media (max-width:640px){.stackx .r1,.stackx .r2{margin-left:0}.stackx .grp{margin-left:0}.stackx .row{grid-template-columns:1fr;min-height:0}}
 
 .ss{width:15px;height:15px;flex:none}
+.mphero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(24px,4vw,64px);align-items:center}
+.mmark{position:relative;width:100%;max-width:400px;aspect-ratio:1/1;justify-self:center;background:var(--paper);border-radius:32px;box-shadow:0 1px 2px rgba(14,18,34,.05),0 24px 60px rgba(14,18,34,.10);display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden}
+.mmark .orbit{position:absolute;inset:0;width:100%;height:100%;animation:spin 60s linear infinite}
+.mmark .m{position:relative;font-size:clamp(150px,19vw,250px);font-weight:800;font-style:italic;letter-spacing:-.06em;line-height:.85;color:var(--navy)}
+.mmark .dots{position:relative;display:flex;gap:14px;margin-top:22px}
+.mmark .dots i{width:20px;height:20px;border-radius:50%;display:block}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.mmark .orbit{animation:none}}
+@media (max-width:900px){.mphero{grid-template-columns:1fr}.mmark{max-width:300px}}
+.note{display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:start}
+.note img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 25%;border-radius:14px;display:block}
+.note .h2{margin-top:12px}
+@media (max-width:760px){.note{grid-template-columns:1fr}.note img{max-width:220px}}
 .hero .motto{font-size:clamp(24px,3vw,36px);font-weight:800;font-style:italic;letter-spacing:-.035em;margin-top:18px}
 .issues{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:22px 16px;margin-top:40px}
 .issue{text-decoration:none;display:block;min-width:0}
@@ -301,21 +314,27 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
 </div></header>
 
 <main>
-<section class="band"><div class="wrap hero">
+<section class="band"><div class="wrap hero mphero"><div>
   <p class="eyebrow"><span class="mark" aria-hidden="true"><i style="background:var(--navy)"></i><i style="background:var(--blue)"></i><i style="background:var(--coral)"></i><i style="background:var(--lime);box-shadow:inset 0 0 0 1.2px var(--navy)"></i></span>Newsletter · Book</p>
   <h1>Multi<span>potentials</span></h1>
   <p class="motto">Don’t choose. Design.</p>
   <p class="q">Thoughts, sketches and systems for people who live in many disciplines, and refuse to choose just one.</p>
-  <a class="byline" href="/#about"><img src="../img/portrait.jpg" alt=""><span><b>By Anna Ambrozevich</b><small>Architect of Human Systems</small></span></a>
   <div class="cta"><a class="btn" href="https://substack.com/@multipotentials" target="_blank" rel="noopener" data-goatcounter-click="mp-hero-subscribe"><svg class="ss" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" fill="currentColor"/></svg>Subscribe on Substack <span class="arr">→</span></a><a class="link" href="#formats">Newsletter and book <span class="arr">→</span></a></div>
+  </div>
+  <div class="mmark" aria-hidden="true">
+    <svg class="orbit" viewBox="0 0 400 400"><ellipse cx="200" cy="200" rx="188" ry="120" fill="none" stroke="#D9D3C6" stroke-width="1.5" transform="rotate(-18 200 200)"/><circle cx="34" cy="246" r="9" fill="#6F86FF"/><circle cx="372" cy="150" r="9" fill="#FF7A59"/></svg>
+    <span class="m">M</span>
+    <span class="dots"><i style="background:var(--navy)"></i><i style="background:var(--blue)"></i><i style="background:var(--coral)"></i><i style="background:var(--lime);box-shadow:inset 0 0 0 2px var(--navy)"></i></span>
+  </div>
 </div></section>
 
 
 
 <section class="band sec" style="background:var(--paper)"><div class="wrap">
-  <div class="why">
-    <div><p class="eyebrow">About the project</p><h2 class="h2">My roles are not scattered. <em>They are a system</em></h2></div>
-    <div class="why-text">
+  <div class="note">
+    <img src="../img/portrait.jpg" alt="Anna Ambrozevich" loading="lazy">
+    <div><p class="eyebrow">From the author</p><h2 class="h2" style="font-size:clamp(30px,3.8vw,48px)">My roles are not scattered. <em>They are a system</em></h2>
+    <div class="why-text" style="padding-top:22px">
       <p>For most of my life, I heard the same advice: choose one thing. One profession. One niche. One label.</p>
       <p>I tried. For years, I tried to fit myself into a single shape. It never held.</p>
       <p>Today I live across more than ten roles, in technology, education, communities and international work. And one quiet day, I finally saw it clearly: this was never a lack of focus. I am a multipotential. My roles are not scattered. They are a system.</p>
@@ -323,6 +342,9 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
       <p>Multipotentials is a long-term research project, and its subject is me. I notice a tension, a rhythm or a pattern in my own life, I find a way to live inside it, and I share what works.</p>
       <p>For now, this research lives in two places: a regular newsletter on Substack, and a book I’m writing right now. More will grow from it over time.</p>
       <p><b>It’s not a guide written from the outside. It’s a system built and tested from the inside.</b></p>
+    </div>
+    <p style="margin-top:22px;font-weight:800">Anna Ambrozevich</p>
+    <p style="margin-top:12px"><a class="link" href="/#about" data-goatcounter-click="mp-about-me">About me <span class="arr">→</span></a></p>
     </div>
   </div>
 </div></section>
