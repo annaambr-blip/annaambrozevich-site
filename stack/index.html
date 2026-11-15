@@ -273,7 +273,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
 .nx p{color:#33364A;margin-top:8px;font-size:15.5px}
 @media (max-width:760px){.next{grid-template-columns:1fr}}
 .nx{transition:transform .25s ease,box-shadow .25s ease}
-.nx:hover{transform:translateY(-6px);box-shadow:0 2px 4px rgba(14,18,34,.06),0 18px 40px rgba(14,18,34,.14)}
+.nx:hover,.js .nx.rv.in:hover{transform:translateY(-6px);box-shadow:0 2px 4px rgba(14,18,34,.06),0 18px 40px rgba(14,18,34,.14);transition:transform .25s ease,box-shadow .25s ease;transition-delay:0s}
+.js .nx.rv.in{transition:opacity .7s ease,transform .25s ease,box-shadow .25s ease}
 @media (prefers-reduced-motion:reduce){.nx,.nx:hover{transition:none;transform:none}}
 /* motion */
 .js .rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
