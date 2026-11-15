@@ -58,7 +58,8 @@ section[id]{scroll-margin-top:84px}
 .btn{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:var(--ivory);border:0;border-radius:999px;padding:15px 24px;font:600 15px/1 var(--sans);text-decoration:none;cursor:pointer;transition:transform .2s ease}
 .btn:hover{transform:translateY(-1px)}
 .btn.lime{background:var(--lime);color:var(--navy)}
-.btn[aria-disabled="true"]{background:transparent;color:var(--navy);border:1.5px solid var(--navy);cursor:default}
+.btn[aria-disabled="true"]{background:var(--lime);color:var(--navy);border:0;cursor:default}
+.dl .btn[aria-disabled="true"]{background:var(--navy);color:var(--lime)}
 .btn[aria-disabled="true"]:hover{transform:none}
 .link{font-weight:600;font-size:15px;text-decoration:none;border-bottom:1.5px solid currentColor;padding-bottom:3px}
 .arr{display:inline-block;transition:transform .25s ease}
@@ -179,7 +180,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
 .heroart .pg2{right:0;transform:rotate(7deg)}
 .heroart .coverimg{width:72%;left:14%;top:0;transform:rotate(-1deg);box-shadow:0 2px 4px rgba(14,18,34,.1),0 30px 64px rgba(14,18,34,.3)}
 @media (max-width:900px){.rhero{grid-template-columns:1fr}.heroart{max-width:340px}}
-.pill{display:inline-block;background:var(--lime);border-radius:999px;padding:7px 16px;font-weight:800;font-size:15px;letter-spacing:-.01em;margin-top:18px}
+.pill{display:inline-block;background:transparent;border:1.5px solid var(--navy);border-radius:999px;padding:7px 16px;font-weight:800;font-size:15px;letter-spacing:-.01em;margin-top:18px}
 /* summary */
 .big{font-size:clamp(32px,4.4vw,56px);font-weight:800;letter-spacing:-.045em;line-height:1.02;margin-top:12px}
 .big em{font-style:italic}
@@ -347,7 +348,6 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
     <span class="pill">The Self-Learning Stack</span>
     <h1 style="margin-top:14px">Staying Irreplaceable</h1>
     <p class="sub">A self-learning system for staying irreplaceable in the age of AI</p>
-    <a class="byline" href="#why"><img src="../img/portrait.jpg" alt=""><span><b>By Anna Ambrozevich</b><small>Architect of Human Systems</small></span></a>
     <div class="cta" style="margin-top:28px"><a class="btn lime" data-buy="r1" data-goatcounter-click="si-hero-download">Download the free report <span class="arr">→</span></a><a class="link" href="#summary">Read the summary <span class="arr">→</span></a></div>
   </div>
   <div class="heroart" aria-hidden="false">
@@ -369,7 +369,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
         <p>For a long time I answered with a list of tools. The list was out of date within months. So I turned the question on myself. For more than five years I have been learning across many roles on my own. When I looked back at what actually worked, I saw a system: three layers on one foundation.</p>
         <p>This report describes that system. Use it, argue with it, adapt it. And if it helps you, I would love to hear your story.</p>
       </div>
-      <p class="sig">Anna Ambrozevich<small>Tashkent, Uzbekistan</small></p>
+      <p class="sig">Anna Ambrozevich</p>
       <p style="margin-top:14px"><a class="link" href="/#about" data-goatcounter-click="stack-about-me">About me <span class="arr">→</span></a></p>
     </div>
   </div>
@@ -423,7 +423,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
 <section class="band sec" id="exhibits" style="background:var(--paper)"><div class="wrap">
   <div class="head">
     <div><p class="eyebrow">From the report</p><h2 class="h2">Selected exhibits</h2></div>
-    <p class="lead">Four of more than thirty exhibits. Each one comes with the evidence behind it and a way to use it.</p>
+    <p class="lead">Four of more than thirty charts and frameworks. Each one comes with the evidence behind it and a way to use it.</p>
   </div>
   <div class="exh">
     <div class="ex rv"><p class="k">Layer 1 · Tools</p><h3>Three strategies to learn any tool on your own</h3>
@@ -454,7 +454,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
 <section class="band sec" id="inside"><div class="wrap">
   <div class="head">
     <div><p class="eyebrow">Look inside</p><h2 class="h2">52 pages, seven chapters</h2></div>
-    <div class="includes"><span>30+ exhibits</span><span>4 worksheets</span><span>A checklist for every layer</span><span>A 90-day plan</span></div>
+    <div class="includes"><span>30+ charts and frameworks</span><span>4 worksheets</span><span>A checklist for every layer</span><span>A 90-day plan</span></div>
   </div>
   <div class="gal">
     <figure class="rv"><img src="../img/si-p05.jpg" alt="Executive summary page" loading="lazy"><figcaption><span>Executive summary</span>Six key findings</figcaption></figure>
