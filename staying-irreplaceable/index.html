@@ -172,8 +172,14 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
 .byline img{width:46px;height:46px;border-radius:50%;object-fit:cover;object-position:50% 25%}
 .byline b{display:block;font-size:16px;font-weight:700}
 .byline small{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:2px}
-.coverimg{width:100%;max-width:420px;justify-self:center;border-radius:6px;box-shadow:0 2px 4px rgba(14,18,34,.08),0 28px 60px rgba(14,18,34,.22);transform:rotate(1.5deg)}
-@media (max-width:900px){.rhero{grid-template-columns:1fr}.coverimg{max-width:280px;transform:none}}
+.heroart{position:relative;width:100%;max-width:440px;justify-self:center;aspect-ratio:1/1.12}
+.heroart img{position:absolute;border-radius:5px;box-shadow:0 2px 4px rgba(14,18,34,.08),0 22px 50px rgba(14,18,34,.2)}
+.heroart .pg{width:66%;top:6%}
+.heroart .pg1{left:0;transform:rotate(-8deg)}
+.heroart .pg2{right:0;transform:rotate(7deg)}
+.heroart .coverimg{width:72%;left:14%;top:0;transform:rotate(-1deg);box-shadow:0 2px 4px rgba(14,18,34,.1),0 30px 64px rgba(14,18,34,.3)}
+@media (max-width:900px){.rhero{grid-template-columns:1fr}.heroart{max-width:340px}}
+.pill{display:inline-block;background:var(--lime);border-radius:999px;padding:7px 16px;font-weight:800;font-size:15px;letter-spacing:-.01em;margin-top:18px}
 /* summary */
 .big{font-size:clamp(32px,4.4vw,56px);font-weight:800;letter-spacing:-.045em;line-height:1.02;margin-top:12px}
 .big em{font-style:italic}
@@ -202,6 +208,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
 .reframe p{color:#C9CDDD;font-size:17px;line-height:1.62}
 .reframe p+p{margin-top:12px}
 .reframe b{color:var(--ivory)}
+.reframe p.rw{font-size:clamp(18px,1.8vw,21px);line-height:1.45;padding:14px 0;border-top:1px solid #2A3050;margin:0}
+.reframe p.rw:first-child{border-top:0;padding-top:0}
 @media (max-width:900px){.reframe{grid-template-columns:1fr}}
 /* exhibits */
 .exh{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
@@ -287,13 +295,18 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
 <section class="band"><div class="wrap rhero">
   <div>
     <p class="eyebrow"><span class="mark" aria-hidden="true"><i style="background:var(--blue-soft)"></i><i style="background:var(--coral-soft)"></i><i style="background:var(--lime);box-shadow:inset 0 0 0 1.2px var(--navy)"></i><i style="background:#8D93AD"></i></span>Insight report No. 1 · November 2026</p>
-    <h1>Staying Irreplaceable</h1>
+    <span class="pill">The Self-Learning Stack</span>
+    <h1 style="margin-top:14px">Staying Irreplaceable</h1>
     <p class="sub">A self-learning system for staying irreplaceable in the age of AI</p>
     <a class="byline" href="#author"><img src="../img/portrait.jpg" alt=""><span><b>By Anna Ambrozevich</b><small>Architect of Human Systems</small></span></a>
     <div class="cta" style="margin-top:28px"><a class="btn lime" data-buy="r1" data-goatcounter-click="si-hero-download">Download the free report <span class="arr">→</span></a><a class="link" href="#summary">Read the summary <span class="arr">→</span></a></div>
     <p class="meta" style="margin-top:14px">52 pages · PDF · Free</p>
   </div>
-  <img class="coverimg" src="../img/si-cover.jpg" alt="Cover of Staying Irreplaceable, insight report No. 1 by Anna Ambrozevich">
+  <div class="heroart" aria-hidden="false">
+    <img class="pg pg1" src="../img/si-p13.jpg" alt="" loading="eager">
+    <img class="pg pg2" src="../img/si-p40.jpg" alt="" loading="eager">
+    <img class="coverimg" src="../img/si-cover.jpg" alt="Cover of Staying Irreplaceable, insight report No. 1 by Anna Ambrozevich">
+  </div>
 </div></section>
 
 <section class="band sec" id="summary" style="background:var(--paper)"><div class="wrap">
@@ -334,9 +347,9 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
   <div class="reframe">
     <div><p class="eyebrow">If you remember one idea</p><h2>The question isn’t <i>what</i> to learn. It’s <em>how</em></h2></div>
     <div>
-      <p>Being irreplaceable doesn’t mean knowing more than AI. Anyone can copy a tool, and any skill that can be written down as a sequence of steps can be automated.</p>
-      <p>What can’t be copied is <b>the way you learn and where you are going</b>: your system for learning, your own combination of fields, your judgement and the people you learn with.</p>
-      <p>And it is <b>staying</b>, not becoming. Like fitness, irreplaceability is kept up, layer by layer.</p>
+      <p class="rw"><b>Irreplaceable</b> doesn’t mean knowing more than AI. Any skill that can be written down as steps can be automated.</p>
+      <p class="rw">What can’t be copied is <b>the way you learn and where you are going</b>.</p>
+      <p class="rw"><b>Staying</b>, not becoming: irreplaceability is kept up, like fitness, layer by layer.</p>
     </div>
   </div>
 </div></section>
