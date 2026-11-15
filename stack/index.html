@@ -287,6 +287,28 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
 .stackx .row,.stackx .found,.stackx .total{transition:transform .25s ease}
 .stackx .row:hover{transform:translateX(-4px)}
 @media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}.js .bars .bar2 i{transform:none;transition:none}.heroart img{animation:none!important}.gal img,.stackx .row{transition:none}}
+/* centered pyramid, as in the report */
+.stackx .row{margin-inline:auto}
+.stackx .r1{width:64%;margin-left:auto}
+.stackx .r2{width:82%;margin-left:auto}
+.stackx .r3{width:100%}
+.stackx .grp{text-align:center;margin-left:0}
+@media (max-width:640px){.stackx .r1{width:74%;margin-left:auto}.stackx .r2{width:87%;margin-left:auto}.stackx .grp{margin-left:0}}
+/* from the author */
+.note{display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:start}
+.note img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 25%;border-radius:14px;display:block}
+.note h2{font-size:clamp(30px,3.8vw,46px);font-weight:800;letter-spacing:-.04em;line-height:1.05;margin-top:12px}
+.note .txt{display:grid;gap:14px;margin-top:18px;font-size:clamp(17px,1.5vw,18.5px);line-height:1.62;color:#2E313C;max-width:64ch}
+.note .q{font-size:clamp(20px,2vw,24px);font-weight:700;letter-spacing:-.02em;line-height:1.3;color:var(--navy);font-style:italic}
+.note .sig{margin-top:18px;font-weight:800}
+.note .sig small{display:block;font-family:var(--mono);font-weight:400;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+@media (max-width:760px){.note{grid-template-columns:1fr}.note img{max-width:220px}}
+/* personas */
+.ppl{margin-top:16px}
+.ppl .r{display:grid;grid-template-columns:minmax(0,34%) minmax(0,1fr);gap:12px;padding:11px 0;border-top:1px solid var(--line)}
+.ppl b{font-size:15px}
+.ppl q{display:block;font-weight:700;font-size:15px;line-height:1.3}
+.ppl small{display:block;font-size:12.5px;color:var(--muted);margin-top:4px;line-height:1.35}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 <script data-goatcounter="https://annaambrozevich.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
@@ -321,6 +343,23 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
     <img class="pg pg1" src="../img/si-p13.jpg" alt="" loading="eager">
     <img class="pg pg2" src="../img/si-p40.jpg" alt="" loading="eager">
     <img class="coverimg" src="../img/si-cover.jpg" alt="Cover of Staying Irreplaceable, insight report No. 1 by Anna Ambrozevich">
+  </div>
+</div></section>
+
+<section class="band sec" id="why"><div class="wrap">
+  <div class="note rv">
+    <img src="../img/portrait.jpg" alt="Anna Ambrozevich" loading="lazy">
+    <div>
+      <p class="eyebrow">From the author</p>
+      <h2>Why I wrote this report</h2>
+      <div class="txt">
+        <p>Every time I give a talk about AI and the future of work, the same question comes from the audience, in different words:</p>
+        <p class="q">How do I stay irreplaceable in the age of AI?</p>
+        <p>For a long time I answered with a list of tools. The list was out of date within months. So I turned the question on myself. For more than five years I have been learning across many roles on my own. When I looked back at what actually worked, I saw a system: three layers on one foundation.</p>
+        <p>This report describes that system. Use it, argue with it, adapt it. And if it helps you, I would love to hear your story.</p>
+      </div>
+      <p class="sig">Anna Ambrozevich<small>Tashkent, Uzbekistan</small></p>
+    </div>
   </div>
 </div></section>
 
@@ -387,13 +426,12 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
         <div style="background:var(--peach)"><small>Step 02</small><h4>Process</h4><p>Wrestle with it: notes, reflection, connections</p></div><span class="ar">→</span>
         <div style="background:var(--cream)"><small>Step 03</small><h4>Create</h4><p>Make it yours: teach, apply, publish</p></div>
       </div><p class="src">Source: Anna Ambrozevich, The Self-Learning Stack, Layer 2 method</p></div>
-    <div class="ex rv"><p class="k">Foundation · Brain health</p><h3>Use your brain, don’t just fill it: lower risk of dementia by activity</h3>
-      <div class="bars rv">
-        <div class="r"><div><b>Adult literacy</b><small>classes, writing, a journal</small></div><div class="bar2"><i style="width:100%"></i>11%</div></div>
-        <div class="r"><div><b>Active mental</b><small>chess, crosswords, puzzles</small></div><div class="bar2"><i style="width:82%"></i>9%</div></div>
-        <div class="r"><div><b>Creative artistic</b><small>crafts, painting, drawing</small></div><div class="bar2"><i style="width:64%"></i>7%</div></div>
-        <div class="r"><div><b>Passive mental</b><small>reading, TV, music</small></div><div class="bar2"><i style="width:64%;background:#D6D1C4"></i>7%</div></div>
-      </div><p class="src">Source: Wu Z. et al., JAMA Network Open, 2023. 10,318 adults aged 70+, 10-year follow-up. Associations, not proof of cause</p></div>
+    <div class="ex rv"><p class="k">Layer 3 · Self-strategy</p><h3>What a self-strategy looks like, in one sentence</h3>
+      <div class="ppl">
+        <div class="r"><b>A marketing manager</b><div><q>I help consumer brands understand why people buy</q><small>Delegates first drafts and data cleaning to AI; always checks claims and the brand voice</small></div></div>
+        <div class="r"><b>An IT student</b><div><q>I am becoming a backend developer for fintech</q><small>Uses AI to explain code and generate tests; always reviews security and logic</small></div></div>
+        <div class="r"><b>A nurse</b><div><q>I care for patients after heart surgery</q><small>Uses AI for shift notes and leaflets; always checks doses and medical facts</small></div></div>
+      </div><p class="src">Source: Anna Ambrozevich, The Self-Learning Stack. Illustrative examples</p></div>
     <div class="ex rv"><p class="k">Roadmap</p><h3>Your first 90 days: one layer at a time</h3>
       <div class="phase">
         <div style="background:var(--lav)"><small>Days 1–30</small><h4>Foundation</h4><ul><li>Fix your sleep and movement</li><li>Run your first learning sprint</li><li>Pick five experts to follow</li></ul></div>
