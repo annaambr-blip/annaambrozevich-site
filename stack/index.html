@@ -303,6 +303,17 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
 .note .sig{margin-top:18px;font-weight:800}
 .note .sig small{display:block;font-family:var(--mono);font-weight:400;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:4px}
 @media (max-width:760px){.note{grid-template-columns:1fr}.note img{max-width:220px}}
+/* brain capital exhibit */
+.halves{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:center;margin-top:16px}
+.halves>div{border-radius:12px;padding:14px;min-width:0}
+.halves small{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+.halves b{display:block;font-size:15px;line-height:1.25;margin-top:6px}
+.halves>span{font-size:24px;font-weight:800;color:var(--muted)}
+.nums{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:14px}
+.nums>div{border-top:1.5px solid var(--navy);padding-top:10px;min-width:0}
+.nums b{font-size:clamp(26px,2.6vw,32px);font-weight:800;letter-spacing:-.04em;line-height:1}
+.nums p{font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.35}
+@media (max-width:520px){.halves{grid-template-columns:1fr}.halves>span{justify-self:center}.nums{grid-template-columns:1fr}}
 /* personas */
 .ppl{margin-top:16px}
 .ppl .r{display:grid;grid-template-columns:minmax(0,34%) minmax(0,1fr);gap:12px;padding:11px 0;border-top:1px solid var(--line)}
@@ -415,13 +426,13 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
     <p class="lead">Four of more than thirty exhibits. Each one comes with the evidence behind it and a way to use it.</p>
   </div>
   <div class="exh">
-    <div class="ex rv"><p class="k">Layer 1 · Tools</p><h3>Three strategies to learn any AI tool on your own</h3>
+    <div class="ex rv"><p class="k">Layer 1 · Tools</p><h3>Three strategies to learn any tool on your own</h3>
       <div class="trio">
         <div style="background:var(--lav)"><b class="no">01</b><h4>Learning sprints</h4><p>“Don’t follow everything daily. Go deep, periodically”</p><small>1 week a month</small></div>
         <div style="background:var(--peach)"><b class="no">02</b><h4>Learn through people</h4><p>“The new universities are people”</p><small>15 minutes a day</small></div>
         <div style="background:var(--cream)"><b class="no">03</b><h4>Social learning</h4><p>“If everyone’s talking about it, it’s already relevant”</p><small>A few events a month</small></div>
       </div><p class="src">Source: Anna Ambrozevich, The Self-Learning Stack</p></div>
-    <div class="ex rv"><p class="k">Layer 2 · Meta-skills</p><h3>Input → Process → Create: most people stop at Input</h3>
+    <div class="ex rv"><p class="k">Layer 2 · Meta-skills</p><h3>How to grow meta-skills: Input → Process → Create</h3>
       <div class="flow">
         <div style="background:var(--stone)"><small>Step 01</small><h4>Input</h4><p>Go deep, not wide: real books, full courses</p></div><span class="ar">→</span>
         <div style="background:var(--peach)"><small>Step 02</small><h4>Process</h4><p>Wrestle with it: notes, reflection, connections</p></div><span class="ar">→</span>
@@ -433,12 +444,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
         <div class="r"><b>An IT student</b><div><q>I am becoming a backend developer for fintech</q><small>Uses AI to explain code and generate tests; always reviews security and logic</small></div></div>
         <div class="r"><b>A nurse</b><div><q>I care for patients after heart surgery</q><small>Uses AI for shift notes and leaflets; always checks doses and medical facts</small></div></div>
       </div><p class="src">Source: Anna Ambrozevich, The Self-Learning Stack. Illustrative examples</p></div>
-    <div class="ex rv"><p class="k">Roadmap</p><h3>Your first 90 days: one layer at a time</h3>
-      <div class="phase">
-        <div style="background:var(--lav)"><small>Days 1–30</small><h4>Foundation</h4><ul><li>Fix your sleep and movement</li><li>Run your first learning sprint</li><li>Pick five experts to follow</li></ul></div>
-        <div style="background:var(--peach)"><small>Days 31–60</small><h4>Build</h4><ul><li>Sprint #2 in a new ecosystem</li><li>An Input → Process → Create habit</li><li>Join one community</li></ul></div>
-        <div style="background:var(--cream)"><small>Days 61–90</small><h4>Compound</h4><ul><li>Teach or publish something</li><li>Define your domain focus</li><li>Set your “irreplaceable” goal</li></ul></div>
-      </div><p class="src">Source: Anna Ambrozevich, The Self-Learning Stack</p></div>
+    <div class="ex rv"><p class="k">Foundation · The brain economy</p><h3>Brain capital: the one asset AI can’t replace</h3>
+      <div class="halves"><div style="background:var(--lav)"><small>Brain skills</small><b>Tools, meta-skills, self-strategy</b></div><span>+</span><div style="background:var(--stone)"><small>Brain health</small><b>Sleep, movement, stress, focus</b></div></div>
+      <div class="nums"><div><b>$6.2T</b><p>in cumulative GDP gains by 2050 from scaling brain health</p></div><div><b>267M</b><p>years of healthy life better brain health could add by 2050</p></div><div><b>~25%</b><p>of the global disease burden comes from brain-related conditions</p></div></div>
+      <p class="src">Source: World Economic Forum and McKinsey Health Institute, The Human Advantage: Stronger Brains in the Age of AI, January 2026</p></div>
   </div>
 </div></section>
 
