@@ -305,6 +305,18 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
 .parts{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
 .parts span{border-radius:999px;padding:7px 14px;font-weight:800;font-style:italic;font-size:15px}
 @media (max-width:700px){.bookwrap{grid-template-columns:1fr}.cover{max-width:220px}}
+
+/* compact round author photo */
+.note{grid-template-columns:140px minmax(0,1fr)!important;align-items:start}
+.note img{width:140px!important;height:140px!important;aspect-ratio:auto!important;border-radius:50%!important;object-position:50% 22%!important;max-width:none!important}
+.authorcard{grid-template-columns:96px minmax(0,1fr)!important}
+.authorcard img{width:96px!important;height:96px!important;border-radius:50%!important}
+@media (max-width:760px){
+.note{grid-template-columns:1fr!important;gap:14px!important}
+.note img{width:84px!important;height:84px!important}
+.authorcard{grid-template-columns:64px minmax(0,1fr)!important;align-items:start}
+.authorcard img{width:64px!important;height:64px!important}}
+@media (max-width:760px){.mmark{max-width:150px!important;border-radius:22px!important;justify-self:start!important}.mmark .m{font-size:84px!important}}
 </style>
 <script data-goatcounter="https://annaambrozevich.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
