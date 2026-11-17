@@ -477,10 +477,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
 <script>
 (function(){
   // Paste the Gumroad link for report No. 1 here when it is live. Empty = "Coming soon".
-  var GUMROAD = { r1: "https://annaambr.gumroad.com/l/staying-irreplaceable?wanted=true" };
+  var GUMROAD = { r1: "https://annaambr.gumroad.com/l/staying-irreplaceable" };
   document.querySelectorAll('[data-buy]').forEach(function(a){
     var url = GUMROAD[a.getAttribute('data-buy')];
-    if (url) { a.href = url; return; }
+    if (url) { a.href = url; a.target = '_blank'; a.rel = 'noopener'; return; }
     a.removeAttribute('href'); a.setAttribute('aria-disabled','true'); a.innerHTML = 'Coming soon';
   });
   var b=document.getElementById('burger'),m=document.getElementById('menu'),h=document.getElementById('hdr');
@@ -494,6 +494,5 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
   els.forEach(function(e){io.observe(e)});
 })();
 </script>
-<script src="https://gumroad.com/js/gumroad.js"></script>
 </body>
 </html>
