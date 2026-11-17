@@ -328,6 +328,22 @@ a.btn.gumroad-button{background:var(--navy)!important;color:var(--ivory)!importa
 a.btn.lime.gumroad-button,.reframe a.btn.gumroad-button{background:var(--lime)!important;color:var(--navy)!important}
 .dl a.btn.gumroad-button{background:var(--navy)!important;color:var(--lime)!important}
 .gumroad-button-logo,.gumroad-button .logo-full{display:none!important}
+/* while you wait */
+.waitgrid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:18px}
+.issue{display:grid;grid-template-columns:180px minmax(0,1fr);gap:22px;align-items:center;background:var(--ivory);border:1px solid var(--line);border-radius:18px;padding:16px;text-decoration:none;color:inherit;transition:transform .25s ease,box-shadow .25s ease}
+.issue:hover,.js .issue.rv.in:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(14,18,34,.12)}
+.issue img{width:180px;height:180px;border-radius:12px;object-fit:cover}
+.issue .k,.sub .k{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.issue h3,.sub h3{font-size:clamp(20px,2vw,25px);font-weight:800;letter-spacing:-.03em;line-height:1.12;margin-top:8px}
+.issue p:not(.k),.sub p{font-size:15.5px;color:#33364A;margin-top:8px}
+.issue .link{margin-top:12px;display:inline-flex}
+.sub{background:var(--navy);color:var(--ivory);border-radius:18px;padding:clamp(20px,2.6vw,28px);position:relative;overflow:hidden}
+.sub p{color:#C9CDDD}
+.sub .btn{background:var(--lime);color:var(--navy)}
+.sub .link{color:var(--ivory)}
+.sub .mm{position:absolute;right:18px;top:-6px;font-size:120px;font-weight:800;font-style:italic;letter-spacing:-.06em;color:rgba(246,243,236,.08);line-height:1}
+@media (max-width:860px){.waitgrid{grid-template-columns:1fr}}
+@media (max-width:520px){.issue{grid-template-columns:1fr}.issue img{width:100%;height:auto;aspect-ratio:1/1}}
 /* personas */
 .ppl{margin-top:16px}
 .ppl .r{display:grid;grid-template-columns:minmax(0,34%) minmax(0,1fr);gap:12px;padding:11px 0;border-top:1px solid var(--line)}
@@ -465,6 +481,25 @@ a.btn.lime.gumroad-button,.reframe a.btn.gumroad-button{background:var(--lime)!i
   <div class="dl rv" id="download">
     <div><p class="eyebrow" style="color:var(--navy)">Coming soon</p><h2 style="margin-top:10px">Get the full report. <em style="font-style:italic">Free</em></h2><p>The evidence, the framework, four worksheets and a 90-day plan to build your own Self-Learning Stack.</p><small>50+ pages · PDF · Free</small></div>
     <a class="btn" data-buy="r1" data-goatcounter-click="si-bottom-follow">Follow for the release <span class="arr">→</span></a>
+  </div>
+</div></section>
+
+<section class="band sec" id="wait" style="background:var(--paper)"><div class="wrap">
+  <div class="head">
+    <div><p class="eyebrow">While you wait</p><h2 class="h2">Read where it started</h2></div>
+    <p class="lead">The Self-Learning Stack first appeared in my newsletter, Multipotentials: frameworks for people who build one life out of many interests.</p>
+  </div>
+  <div class="waitgrid">
+    <a class="issue rv" href="https://multipotentials.substack.com/p/23-staying-irreplaceable-a-self-learning" target="_blank" rel="noopener" data-goatcounter-click="stack-wait-issue23">
+      <img src="../img/mp/issue-23.jpg" alt="Multipotentials #23: Staying irreplaceable" loading="lazy">
+      <div><p class="k">Multipotentials · #23</p><h3>Staying irreplaceable: a self-learning system</h3><p>The first sketch of the framework, before it grew into a report.</p><span class="link">Read on Substack <span class="arr">→</span></span></div>
+    </a>
+    <div class="sub rv">
+      <span class="mm" aria-hidden="true">M</span>
+      <h3>Multipotentials newsletter</h3>
+      <p>Thoughts, sketches and systems for people who live in many disciplines. Free, twice a month.</p>
+      <div class="cta" style="margin-top:18px"><a class="btn" href="https://multipotentials.substack.com/subscribe" target="_blank" rel="noopener" data-goatcounter-click="stack-wait-subscribe">Subscribe free <span class="arr">→</span></a><a class="link" href="/multipotentials/">About the project <span class="arr">→</span></a></div>
+    </div>
   </div>
 </div></section>
 
