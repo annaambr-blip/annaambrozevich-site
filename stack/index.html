@@ -330,20 +330,20 @@ a.btn.lime.gumroad-button,.reframe a.btn.gumroad-button{background:var(--lime)!i
 .gumroad-button-logo,.gumroad-button .logo-full{display:none!important}
 /* while you wait */
 .waitgrid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:18px}
-.issue{display:grid;grid-template-columns:180px minmax(0,1fr);gap:22px;align-items:center;background:var(--ivory);border:1px solid var(--line);border-radius:18px;padding:16px;text-decoration:none;color:inherit;transition:transform .25s ease,box-shadow .25s ease}
-.issue:hover,.js .issue.rv.in:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(14,18,34,.12)}
-.issue img{width:180px;height:180px;border-radius:12px;object-fit:cover}
+.issue{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:center;background:var(--ivory);border:1px solid var(--line);border-radius:18px;padding:18px}
+.covers{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.covers img{width:100%;aspect-ratio:1/1;border-radius:10px;object-fit:cover;display:block;box-shadow:0 0 0 1px var(--line),0 8px 20px rgba(14,18,34,.10);transition:transform .25s ease}
+.covers a:hover img{transform:translateY(-4px)}
 .issue .k,.sub .k{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .issue h3,.sub h3{font-size:clamp(20px,2vw,25px);font-weight:800;letter-spacing:-.03em;line-height:1.12;margin-top:8px}
-.issue p:not(.k),.sub p{font-size:15.5px;color:#33364A;margin-top:8px}
-.issue .link{margin-top:12px;display:inline-flex}
-.sub{background:var(--navy);color:var(--ivory);border-radius:18px;padding:clamp(20px,2.6vw,28px);position:relative;overflow:hidden}
-.sub p{color:#C9CDDD}
-.sub .btn{background:var(--lime);color:var(--navy)}
+.issue p:not(.k),.sub p:not(.k){font-size:15.5px;color:#33364A;margin-top:8px}
+.sub{display:block;background:var(--navy);color:var(--ivory);border-radius:18px;padding:clamp(20px,2.6vw,28px);position:relative;overflow:hidden;text-decoration:none;transition:transform .25s ease}
+.sub:hover,.js .sub.rv.in:hover{transform:translateY(-5px)}
+.sub p:not(.k){color:#C9CDDD}
 .sub .link{color:var(--ivory)}
-.sub .mm{position:absolute;right:18px;top:-6px;font-size:120px;font-weight:800;font-style:italic;letter-spacing:-.06em;color:rgba(246,243,236,.08);line-height:1}
+.sub .mm{position:absolute;right:18px;top:-6px;font-size:140px;font-weight:800;font-style:italic;letter-spacing:-.06em;color:rgba(246,243,236,.08);line-height:1}
 @media (max-width:860px){.waitgrid{grid-template-columns:1fr}}
-@media (max-width:520px){.issue{grid-template-columns:1fr}.issue img{width:100%;height:auto;aspect-ratio:1/1}}
+@media (max-width:620px){.issue{grid-template-columns:1fr}}
 /* personas */
 .ppl{margin-top:16px}
 .ppl .r{display:grid;grid-template-columns:minmax(0,34%) minmax(0,1fr);gap:12px;padding:11px 0;border-top:1px solid var(--line)}
@@ -486,20 +486,26 @@ a.btn.lime.gumroad-button,.reframe a.btn.gumroad-button{background:var(--lime)!i
 
 <section class="band sec" id="wait" style="background:var(--paper)"><div class="wrap">
   <div class="head">
-    <div><p class="eyebrow">While you wait</p><h2 class="h2">Read where it started</h2></div>
-    <p class="lead">The Self-Learning Stack first appeared in my newsletter, Multipotentials: frameworks for people who build one life out of many interests.</p>
+    <div><p class="eyebrow">While you wait · My other project</p><h2 class="h2">Multipotentials</h2></div>
+    <p class="lead">A newsletter and a book for people who build one life out of many interests, instead of choosing just one.</p>
   </div>
   <div class="waitgrid">
-    <a class="issue rv" href="https://multipotentials.substack.com/p/23-staying-irreplaceable-a-self-learning" target="_blank" rel="noopener" data-goatcounter-click="stack-wait-issue23">
-      <img src="../img/mp/issue-23.jpg" alt="Multipotentials #23: Staying irreplaceable" loading="lazy">
-      <div><p class="k">Multipotentials · #23</p><h3>Staying irreplaceable: a self-learning system</h3><p>The first sketch of the framework, before it grew into a report.</p><span class="link">Read on Substack <span class="arr">→</span></span></div>
-    </a>
-    <div class="sub rv">
-      <span class="mm" aria-hidden="true">M</span>
-      <h3>Multipotentials newsletter</h3>
-      <p>Thoughts, sketches and systems for people who live in many disciplines. Free, twice a month.</p>
-      <div class="cta" style="margin-top:18px"><a class="btn" href="https://multipotentials.substack.com/subscribe" target="_blank" rel="noopener" data-goatcounter-click="stack-wait-subscribe">Subscribe free <span class="arr">→</span></a><a class="link" href="/multipotentials/">About the project <span class="arr">→</span></a></div>
+    <div class="issue rv">
+      <div class="covers">
+        <a href="https://multipotentials.substack.com/p/24-to-see-is-to-think-visual-systems" target="_blank" rel="noopener" data-goatcounter-click="stack-mp-24"><img src="../img/mp/issue-24.jpg" alt="Multipotentials #24" loading="lazy"></a>
+        <a href="https://multipotentials.substack.com/p/23-staying-irreplaceable-a-self-learning" target="_blank" rel="noopener" data-goatcounter-click="stack-mp-23"><img src="../img/mp/issue-23.jpg" alt="Multipotentials #23" loading="lazy"></a>
+        <a href="https://multipotentials.substack.com/p/22-dont-wait-for-the-system-ai-readiness" target="_blank" rel="noopener" data-goatcounter-click="stack-mp-22"><img src="../img/mp/issue-22.jpg" alt="Multipotentials #22" loading="lazy"></a>
+      </div>
+      <div><p class="k">The newsletter · Free</p><h3>Thoughts, sketches and systems for people who live in many disciplines</h3><p>Twice a month on Substack.</p>
+      <div class="cta" style="margin-top:16px"><a class="btn" href="https://multipotentials.substack.com/subscribe" target="_blank" rel="noopener" data-goatcounter-click="stack-mp-subscribe">Subscribe free <span class="arr">→</span></a></div></div>
     </div>
+    <a class="sub rv" href="/multipotentials/" data-goatcounter-click="stack-mp-project">
+      <span class="mm" aria-hidden="true">M</span>
+      <p class="k" style="color:var(--lime)">The project</p>
+      <h3>Multipotentials</h3>
+      <p>Frameworks for designing a life and a career out of many interests. The newsletter, and a book coming soon.</p>
+      <span class="link" style="margin-top:18px;display:inline-flex">About the project <span class="arr">→</span></span>
+    </a>
   </div>
 </div></section>
 
