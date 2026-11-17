@@ -363,7 +363,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
     <span class="pill">The Self-Learning Stack</span>
     <h1 style="margin-top:14px">Staying Irreplaceable</h1>
     <p class="sub">A self-learning system for staying irreplaceable in the age of AI</p>
-    <div class="cta" style="margin-top:28px"><a class="btn lime" data-buy="r1" data-goatcounter-click="si-hero-download">Download the free report <span class="arr">→</span></a><a class="link" href="#summary">Read the summary <span class="arr">→</span></a></div>
+    <div class="cta" style="margin-top:28px"><a class="btn lime" data-buy="r1" data-goatcounter-click="si-hero-early-access">Get early access <span class="arr">→</span></a><a class="link" href="#summary">Read the summary <span class="arr">→</span></a></div>
   </div>
   <div class="heroart" aria-hidden="false">
     <img class="pg pg1" src="../img/si-p13.jpg" alt="" loading="eager">
@@ -451,8 +451,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
     <figure class="rv"><img src="../img/si-p45.jpg" alt="Worksheet page" loading="lazy"><figcaption><span>Workbook</span>Audit your stack</figcaption></figure>
   </div>
   <div class="dl rv" id="download">
-    <div><h2>Get the full report. <em style="font-style:italic">Free</em></h2><p>The evidence, the framework, four worksheets and a 90-day plan to build your own Self-Learning Stack.</p><small>50+ pages · PDF · Free</small></div>
-    <a class="btn" data-buy="r1" data-goatcounter-click="si-bottom-download">Download the free report <span class="arr">→</span></a>
+    <div><p class="eyebrow" style="color:var(--navy)">Coming soon · Early access</p><h2 style="margin-top:10px">Get the full report. <em style="font-style:italic">Free</em></h2><p>The evidence, the framework, four worksheets and a 90-day plan to build your own Self-Learning Stack.</p><small>50+ pages · PDF · Free · Sent to your inbox on release day</small></div>
+    <a class="btn" data-buy="r1" data-goatcounter-click="si-bottom-early-access">Get early access <span class="arr">→</span></a>
   </div>
 </div></section>
 
@@ -477,7 +477,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
 <script>
 (function(){
   // Paste the Gumroad link for report No. 1 here when it is live. Empty = "Coming soon".
-  var GUMROAD = { r1: "" };
+  var GUMROAD = { r1: "https://annaambr.gumroad.com/l/staying-irreplaceable?wanted=true" };
   document.querySelectorAll('[data-buy]').forEach(function(a){
     var url = GUMROAD[a.getAttribute('data-buy')];
     if (url) { a.href = url; return; }
@@ -494,5 +494,6 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
   els.forEach(function(e){io.observe(e)});
 })();
 </script>
+<script src="https://gumroad.com/js/gumroad.js"></script>
 </body>
 </html>
