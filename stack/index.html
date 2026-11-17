@@ -492,7 +492,7 @@ a.btn.lime.gumroad-button,.reframe a.btn.gumroad-button{background:var(--lime)!i
   var GUMROAD = { r1: "https://annaambr.gumroad.com/l/staying-irreplaceable" };
   document.querySelectorAll('[data-buy]').forEach(function(a){
     var url = GUMROAD[a.getAttribute('data-buy')];
-    if (url) { a.href = url; a.target = '_blank'; a.rel = 'noopener'; a.classList.add('gumroad-button'); return; }
+    if (url) { a.href = url; a.target = '_blank'; a.rel = 'noopener'; return; }
     a.removeAttribute('href'); a.setAttribute('aria-disabled','true'); a.innerHTML = 'Coming soon';
   });
   var b=document.getElementById('burger'),m=document.getElementById('menu'),h=document.getElementById('hdr');
@@ -506,6 +506,5 @@ a.btn.lime.gumroad-button,.reframe a.btn.gumroad-button{background:var(--lime)!i
   els.forEach(function(e){io.observe(e)});
 })();
 </script>
-<script src="https://gumroad.com/js/gumroad.js"></script>
 </body>
 </html>
