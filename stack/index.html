@@ -319,6 +319,15 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
 .nums b{font-size:clamp(26px,2.6vw,32px);font-weight:800;letter-spacing:-.04em;line-height:1}
 .nums p{font-size:12.5px;color:var(--muted);margin-top:6px;line-height:1.35}
 @media (max-width:520px){.halves{grid-template-columns:1fr}.halves>span{justify-self:center}.nums{grid-template-columns:1fr}}
+/* repeated calls to action */
+.ctarow{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;margin-top:32px}
+#stack .ctarow{justify-content:center}
+.ctarow span{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+/* keep our look when gumroad.js styles the button */
+a.btn.gumroad-button{background:var(--navy)!important;color:var(--ivory)!important;font:600 15px/1 var(--sans)!important;border:0!important;box-shadow:none!important;border-radius:999px!important;padding:15px 24px!important;text-shadow:none!important;display:inline-flex!important;align-items:center!important;gap:8px!important}
+a.btn.lime.gumroad-button,.reframe a.btn.gumroad-button{background:var(--lime)!important;color:var(--navy)!important}
+.dl a.btn.gumroad-button{background:var(--navy)!important;color:var(--lime)!important}
+.gumroad-button-logo,.gumroad-button .logo-full{display:none!important}
 /* personas */
 .ppl{margin-top:16px}
 .ppl .r{display:grid;grid-template-columns:minmax(0,34%) minmax(0,1fr);gap:12px;padding:11px 0;border-top:1px solid var(--line)}
@@ -407,6 +416,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
     <div class="finding rv"><span class="n">05</span><h3>Brain capital has two halves: skills and health</h3><p>Every skill runs on the brain. Writing, learning and puzzles go with a lower risk of dementia.</p></div>
     <div class="finding rv"><span class="n">06</span><h3>Ninety days are enough to build the system</h3><p>The foundation first, then depth, then creation. After 90 days you have a system, not a to-do list.</p></div>
   </div>
+  <div class="ctarow rv"><a class="btn lime" data-buy="r1" data-goatcounter-click="si-summary-early-access">Get early access <span class="arr">→</span></a><span>Free · 50+ pages · sent to your inbox on release day</span></div>
 </div></section>
 
 <section class="band sec" id="stack"><div class="wrap">
@@ -422,6 +432,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
     <div class="found rv"><span class="n">Foundation</span><b>Brain health</b></div>
     <div class="total rv"><b>= Brain capital</b><span>The one asset AI can’t replace</span></div>
   </div>
+  <div class="ctarow rv"><a class="btn lime" data-buy="r1" data-goatcounter-click="si-stack-early-access">Get early access <span class="arr">→</span></a><span>Free · 50+ pages · sent to your inbox on release day</span></div>
 </div></section>
 
 <section class="band" style="padding-bottom:clamp(40px,5.5vw,72px)"><div class="wrap">
@@ -431,6 +442,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
       <p class="rw"><b>Irreplaceable</b> doesn’t mean knowing more than AI. Any skill that can be written down as steps can be automated.</p>
       <p class="rw">What can’t be copied is <b>the way you learn and where you are going</b>.</p>
       <p class="rw"><b>Staying</b>, not becoming: irreplaceability is kept up, like fitness, layer by layer.</p>
+      <p style="margin-top:22px"><a class="btn lime" data-buy="r1" data-goatcounter-click="si-reframe-early-access">Get early access <span class="arr">→</span></a></p>
     </div>
   </div>
 </div></section>
@@ -480,7 +492,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
   var GUMROAD = { r1: "https://annaambr.gumroad.com/l/staying-irreplaceable" };
   document.querySelectorAll('[data-buy]').forEach(function(a){
     var url = GUMROAD[a.getAttribute('data-buy')];
-    if (url) { a.href = url; a.target = '_blank'; a.rel = 'noopener'; return; }
+    if (url) { a.href = url; a.target = '_blank'; a.rel = 'noopener'; a.classList.add('gumroad-button'); return; }
     a.removeAttribute('href'); a.setAttribute('aria-disabled','true'); a.innerHTML = 'Coming soon';
   });
   var b=document.getElementById('burger'),m=document.getElementById('menu'),h=document.getElementById('hdr');
@@ -494,5 +506,6 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
   els.forEach(function(e){io.observe(e)});
 })();
 </script>
+<script src="https://gumroad.com/js/gumroad.js"></script>
 </body>
 </html>
