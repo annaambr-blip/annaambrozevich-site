@@ -334,14 +334,14 @@ a.btn.lime.gumroad-button,.reframe a.btn.gumroad-button{background:var(--lime)!i
 .covers{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
 .covers img{width:100%;aspect-ratio:1/1;border-radius:10px;object-fit:cover;display:block;box-shadow:0 0 0 1px var(--line),0 8px 20px rgba(14,18,34,.10);transition:transform .25s ease}
 .covers a:hover img{transform:translateY(-4px)}
-.issue .k,.sub .k{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.issue h3,.sub h3{font-size:clamp(20px,2vw,25px);font-weight:800;letter-spacing:-.03em;line-height:1.12;margin-top:8px}
-.issue p:not(.k),.sub p:not(.k){font-size:15.5px;color:#33364A;margin-top:8px}
-.sub{display:block;background:var(--navy);color:var(--ivory);border-radius:18px;padding:clamp(20px,2.6vw,28px);position:relative;overflow:hidden;text-decoration:none;transition:transform .25s ease}
-.sub:hover,.js .sub.rv.in:hover{transform:translateY(-5px)}
-.sub p:not(.k){color:#C9CDDD}
-.sub .link{color:var(--ivory)}
-.sub .mm{position:absolute;right:18px;top:-6px;font-size:140px;font-weight:800;font-style:italic;letter-spacing:-.06em;color:rgba(246,243,236,.08);line-height:1}
+.issue .k,.mpcard .k{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.issue h3,.mpcard h3{font-size:clamp(20px,2vw,25px);font-weight:800;letter-spacing:-.03em;line-height:1.12;margin-top:8px}
+.issue p:not(.k),.mpcard p:not(.k){font-size:15.5px;color:#33364A;margin-top:8px}
+.mpcard{display:block;background:var(--navy);color:var(--ivory);border-radius:18px;padding:clamp(20px,2.6vw,28px);position:relative;overflow:hidden;text-decoration:none;transition:transform .25s ease}
+.mpcard:hover,.js .mpcard.rv.in:hover{transform:translateY(-5px)}
+.mpcard p:not(.k){color:#C9CDDD}
+.mpcard .link{color:var(--ivory)}
+.mpcard .mm{position:absolute;right:18px;top:-6px;font-size:140px;font-weight:800;font-style:italic;letter-spacing:-.06em;color:rgba(246,243,236,.08);line-height:1}
 @media (max-width:860px){.waitgrid{grid-template-columns:1fr}}
 @media (max-width:620px){.issue{grid-template-columns:1fr}}
 /* personas */
@@ -499,7 +499,7 @@ a.btn.lime.gumroad-button,.reframe a.btn.gumroad-button{background:var(--lime)!i
       <div><p class="k">The newsletter · Free</p><h3>Thoughts, sketches and systems for people who live in many disciplines</h3><p>Twice a month on Substack.</p>
       <div class="cta" style="margin-top:16px"><a class="btn" href="https://multipotentials.substack.com/subscribe" target="_blank" rel="noopener" data-goatcounter-click="stack-mp-subscribe">Subscribe free <span class="arr">→</span></a></div></div>
     </div>
-    <a class="sub rv" href="/multipotentials/" data-goatcounter-click="stack-mp-project">
+    <a class="mpcard rv" href="/multipotentials/" data-goatcounter-click="stack-mp-project">
       <span class="mm" aria-hidden="true">M</span>
       <p class="k" style="color:var(--lime)">The project</p>
       <h3>Multipotentials</h3>
