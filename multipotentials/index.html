@@ -289,7 +289,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
 .qt{margin:0;background:var(--paper);border-radius:16px;padding:24px 24px 22px;border-top:3px solid var(--lime)}
 .qt blockquote{margin:0;font-size:18px;font-weight:700;letter-spacing:-.02em;line-height:1.35}
 .qt figcaption{margin-top:16px}.qt b{display:block;font-size:15px}.qt small{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-@media (max-width:860px){.quotes{grid-template-columns:1fr}}
+.quotes.q2{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:860px){.quotes,.quotes.q2{grid-template-columns:1fr}}
 .prev{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);margin-top:14px;opacity:.7}
 .latest{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
 .limg img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px;display:block;box-shadow:0 1px 2px rgba(14,18,34,.06),0 14px 34px rgba(14,18,34,.12);transition:transform .2s,box-shadow .2s}
@@ -381,12 +382,11 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-ite
   </div>
 </div></section>
 
-<section class="band sec" id="readers" hidden><div class="wrap">
+<section class="band sec" id="readers"><div class="wrap">
   <p class="eyebrow">From readers</p>
-  <div class="quotes">
-    <figure class="qt"><blockquote>[Reader quote 1]</blockquote><figcaption><b>[Name]</b><small>[Role, country]</small></figcaption></figure>
-    <figure class="qt"><blockquote>[Reader quote 2]</blockquote><figcaption><b>[Name]</b><small>[Role, country]</small></figcaption></figure>
-    <figure class="qt"><blockquote>[Reader quote 3]</blockquote><figcaption><b>[Name]</b><small>[Role, country]</small></figcaption></figure>
+  <div class="quotes q2">
+    <figure class="qt"><blockquote>“I already knew the word tsundoku, but you’ve framed it in a way that genuinely freed something for me — you turn it into permission to release the guilt and perfectionism around reading. […] Lovely issue.”</blockquote><figcaption><b>Karina</b><small>Substack reader</small></figcaption></figure>
+    <figure class="qt"><blockquote>“This is actually fascinating. […] I just came to the understanding that I am a multipotentialite. As I read this, I think I do visual thinking too, and I will be applying your tips and see how that pans out.”</blockquote><figcaption><b>Dupe</b><small>Substack reader, on issue #24</small></figcaption></figure>
   </div>
 </div></section>
 
