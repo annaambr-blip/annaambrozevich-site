@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Самосистема · концепт</title>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,700;0,800;1,500;1,800&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F6F3EC}
+a{color:#0E1222}a:hover{color:#3F51C4}
+*{box-sizing:border-box}
+@media (max-width:720px){
+ body > div > div[style*="padding: 28px 32px"], body > div > div[style*="1240px"], body > div div[style*="max-width: 1240px"]{padding-left:16px!important;padding-right:16px!important}
+ .tbl{min-width:680px} .tbl3{min-width:520px}
+ .tblwrap{display:none!important}
+ .mcards{display:flex!important}
+ .navlinks{display:none!important}
+ .burger{display:flex!important}
+ .navlinks.open{display:flex!important;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0!important;background:#F6F3EC;border-top:1px solid #D9D3C6;border-bottom:1px solid #D9D3C6;padding:6px 16px 14px;z-index:20}
+ .navlinks.open a{padding:14px 0;font-size:18px!important;border-bottom:1px solid #E6E1D6}
+ .hero{padding-top:24px!important;gap:40px!important}
+ img[alt="Анна Амброзевич"]{width:100%!important;height:340px!important}
+}
+.burger{display:none;width:44px;height:44px;border:1.5px solid #0E1222;border-radius:999px;background:transparent;align-items:center;justify-content:center;cursor:pointer;padding:0}
+.burger span,.burger span::before,.burger span::after{display:block;width:18px;height:2px;background:#0E1222;position:relative;transition:transform .25s,opacity .25s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.burger[aria-expanded="true"] span{background:transparent}
+.burger[aria-expanded="true"] span::before{transform:translateY(6px) rotate(45deg)}
+.burger[aria-expanded="true"] span::after{transform:translateY(-6px) rotate(-45deg)}
+.layer{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.layer.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.layer{opacity:1;transform:none;transition:none}}
+.dark{background:#0B0E1A;color:#F6F3EC;font-family:inherit}
+.dark a{color:#F6F3EC}.dark a:hover{color:#D4FF3A}
+.dark h1{color:#F6F3EC;font-family:'IBM Plex Mono',monospace!important;font-weight:500!important;letter-spacing:-0.03em!important}
+.dark .hero p{color:#B9BED0!important}
+.dark .hero p[style*="#3F51C4"]{color:#D4FF3A!important}
+.dark .hero a[href="#join"]{color:#0E1222!important}
+.dark .burger{border-color:#F6F3EC}.dark .burger span,.dark .burger span::before,.dark .burger span::after{background:#F6F3EC}
+.dark .burger[aria-expanded="true"] span{background:transparent}
+.dark .navlinks.open{background:#0B0E1A!important;border-color:#2A2F45!important}
+.dark .navlinks.open a{border-color:#2A2F45!important}
+.dark #stackviz p[style*="#3F51C4"]{color:#A9B6FF!important}
+.dark #stackviz div[style*="#0E1222"]{background:#1B2036!important}
+.dark #stackviz div[style*="border: 2px solid #0E1222"]{border-color:#F6F3EC!important}
+.dark #stackviz .layer[style*="#A9B6FF"] p,.dark #stackviz .layer[style*="#FFB877"] p,.dark #stackviz .layer[style*="#D4FF3A"] p{color:#0E1222!important}
+.dark #stackviz .layer p[style*="#D4FF3A"]{color:#D4FF3A!important}
+.schema .in path{animation:flow 2.4s linear infinite}.schema .out path{animation:flow 1.6s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-14}}
+.schema .pulse{transform-origin:180px 105px;animation:pulse 2.8s ease-out infinite}
+@keyframes pulse{0%{transform:scale(1);opacity:.9}100%{transform:scale(2);opacity:0}}
+.schema .ring2{transform-origin:180px 105px;animation:spin 40s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+</style>
+<script data-goatcounter="https://annaambrozevich.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</head>
+<body>
+
+<div style="font-family: 'Inter Tight', system-ui, sans-serif; color: #0E1222; background: #F6F3EC; width: 100%;">
+
+<div class="dark">
+<!-- HEADER -->
+<div style="max-width: 1240px; margin: 0 auto; padding: 28px 32px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; position: relative;">
+<p style="margin: 0; font-weight: 800; font-size: 18px; line-height: 0.95; letter-spacing: -0.02em;">АННА<br>АМБРОЗЕВИЧ</p>
+<button class="burger" aria-label="Меню" aria-expanded="false" onclick="var n=document.querySelector('.navlinks');var o=n.classList.toggle('open');this.setAttribute('aria-expanded',o)"><span></span></button>
+<div class="navlinks" onclick="if(event.target.tagName=='A'){this.classList.remove('open');document.querySelector('.burger').setAttribute('aria-expanded','false')}" style="display: flex; gap: 28px; flex-wrap: wrap; font-size: 15px;">
+<a href="#framework" style="text-decoration: none;">Фреймворк</a>
+<a href="#program" style="text-decoration: none;">Программа</a>
+<a href="#sources" style="text-decoration: none;">Методология</a>
+<a href="#author" style="text-decoration: none;">Автор</a>
+<a href="#join" style="text-decoration: none;">Участие</a>
+</div>
+</div>
+
+<!-- HERO -->
+<div class="hero" style="max-width: 1240px; margin: 0 auto; padding: 48px 32px 96px; display: flex; flex-direction: column; gap: 64px; align-items: stretch;">
+<div style="width: 100%; max-width: 860px; display: flex; flex-direction: column; align-items: flex-start;">
+<div class="schema" aria-hidden="true" style="width: 100%; margin: 0 0 26px;">
+<svg viewBox="0 0 360 210" style="width: 100%; height: auto; display: block; overflow: visible;" font-family="'IBM Plex Mono', monospace">
+<defs><radialGradient id="glow"><stop offset="0" stop-color="#D4FF3A" stop-opacity=".55"/><stop offset="1" stop-color="#D4FF3A" stop-opacity="0"/></radialGradient></defs>
+<g stroke="#F6F3EC" stroke-width="1" fill="none" opacity=".4"><path d="M2 8V2h6M352 2h6v6M358 202v6h-6M8 208H2v-6"/></g>
+<text x="12" y="20" font-size="7.5" letter-spacing="1.4" fill="#8A90A6">ВХОД · ШУМ</text>
+<text x="348" y="20" font-size="7.5" letter-spacing="1.4" fill="#8A90A6" text-anchor="end">ВЫХОД · СИСТЕМА</text>
+<g class="in" fill="none" stroke="#F6F3EC" stroke-width=".8" stroke-dasharray="3 4" opacity=".4">
+<path d="M58 44 C120 44 130 105 158 105"/><path d="M58 74 C120 74 130 105 158 105"/><path d="M58 105 L158 105"/><path d="M58 136 C120 136 130 105 158 105"/><path d="M58 166 C120 166 130 105 158 105"/></g>
+<g font-size="8" fill="#8A90A6" text-anchor="end"><text x="52" y="47">курсы</text><text x="52" y="77">подкасты</text><text x="52" y="108">статьи</text><text x="52" y="139">нейросети</text><text x="52" y="169">сохранёнки</text></g>
+<g fill="#F6F3EC" opacity=".7"><circle cx="56" cy="44" r="1.8"/><circle cx="56" cy="74" r="1.8"/><circle cx="56" cy="105" r="1.8"/><circle cx="56" cy="136" r="1.8"/><circle cx="56" cy="166" r="1.8"/></g>
+<g class="out" fill="none" stroke-width="1.1" stroke-dasharray="4 4"><path d="M202 105 C240 105 250 52 298 52" stroke="#A9B6FF"/><path d="M202 105 L298 105" stroke="#FFB877"/><path d="M202 105 C240 105 250 158 298 158" stroke="#D4FF3A"/></g>
+<circle cx="180" cy="105" r="46" fill="url(#glow)"/>
+<circle class="ring2" cx="180" cy="105" r="40" fill="none" stroke="#F6F3EC" stroke-width=".6" stroke-dasharray="2 5" opacity=".4"/>
+<circle class="pulse" cx="180" cy="105" r="20" fill="none" stroke="#D4FF3A" stroke-width="1.5"/>
+<circle cx="180" cy="105" r="20" fill="none" stroke="#D4FF3A" stroke-width="1"/>
+<circle cx="180" cy="105" r="7" fill="#D4FF3A"/>
+<g><circle cx="304" cy="52" r="5" fill="#A9B6FF"/><circle cx="304" cy="105" r="5" fill="#FFB877"/><circle cx="304" cy="158" r="5" fill="#D4FF3A"/></g>
+<g font-size="8" fill="#F6F3EC"><text x="314" y="55">инструменты</text><text x="314" y="108">метанавыки</text><text x="314" y="161">стратегия</text></g>
+<text x="180" y="165" font-size="8.5" letter-spacing="1.8" fill="#F6F3EC" text-anchor="middle" font-weight="700">САМОСИСТЕМА</text>
+<text x="180" y="179" font-size="7" letter-spacing=".6" fill="#8A90A6" text-anchor="middle">на фундаменте: мозг</text>
+</svg></div>
+<h1 style="margin: 0; font-size: clamp(44px, 7.5vw, 104px); font-weight: 800; letter-spacing: -0.05em; line-height: 0.95;">Самосистема</h1>
+<p style="margin: 14px 0 0; font-size: clamp(18px, 1.8vw, 22px); font-weight: 700; color: #3F51C4;">Собрать себя в эпоху ИИ: обучение, стратегия и капитал мозга в одной системе</p>
+<p style="margin: 22px 0 0; font-size: clamp(20px, 2.1vw, 25px); font-weight: 500; line-height: 1.38; color: #3E414C; max-width: 40ch;">У меня есть папка с курсами, которые я так и не открыла. Скорее всего, у вас тоже. Эта программа не добавит в неё ещё один курс. Она про то, как перестать её пополнять и собрать систему, которая учится вместе с вами</p>
+<div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap; margin-top: 34px;">
+<a href="#join" style="display: inline-flex; align-items: center; gap: 8px; background: #D4FF3A; color: #0E1222; border-radius: 999px; padding: 16px 28px; font-weight: 700; font-size: 17px; text-decoration: none; min-height: 44px; box-sizing: border-box;">Хочу в первый поток →</a>
+<a href="#framework" style="font-weight: 600; font-size: 16px;">Сначала посмотреть, как это устроено</a>
+</div>
+<p style="margin: 22px 0 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #5C606C;">6 недель · онлайн · в парах · на русском</p>
+</div>
+<div id="stackviz" style="width: 100%; display: flex; flex-direction: column; gap: 10px; align-items: center;">
+<p style="margin: 0 0 6px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #3F51C4;">The Self-Learning Stack</p>
+<div class="layer" style="width: 60%; background: #A9B6FF; border-radius: 12px; padding: 14px 20px; box-sizing: border-box;"><p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;">Слой 1 · меняется за месяцы</p><p style="margin: 4px 0 0; font-size: 22px; font-weight: 800;">Инструменты</p><p style="margin: 2px 0 0; font-size: 14px;">Держат в курсе</p></div>
+<div class="layer" style="width: 77%; background: #FFB877; border-radius: 12px; padding: 14px 20px; box-sizing: border-box;"><p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;">Слой 2 · служит годами</p><p style="margin: 4px 0 0; font-size: 22px; font-weight: 800;">Метанавыки</p><p style="margin: 2px 0 0; font-size: 14px;">Делают лучше</p></div>
+<div class="layer" style="width: 94%; background: #D4FF3A; border-radius: 12px; padding: 14px 20px; box-sizing: border-box;"><p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;">Слой 3 · на всю карьеру</p><p style="margin: 4px 0 0; font-size: 22px; font-weight: 800;">Личная стратегия</p><p style="margin: 2px 0 0; font-size: 14px;">Делает незаменимым</p></div>
+<div class="layer" style="width: 94%; background: #0E1222; color: #F6F3EC; border-radius: 12px; padding: 14px 20px; box-sizing: border-box;"><p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #D4FF3A;">Фундамент</p><p style="margin: 4px 0 0; font-size: 22px; font-weight: 800;">Здоровье мозга</p><p style="margin: 2px 0 0; font-size: 14px; color: #C9CDDD;">Сон · движение · стресс · фокус</p></div>
+<div class="layer" style="width: 94%; border: 2px solid #0E1222; border-radius: 12px; padding: 14px 20px; box-sizing: border-box;"><p style="margin: 0; font-size: 22px; font-weight: 800;">= Капитал мозга</p><p style="margin: 2px 0 0; font-size: 14px;">Актив, который ИИ усиливает, но не заменяет</p></div>
+</div>
+</div>
+
+</div>
+
+<!-- DATA -->
+<div style="background: #FBFAF6;">
+<div style="max-width: 1240px; margin: 0 auto; padding: 88px 32px;">
+<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #5C606C;">Почему сейчас</p>
+<h2 style="margin: 14px 0 0; font-size: clamp(34px, 4.4vw, 56px); font-weight: 800; letter-spacing: -0.045em; line-height: 1.02; max-width: 22ch;">Что говорят данные</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 44px;">
+<div style="border-top: 2px solid #0E1222; padding-top: 18px;"><p style="margin: 0; font-size: 46px; font-weight: 800; letter-spacing: -0.04em;">39%</p><p style="margin: 8px 0 0; font-size: 16.5px; line-height: 1.5;">ключевых навыков работников изменится к 2030 году</p><p style="margin: 10px 0 0; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #5C606C;">WEF, Future of Jobs 2025</p></div>
+<div style="border-top: 2px solid #0E1222; padding-top: 18px;"><p style="margin: 0; font-size: 46px; font-weight: 800; letter-spacing: -0.04em;">59 → 11</p><p style="margin: 8px 0 0; font-size: 16.5px; line-height: 1.5;">из 100 работников 59 понадобится переобучение к 2030 году, и 11 из них его, скорее всего, не получат</p><p style="margin: 10px 0 0; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #5C606C;">WEF, Future of Jobs 2025</p></div>
+<div style="border-top: 2px solid #0E1222; padding-top: 18px;"><p style="margin: 0; font-size: 46px; font-weight: 800; letter-spacing: -0.04em;">22%</p><p style="margin: 8px 0 0; font-size: 16.5px; line-height: 1.5;">сегодняшних рабочих мест затронет создание и исчезновение профессий в 2025–2030 годах</p><p style="margin: 10px 0 0; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #5C606C;">WEF, Future of Jobs 2025</p></div>
+<div style="border-top: 2px solid #0E1222; padding-top: 18px;"><p style="margin: 0; font-size: 46px; font-weight: 800; letter-spacing: -0.04em;">37%</p><p style="margin: 8px 0 0; font-size: 16.5px; line-height: 1.5;">студентов сомневаются, что их программа актуальна для эпохи ИИ (27 000 студентов, 35 стран)</p><p style="margin: 10px 0 0; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #5C606C;">Digital Education Council, 2026</p></div>
+</div>
+
+<div style="margin-top: 64px; display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start;">
+<div style="flex: 1 1 340px; min-width: 0;">
+<h3 style="margin: 0; font-size: clamp(26px, 2.8vw, 34px); font-weight: 800; letter-spacing: -0.035em; line-height: 1.1;">А вот мои мысли</h3>
+<p style="margin: 14px 0 0; font-size: 17px; line-height: 1.6; color: #3E414C;">Что «учиться нужно всю жизнь», мы слышим лет двадцать. Но если курсы, нейросети и ответы доступны всем одинаково, то в чём тогда разница между людьми? Мне кажется, уже не в том, сколько вы знаете, а в том, кто ведёт ваше обучение: программа, работодатель или вы сами. И что будет с теми, кто так и не возьмёт руль?</p>
+</div>
+<div class="mcards" style="display:none;flex-direction:column;gap:14px;width:100%;"><div style="border:1px solid #D9D3C6;border-radius:16px;overflow:hidden;background:#F6F3EC;"><div style="background:#EEECE6;padding:16px 20px;"><p style="margin:0;font-size:20px;font-weight:800;letter-spacing:-0.02em;">Lifelong learning</p></div><div style="padding:4px 20px 8px;"><div style="padding:12px 0;border-bottom:1px solid rgba(14,18,34,0.15);"><p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#5C606C;">Вопрос</p><p style="margin:4px 0 0;font-size:16px;line-height:1.4;font-weight:600;">Как долго учиться?</p></div><div style="padding:12px 0;border-bottom:1px solid rgba(14,18,34,0.15);"><p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#5C606C;">Кто задаёт путь</p><p style="margin:4px 0 0;font-size:16px;line-height:1.4;font-weight:600;">Вуз, работодатель, программа</p></div><div style="padding:12px 0;border-bottom:1px solid rgba(14,18,34,0.15);"><p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#5C606C;">Что даёт</p><p style="margin:4px 0 0;font-size:16px;line-height:1.4;font-weight:600;">Учебный план</p></div><div style="padding:12px 0;"><p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#5C606C;">Темп</p><p style="margin:4px 0 0;font-size:16px;line-height:1.4;font-weight:600;">Скорость институции</p></div></div></div><div style="border:1px solid #0E1222;border-radius:16px;overflow:hidden;background:#F6F3EC;"><div style="background:#D4FF3A;padding:16px 20px;"><p style="margin:0;font-size:20px;font-weight:800;letter-spacing:-0.02em;">Самообучение</p></div><div style="padding:4px 20px 8px;"><div style="padding:12px 0;border-bottom:1px solid rgba(14,18,34,0.15);"><p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#5C606C;">Вопрос</p><p style="margin:4px 0 0;font-size:16px;line-height:1.4;font-weight:600;">Кто ведёт обучение?</p></div><div style="padding:12px 0;border-bottom:1px solid rgba(14,18,34,0.15);"><p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#5C606C;">Кто задаёт путь</p><p style="margin:4px 0 0;font-size:16px;line-height:1.4;font-weight:600;">Вы</p></div><div style="padding:12px 0;border-bottom:1px solid rgba(14,18,34,0.15);"><p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#5C606C;">Что даёт</p><p style="margin:4px 0 0;font-size:16px;line-height:1.4;font-weight:600;">Систему</p></div><div style="padding:12px 0;"><p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#5C606C;">Темп</p><p style="margin:4px 0 0;font-size:16px;line-height:1.4;font-weight:600;">Скорость отрасли</p></div></div></div></div>
+<div style="flex: 1.4 1 460px; min-width: 0; border: 1px solid #D9D3C6; border-radius: 16px; overflow: hidden; background: #F6F3EC;" class="tblwrap">
+<div class="tbl3" style="display: grid; grid-template-columns: 1fr 1fr 1fr; font-size: 15px;">
+<div style="padding: 14px 16px; background: #EEECE6;"></div><div style="padding: 14px 16px; background: #EEECE6; font-weight: 800;">Lifelong learning</div><div style="padding: 14px 16px; background: #D4FF3A; font-weight: 800;">Самообучение</div>
+<div style="padding: 12px 16px; border-top: 1px solid #D9D3C6; color: #5C606C;">Вопрос</div><div style="padding: 12px 16px; border-top: 1px solid #D9D3C6;">Как долго учиться?</div><div style="padding: 12px 16px; border-top: 1px solid #D9D3C6; font-weight: 700;">Кто ведёт обучение?</div>
+<div style="padding: 12px 16px; border-top: 1px solid #D9D3C6; color: #5C606C;">Кто задаёт путь</div><div style="padding: 12px 16px; border-top: 1px solid #D9D3C6;">Вуз, работодатель, программа</div><div style="padding: 12px 16px; border-top: 1px solid #D9D3C6; font-weight: 700;">Вы</div>
+<div style="padding: 12px 16px; border-top: 1px solid #D9D3C6; color: #5C606C;">Что даёт</div><div style="padding: 12px 16px; border-top: 1px solid #D9D3C6;">Учебный план</div><div style="padding: 12px 16px; border-top: 1px solid #D9D3C6; font-weight: 700;">Систему</div>
+<div style="padding: 12px 16px; border-top: 1px solid #D9D3C6; color: #5C606C;">Темп</div><div style="padding: 12px 16px; border-top: 1px solid #D9D3C6;">Скорость институции</div><div style="padding: 12px 16px; border-top: 1px solid #D9D3C6; font-weight: 700;">Скорость отрасли</div>
+</div>
+</div>
+</div>
+
+<div style="margin-top: 56px; background: #0E1222; color: #F6F3EC; border-radius: 20px; padding: clamp(28px, 4vw, 52px); display: flex; flex-wrap: wrap; gap: 32px; align-items: center;">
+<p style="flex: 1 1 420px; margin: 0; font-size: clamp(30px, 3.6vw, 48px); font-weight: 800; letter-spacing: -0.04em; line-height: 1.05;">Вопрос не в том, чему учиться. <span style="color: #D4FF3A;">А в том, как.</span></p>
+<p style="flex: 1 1 320px; margin: 0; font-size: 18px; line-height: 1.6; color: #C9CDDD;">В понедельник я ставлю новый ИИ-инструмент, а к пятнице выходит лучше. Гнаться за каждым бессмысленно: инструменты — самый верхний и самый заменимый слой. Система отвечает на то, на что не ответит ни один список курсов: что заслуживает глубины, что беглого взгляда, а что можно спокойно пропустить.</p>
+</div>
+</div>
+</div>
+
+<!-- FRAMEWORK -->
+<div id="framework" style="max-width: 1240px; margin: 0 auto; padding: 96px 32px;">
+<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #5C606C;">Фреймворк</p>
+<h2 style="margin: 14px 0 0; font-size: clamp(34px, 4.4vw, 56px); font-weight: 800; letter-spacing: -0.045em; line-height: 1.02;">Три слоя, и у каждого своя скорость</h2>
+<p style="margin: 18px 0 0; font-size: 19px; line-height: 1.55; color: #3E414C; max-width: 62ch;">Фреймворк вырос из простого наблюдения: мы учим ИИ-инструменты, метанавыки и собственную стратегию одинаково, хотя первые устаревают за месяцы, а последняя служит всю карьеру. Self-Learning Stack разводит их по слоям. У каждого свои учителя, свой формат и своя типичная ошибка.</p>
+<div class="mcards" style="display:none;flex-direction:column;gap:14px;margin-top:32px;"><div style="border:1px solid #D9D3C6;border-radius:16px;overflow:hidden;background:#FBFAF6;"><div style="background:#A9B6FF;padding:16px 20px;"><p style="margin:0;font-size:20px;font-weight:800;letter-spacing:-0.02em;">01 · Инструменты</p></div><div style="padding:4px 20px 8px;"><div style="padding:12px 0;border-bottom:1px solid rgba(14,18,34,0.15);"><p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#5C606C;">Скорость изменений</p><p style="margin:4px 0 0;font-size:16px;line-height:1.4;font-weight:600;">Месяцы</p></div><div style="padding:12px 0;border-bottom:1px solid rgba(14,18,34,0.15);"><p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#5C606C;">Главный вопрос</p><p style="margin:4px 0 0;font-size:16px;line-height:1.4;font-weight:600;">Чем я пользуюсь?</p></div><div style="padding:12px 0;border-bottom:1px solid rgba(14,18,34,0.15);"><p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#5C606C;">Лучшие учителя</p><p style="margin:4px 0 0;font-size:16px;line-height:1.4;font-weight:600;">Разработчики, практики, коллеги</p></div><div style="padding:12px 0;border-bottom:1px solid rgba(14,18,34,0.15);"><p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#5C606C;">Как влияет ИИ</p><p style="margin:4px 0 0;font-size:16px;line-height:1.4;font-weight:600;">Поглощает быстрее всего</p></div><div style="padding:12px 0;"><p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#5C606C;">Типичная ошибка</p><p style="margin:4px 0 0;font-size:16px;line-height:1.4;font-weight:600;">Гнаться за каждым инструментом</p></div></div></div><div style="border:1px solid #D9D3C6;border-radius:16px;overflow:hidden;background:#FBFAF6;"><div style="background:#FFB877;padding:16px 20px;"><p style="margin:0;font-size:20px;font-weight:800;letter-spacing:-0.02em;">02 · Метанавыки</p></div><div style="padding:4px 20px 8px;"><div style="padding:12px 0;border-bottom:1px solid rgba(14,18,34,0.15);"><p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#5C606C;">Скорость изменений</p><p style="margin:4px 0 0;font-size:16px;line-height:1.4;font-weight:600;">Годы</p></div><div style="padding:12px 0;border-bottom:1px solid rgba(14,18,34,0.15);"><p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#5C606C;">Главный вопрос</p><p style="margin:4px 0 0;font-size:16px;line-height:1.4;font-weight:600;">Как я учусь и думаю?</p></div><div style="padding:12px 0;border-bottom:1px solid rgba(14,18,34,0.15);"><p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#5C606C;">Лучшие учителя</p><p style="margin:4px 0 0;font-size:16px;line-height:1.4;font-weight:600;">Преподаватели, авторы, глубокие форматы</p></div><div style="padding:12px 0;border-bottom:1px solid rgba(14,18,34,0.15);"><p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#5C606C;">Как влияет ИИ</p><p style="margin:4px 0 0;font-size:16px;line-height:1.4;font-weight:600;">Усиливает</p></div><div style="padding:12px 0;"><p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#5C606C;">Типичная ошибка</p><p style="margin:4px 0 0;font-size:16px;line-height:1.4;font-weight:600;">Останавливаться на потреблении</p></div></div></div><div style="border:1px solid #D9D3C6;border-radius:16px;overflow:hidden;background:#FBFAF6;"><div style="background:#D4FF3A;padding:16px 20px;"><p style="margin:0;font-size:20px;font-weight:800;letter-spacing:-0.02em;">03 · Личная стратегия</p></div><div style="padding:4px 20px 8px;"><div style="padding:12px 0;border-bottom:1px solid rgba(14,18,34,0.15);"><p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#5C606C;">Скорость изменений</p><p style="margin:4px 0 0;font-size:16px;line-height:1.4;font-weight:600;">Вся карьера</p></div><div style="padding:12px 0;border-bottom:1px solid rgba(14,18,34,0.15);"><p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#5C606C;">Главный вопрос</p><p style="margin:4px 0 0;font-size:16px;line-height:1.4;font-weight:600;">Куда я иду?</p></div><div style="padding:12px 0;border-bottom:1px solid rgba(14,18,34,0.15);"><p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#5C606C;">Лучшие учителя</p><p style="margin:4px 0 0;font-size:16px;line-height:1.4;font-weight:600;">Менторы, ролевые модели, вы сами</p></div><div style="padding:12px 0;border-bottom:1px solid rgba(14,18,34,0.15);"><p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#5C606C;">Как влияет ИИ</p><p style="margin:4px 0 0;font-size:16px;line-height:1.4;font-weight:600;">Зависит от неё</p></div><div style="padding:12px 0;"><p style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#5C606C;">Типичная ошибка</p><p style="margin:4px 0 0;font-size:16px;line-height:1.4;font-weight:600;">Не продумать и не записать стратегию</p></div></div></div></div>
+<div class="tblwrap" style="margin-top: 40px; border: 1px solid #D9D3C6; border-radius: 18px; overflow: hidden; background: #FBFAF6;">
+<div class="tbl" style="display: grid; grid-template-columns: 1.1fr 1fr 1fr 1fr; font-size: 15.5px; line-height: 1.45;">
+<div style="padding: 16px 18px;"></div>
+<div style="padding: 16px 18px; background: #A9B6FF; font-weight: 800;">01 · Инструменты</div>
+<div style="padding: 16px 18px; background: #FFB877; font-weight: 800;">02 · Метанавыки</div>
+<div style="padding: 16px 18px; background: #D4FF3A; font-weight: 800;">03 · Личная стратегия</div>
+<div style="padding: 14px 18px; border-top: 1px solid #D9D3C6; color: #5C606C;">Скорость изменений</div><div style="padding: 14px 18px; border-top: 1px solid #D9D3C6;">Месяцы</div><div style="padding: 14px 18px; border-top: 1px solid #D9D3C6;">Годы</div><div style="padding: 14px 18px; border-top: 1px solid #D9D3C6;">Вся карьера</div>
+<div style="padding: 14px 18px; border-top: 1px solid #D9D3C6; color: #5C606C;">Главный вопрос</div><div style="padding: 14px 18px; border-top: 1px solid #D9D3C6;">Чем я пользуюсь?</div><div style="padding: 14px 18px; border-top: 1px solid #D9D3C6;">Как я учусь и думаю?</div><div style="padding: 14px 18px; border-top: 1px solid #D9D3C6;">Куда я иду?</div>
+<div style="padding: 14px 18px; border-top: 1px solid #D9D3C6; color: #5C606C;">Лучшие учителя</div><div style="padding: 14px 18px; border-top: 1px solid #D9D3C6;">Разработчики, практики, коллеги</div><div style="padding: 14px 18px; border-top: 1px solid #D9D3C6;">Преподаватели, авторы, глубокие форматы</div><div style="padding: 14px 18px; border-top: 1px solid #D9D3C6;">Менторы, ролевые модели, вы сами</div>
+<div style="padding: 14px 18px; border-top: 1px solid #D9D3C6; color: #5C606C;">Как влияет ИИ</div><div style="padding: 14px 18px; border-top: 1px solid #D9D3C6;">Поглощает быстрее всего</div><div style="padding: 14px 18px; border-top: 1px solid #D9D3C6;">Усиливает</div><div style="padding: 14px 18px; border-top: 1px solid #D9D3C6;">Зависит от неё</div>
+<div style="padding: 14px 18px; border-top: 1px solid #D9D3C6; color: #5C606C;">Типичная ошибка</div><div style="padding: 14px 18px; border-top: 1px solid #D9D3C6;">Гнаться за каждым инструментом</div><div style="padding: 14px 18px; border-top: 1px solid #D9D3C6;">Останавливаться на потреблении</div><div style="padding: 14px 18px; border-top: 1px solid #D9D3C6;">Не продумать и не записать стратегию</div>
+</div>
+</div>
+<p style="margin: 12px 0 0; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #5C606C;">Источник: Анна Амброзевич, The Self-Learning Stack, 2025–2026</p>
+</div>
+
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 32px;"><canvas class="threads" data-mode="braid" aria-hidden="true" style="width: 100%; height: 70px; display: block;"></canvas></div>
+<!-- PROGRAM -->
+<div id="program" style="background: #FBFAF6;">
+<div style="max-width: 1240px; margin: 0 auto; padding: 96px 32px;">
+<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #5C606C;">Программа</p>
+<h2 style="margin: 14px 0 0; font-size: clamp(34px, 4.4vw, 56px); font-weight: 800; letter-spacing: -0.045em; line-height: 1.02;">Шесть недель, один слой за раз</h2>
+<p style="margin: 18px 0 0; font-size: 19px; line-height: 1.55; color: #3E414C; max-width: 62ch;">Когнитивная нагрузка — реальное ограничение, поэтому не всё сразу. Каждую неделю — один слой, одно короткое видео, один рабочий лист и разговор с партнёром по паре. И главное правило: к концу недели у вас должно появиться что-то сделанное, а не просмотренное.</p>
+<div style="display: flex; flex-direction: column; gap: 16px; margin-top: 44px;">
+
+<div style="display: flex; flex-wrap: wrap; border-radius: 18px; overflow: hidden; background: #E3E7FB;">
+<div style="flex: 1 1 260px; background: #A9B6FF; padding: 28px; box-sizing: border-box;"><p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;">Неделя 1 · Слой 1</p><h3 style="margin: 10px 0 0; font-size: 28px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.1;">Инструменты</h3><p style="margin: 8px 0 0; font-size: 15px;">Глубина, фильтр, сигнал</p></div>
+<div style="flex: 2 1 420px; padding: 28px; box-sizing: border-box;"><p style="margin: 0; font-size: 17px; line-height: 1.6;">Как осваивать ИИ-инструменты и не выгорать. <b>Учебные спринты</b>: «командировка для мозга» — неделя в месяц на одну экосистему, с результатом в конце. <b>Обучение через людей</b>: новые университеты — это люди, поэтому собираем свой круг из 5–10 практиков и безжалостно отписываемся от шума. <b>Социальное обучение</b>: если про инструмент заговорили трижды в вашем окружении, значит, пора. Это и есть фильтр против хайпа.</p><p style="margin: 14px 0 0; font-size: 15px; font-weight: 700;">Результат: план спринтов и карта своего круга обучения</p></div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; border-radius: 18px; overflow: hidden; background: #FFEEDC;">
+<div style="flex: 1 1 260px; background: #FFB877; padding: 28px; box-sizing: border-box;"><p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;">Недели 2–3 · Слой 2</p><h3 style="margin: 10px 0 0; font-size: 28px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.1;">Метанавыки</h3><p style="margin: 8px 0 0; font-size: 15px;">Глубина, а не объём</p></div>
+<div style="flex: 2 1 420px; padding: 28px; box-sizing: border-box;"><p style="margin: 0; font-size: 17px; line-height: 1.6;">Простой тест: если задачу можно подробно описать, ИИ скоро научится её делать. Метанавыки — то, что описать нельзя: как вы думаете, учитесь и собираете смысл. Не случайно они держатся в топе списков WEF до 2030 года. Метод <b>Получить → Осмыслить → Создать</b> и двенадцать привычек к нему. Большинство из нас застревает на первом шаге: подкасты, статьи, сохранёнки, а к пятнице ничего не изменилось. Поэтому в паре вы проходите все три шага на одном большом отчёте и пишете собственные выводы.</p><p style="margin: 14px 0 0; font-size: 15px; font-weight: 700;">Результат: свой подход к развитию метанавыков и баланс обучения, где потребление занимает меньше 80%</p></div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; border-radius: 18px; overflow: hidden; background: #F1F6D8;">
+<div style="flex: 1 1 260px; background: #D4FF3A; padding: 28px; box-sizing: border-box;"><p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;">Недели 4–5 · Слой 3</p><h3 style="margin: 10px 0 0; font-size: 28px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.1;">Личная стратегия</h3><p style="margin: 8px 0 0; font-size: 15px;">Сила, направление, рычаг</p></div>
+<div style="flex: 2 1 420px; padding: 28px; box-sizing: border-box;"><p style="margin: 0; font-size: 17px; line-height: 1.6;">Самый глубокий и самый пропускаемый слой: можно учиться быстро и эффективно, но в неправильную сторону. Три опоры: <b>экспертиза в своей области</b>, которую ИИ усиливает, а не заменяет; <b>самопознание</b>, сильные стороны и ценности; <b>ИИ-грамотность</b>: что делегировать, а что всегда проверять самому. Шесть шагов построения стратегии и пять вопросов, чтобы найти рабочую цель. Стратегию не придумывают в голове, её собирают делом и рефлексией.</p><p style="margin: 14px 0 0; font-size: 15px; font-weight: 700;">Результат: холст личной стратегии и цель в одной строке «Я помогаю [кому] [делать что], чтобы [что изменилось]»</p></div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; border-radius: 18px; overflow: hidden; background: #1E2440; color: #F6F3EC;">
+<div style="flex: 1 1 260px; background: #0E1222; padding: 28px; box-sizing: border-box;"><p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #D4FF3A;">Неделя 6 · Фундамент</p><h3 style="margin: 10px 0 0; font-size: 28px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.1;">Мой капитал мозга</h3><p style="margin: 8px 0 0; font-size: 15px; color: #C9CDDD;">Навыки + здоровье мозга</p></div>
+<div style="flex: 2 1 420px; padding: 28px; box-sizing: border-box;"><p style="margin: 0; font-size: 17px; line-height: 1.6; color: #E6E8F0;">Стратегией не переиграешь уставший мозг. Концепция капитала мозга и экономики мозга по данным WEF и McKinsey Health Institute. Четыре привычки фундамента: сон, движение, восстановление, фокус. Фундаментальные науки и ремесло как тренировка мозга и что о них говорит десятилетнее исследование 10 318 взрослых. В конце соединяем все слои в план на 90 дней.</p><p style="margin: 14px 0 0; font-size: 15px; font-weight: 700;">Результат: аудит своего стека и план на 90 дней: фундамент, построение, накопление</p></div>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- OUTCOMES -->
+<div style="max-width: 1240px; margin: 0 auto; padding: 88px 32px;">
+<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #5C606C;">Результат</p>
+<h2 style="margin: 14px 0 0; font-size: clamp(34px, 4.4vw, 56px); font-weight: 800; letter-spacing: -0.045em; line-height: 1.02;">Через шесть недель у вас не список дел, а система</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-top: 40px;">
+<div style="background: #FBFAF6; border: 1px solid #D9D3C6; border-top: 6px solid #A9B6FF; border-radius: 16px; padding: 24px;"><p style="margin: 0; font-size: 15px; font-weight: 800; color: #3F51C4;">01</p><h3 style="margin: 10px 0 0; font-size: 21px; font-weight: 800; line-height: 1.2;">Система освоения инструментов</h3><p style="margin: 8px 0 0; font-size: 15.5px; line-height: 1.5; color: #4A4D58;">План спринтов, круг обучения и фильтр для новых технологий</p></div>
+<div style="background: #FBFAF6; border: 1px solid #D9D3C6; border-top: 6px solid #FFB877; border-radius: 16px; padding: 24px;"><p style="margin: 0; font-size: 15px; font-weight: 800; color: #3F51C4;">02</p><h3 style="margin: 10px 0 0; font-size: 21px; font-weight: 800; line-height: 1.2;">Подход к метанавыкам</h3><p style="margin: 8px 0 0; font-size: 15.5px; line-height: 1.5; color: #4A4D58;">Привычка проходить путь от потребления к созданию</p></div>
+<div style="background: #FBFAF6; border: 1px solid #D9D3C6; border-top: 6px solid #D4FF3A; border-radius: 16px; padding: 24px;"><p style="margin: 0; font-size: 15px; font-weight: 800; color: #3F51C4;">03</p><h3 style="margin: 10px 0 0; font-size: 21px; font-weight: 800; line-height: 1.2;">Личная стратегия 1.0</h3><p style="margin: 8px 0 0; font-size: 15.5px; line-height: 1.5; color: #4A4D58;">Экспертиза, направление и граница с ИИ, записанные на одном холсте</p></div>
+<div style="background: #FBFAF6; border: 1px solid #D9D3C6; border-top: 6px solid #0E1222; border-radius: 16px; padding: 24px;"><p style="margin: 0; font-size: 15px; font-weight: 800; color: #3F51C4;">04</p><h3 style="margin: 10px 0 0; font-size: 21px; font-weight: 800; line-height: 1.2;">Мой капитал мозга</h3><p style="margin: 8px 0 0; font-size: 15.5px; line-height: 1.5; color: #4A4D58;">Аудит всех слоёв и ритм самообучения на 90 дней вперёд</p></div>
+</div>
+</div>
+
+<!-- FORMAT -->
+<div id="format" style="background: #FBFAF6;">
+<div style="max-width: 1240px; margin: 0 auto; padding: 88px 32px;">
+<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #5C606C;">Формат</p>
+<h2 style="margin: 14px 0 0; font-size: clamp(34px, 4.4vw, 56px); font-weight: 800; letter-spacing: -0.045em; line-height: 1.02;">Самостоятельно, но не в одиночку. И есть условия</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0 32px; margin-top: 40px;">
+<div style="border-top: 1px solid #D9D3C6; padding: 22px 0;"><h3 style="margin: 0; font-size: 19px; font-weight: 800;">Короткие видео и рабочие листы</h3><p style="margin: 8px 0 0; font-size: 16px; line-height: 1.5; color: #4A4D58;">Каждую неделю 15–20 минут теории по слою и рабочий лист из исследования</p></div>
+<div style="border-top: 1px solid #D9D3C6; padding: 22px 0;"><h3 style="margin: 0; font-size: 19px; font-weight: 800;">Работа в парах</h3><p style="margin: 8px 0 0; font-size: 16px; line-height: 1.5; color: #4A4D58;">Партнёр помогает дойти до конца и задаёт вопросы, которые не задашь себе сам</p></div>
+<div style="border-top: 1px solid #D9D3C6; padding: 22px 0;"><h3 style="margin: 0; font-size: 19px; font-weight: 800;">Встреча раз в неделю</h3><p style="margin: 8px 0 0; font-size: 16px; line-height: 1.5; color: #4A4D58;">Час разбора с группой: что сработало и что нет</p></div>
+<div style="border-top: 1px solid #D9D3C6; padding: 22px 0;"><h3 style="margin: 0; font-size: 19px; font-weight: 800;">Финальная встреча</h3><p style="margin: 8px 0 0; font-size: 16px; line-height: 1.5; color: #4A4D58;">Каждый показывает свой стек и план на 90 дней</p></div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 40px;">
+<div style="flex: 1 1 380px; min-width: 0; background: #F6F3EC; border: 1.5px solid #0E1222; border-radius: 18px; padding: 28px; box-sizing: border-box;">
+<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;">Подойдёт, если</p>
+<p style="margin: 12px 0 0; font-size: 16.5px; line-height: 1.6;">вы готовы закоммититься на шесть недель: каждую неделю смотреть урок, заполнять рабочий лист, созваниваться с партнёром и приносить сделанное, а не просмотренное. В паре нельзя исчезнуть молча — в этом и смысл.</p>
+</div>
+<div style="flex: 1 1 380px; min-width: 0; border: 1px solid #D9D3C6; border-radius: 18px; padding: 28px; box-sizing: border-box;">
+<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #5C606C;">Не подойдёт, если</p>
+<p style="margin: 12px 0 0; font-size: 16.5px; line-height: 1.6; color: #3E414C;">вы ищете обзор свежих нейросетей, мотивацию или ещё один курс в папку «посмотрю потом». Здесь не будет списка из ста инструментов. Будет одна система, которую вы соберёте сами.</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- SOURCES -->
+<div id="sources" style="max-width: 1240px; margin: 0 auto; padding: 88px 32px;">
+<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #5C606C;">Методология</p>
+<h2 style="margin: 14px 0 0; font-size: clamp(32px, 4vw, 50px); font-weight: 800; letter-spacing: -0.045em; line-height: 1.05; max-width: 24ch;">Авторский фреймворк на данных международных исследований</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 36px;">
+<div style="flex: 1.3 1 420px; min-width: 0; background: #D4FF3A; border-radius: 18px; padding: 28px; box-sizing: border-box;">
+<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;">Авторское · Анна Амброзевич</p>
+<h3 style="margin: 10px 0 0; font-size: 26px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.15;">The Self-Learning Stack</h3>
+<p style="margin: 10px 0 0; font-size: 16.5px; line-height: 1.55;">Оригинальный фреймворк, 2025–2026. Описан в отчёте Staying Irreplaceable на 54 страницы и проверен на очень разных аудиториях.</p>
+<div style="margin-top: 16px; font-size: 15.5px; line-height: 1.5;">
+<p style="margin: 0; padding: 10px 0; border-top: 1px solid rgba(14,18,34,0.2);">Три слоя на одном фундаменте</p>
+<p style="margin: 0; padding: 10px 0; border-top: 1px solid rgba(14,18,34,0.2);">Три стратегии для инструментов: спринты, обучение через людей, социальное обучение</p>
+<p style="margin: 0; padding: 10px 0; border-top: 1px solid rgba(14,18,34,0.2);">Метод «Получить → Осмыслить → Создать»</p>
+<p style="margin: 0; padding: 10px 0; border-top: 1px solid rgba(14,18,34,0.2);">Три опоры и шесть шагов личной стратегии</p>
+<p style="margin: 0; padding: 10px 0; border-top: 1px solid rgba(14,18,34,0.2);">План на 90 дней и рабочие листы</p>
+</div>
+</div>
+<div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 20px;">
+<div style="background: #0E1222; color: #F6F3EC; border-radius: 18px; padding: 28px; box-sizing: border-box;">
+<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #D4FF3A;">Концепция · WEF и McKinsey Health Institute</p>
+<h3 style="margin: 10px 0 0; font-size: 24px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.15;">Капитал мозга и экономика мозга</h3>
+<p style="margin: 10px 0 0; font-size: 16px; line-height: 1.55; color: #C9CDDD;">Капитал мозга — это навыки плюс здоровье мозга. Масштабирование мер по здоровью мозга может принести до <b style="color: #F6F3EC;">$6,2 трлн</b> мирового ВВП к 2050 году.</p>
+<p style="margin: 12px 0 0; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #9AA0B4;">The Human Advantage: Stronger Brains in the Age of AI, 2026</p>
+</div>
+<div style="border: 1px solid #D9D3C6; border-radius: 18px; padding: 24px 28px; box-sizing: border-box;">
+<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #5C606C;">Данные</p>
+<p style="margin: 10px 0 0; font-size: 15.5px; line-height: 1.55;">WEF, Future of Jobs 2025 · Digital Education Council, 2026 · JAMA Network Open, 2023</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- AUTHOR -->
+<div id="author" style="background: #FBFAF6;">
+<div style="max-width: 1240px; margin: 0 auto; padding: 88px 32px; display: flex; flex-wrap: wrap; gap: 48px; align-items: center;">
+<img src="/img/portrait-studio.jpg" alt="Анна Амброзевич" style="width: 260px; height: 320px; object-fit: cover; object-position: 50% 25%; border-radius: 16px; flex: 0 0 auto;">
+<div style="flex: 1 1 420px; min-width: 0;">
+<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #5C606C;">Автор фреймворка и программы</p>
+<h2 style="margin: 12px 0 0; font-size: clamp(32px, 3.8vw, 48px); font-weight: 800; letter-spacing: -0.04em;">Анна Амброзевич</h2>
+<p style="margin: 16px 0 0; font-size: 18px; line-height: 1.6; color: #2E313C; max-width: 62ch;">По образованию я пищевой химик. Потом 15 лет в IT и цифровой трансформации: PepsiCo, Alibaba Group, Philip Morris International, Otto Group, затем своя консалтинговая компания. Сейчас — Women in Tech, технологическая дипломатия в Центральной Азии и исследования о том, как оставаться незаменимым. Переучиваться мне приходилось много раз, и каждый раз я заново изобретала, как это делать.</p>
+<p style="margin: 14px 0 0; font-size: 18px; line-height: 1.6; color: #2E313C; max-width: 62ch;">В какой-то момент я поняла, что изобретаю одно и то же, и записала это как систему. Так появился The Self-Learning Stack. Я рассказывала его дипломатам и руководителям, студентам и школьникам, а этой осенью — международной аудитории European Business University. Вопрос после выступлений всегда один: «А как это применить?» Эта программа — мой ответ.</p>
+</div>
+</div>
+</div>
+
+<!-- JOIN -->
+<div style="max-width: 1240px; margin: 0 auto; padding: 40px 32px 0;"><canvas class="threads" data-mode="converge" aria-hidden="true" style="width: 100%; height: clamp(90px, 14vw, 140px); display: block;"></canvas></div>
+
+<div id="join" style="max-width: 1240px; margin: 0 auto; padding: 96px 32px 72px;">
+<div style="background: #D4FF3A; border-radius: 22px; padding: clamp(28px, 5vw, 60px); display: flex; flex-wrap: wrap; gap: 28px 48px; align-items: center; justify-content: space-between;">
+<div style="flex: 1 1 480px; min-width: 0;">
+<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;">Первый поток · весна 2027</p>
+<h2 style="margin: 12px 0 0; font-size: clamp(34px, 4.6vw, 58px); font-weight: 800; letter-spacing: -0.045em; line-height: 1;">Соберите свою самосистему</h2>
+<p style="margin: 14px 0 0; font-size: 18px; line-height: 1.5; max-width: 46ch;">Сколько курсов вы сохранили в этом году? А сколько из них изменили то, как вы работаете? Если разница вас тоже беспокоит, приходите в первый поток. Он пилотный: мы вместе проверяем программу и улучшаем её по вашим отзывам.</p>
+<p style="margin: 14px 0 0; font-size: 16px; font-weight: 700;">— Анна</p>
+</div>
+<a id="signup" data-goatcounter-click="natint-voice-signup" href="[ССЫЛКА ДЛЯ ЗАПИСИ]" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; justify-content: center; height: 60px; padding: 0 40px; border-radius: 999px; background: #0E1222; color: #D4FF3A; font-size: 19px; font-weight: 700; text-decoration: none; box-sizing: border-box;">Хочу в первый поток →</a>
+</div>
+<p style="margin: 40px 0 0; font-size: 14px; color: #5C606C;">© 2026 Анна Амброзевич · annaambrozevich.com</p>
+</div>
+
+</div>
+
+<script>
+(function(){
+// layers assemble from the foundation up
+var layers=[].slice.call(document.querySelectorAll('#stackviz .layer'));
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){layers.slice().reverse().forEach(function(l,i){setTimeout(function(){l.classList.add('in')},i*140)});io.disconnect()}})},{threshold:.15});
+io.observe(document.getElementById('stackviz'));
+})();
+</script>
+<script>
+(function(){
+var cols=['#A9B6FF','#FFB877','#C6EE1F','#0E1222'],dpr=Math.min(window.devicePixelRatio||1,2);
+var slow=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches?0.4:1;
+[].forEach.call(document.querySelectorAll('canvas.threads'),function(cv){
+ var ctx=cv.getContext('2d'),mode=cv.dataset.mode,W,H,vis=false,L=[];
+ function size(){var r=cv.getBoundingClientRect();W=r.width;H=r.height;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0)}
+ for(var i=0;i<12;i++)L.push({b:i%4,p:Math.random()*100,f:.7+Math.random()*.8});
+ size();addEventListener('resize',size);
+ new IntersectionObserver(function(e){vis=e[0].isIntersecting}).observe(cv);
+ var t0=performance.now();
+ function frame(now){
+  requestAnimationFrame(frame);if(!vis)return;
+  var s=(now-t0)/1000*slow;ctx.clearRect(0,0,W,H);
+  L.forEach(function(l,i){
+   ctx.beginPath();
+   for(var x=0;x<=W;x+=6){
+    var u=x/W,y;
+    if(mode==='braid'){ // four colour bundles weaving around the centre line
+     var lane=(l.b-1.5)*H*.12;
+     y=H/2+lane*Math.cos(u*6.28*1.5+s*.6+l.b)+Math.sin(u*9*l.f+s*.8+l.p)*H*.09;
+    }else{ // spread on the left, converge to one point on the right
+     var spread=(i-5.5)/5.5*H*.42,k=Math.pow(u,1.6);
+     y=H/2+spread*(1-k)+Math.sin(u*7*l.f-s*.7+l.p)*H*.06*(1-k);
+    }
+    x?ctx.lineTo(x,y):ctx.moveTo(x,y);
+   }
+   ctx.strokeStyle=cols[l.b];ctx.globalAlpha=l.b==3?.5:.85;ctx.lineWidth=1.1;ctx.stroke();
+  });
+  if(mode==='converge'){ctx.globalAlpha=1;ctx.fillStyle='#0E1222';ctx.beginPath();ctx.arc(W-4,H/2,3.5+Math.sin(s*2)*.8,0,6.283);ctx.fill()}
+  ctx.globalAlpha=1;
+ }
+ requestAnimationFrame(frame);
+});
+})();
+</script>
+</body>
+</html>

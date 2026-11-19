@@ -137,6 +137,7 @@ a{color:#0E1222}a:hover{color:#3F51C4}
 <p style="margin: 12px 0 0; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #5C606C;">Источник: Анна Амброзевич, The Self-Learning Stack, 2025–2026</p>
 </div>
 
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 32px;"><canvas class="threads" data-mode="braid" aria-hidden="true" style="width: 100%; height: 70px; display: block;"></canvas></div>
 <!-- PROGRAM -->
 <div id="program" style="background: #FBFAF6;">
 <div style="max-width: 1240px; margin: 0 auto; padding: 96px 32px;">
@@ -251,6 +252,8 @@ a{color:#0E1222}a:hover{color:#3F51C4}
 </div>
 
 <!-- JOIN -->
+<div style="max-width: 1240px; margin: 0 auto; padding: 40px 32px 0;"><canvas class="threads" data-mode="converge" aria-hidden="true" style="width: 100%; height: clamp(90px, 14vw, 140px); display: block;"></canvas></div>
+
 <div id="join" style="max-width: 1240px; margin: 0 auto; padding: 96px 32px 72px;">
 <div style="background: #D4FF3A; border-radius: 22px; padding: clamp(28px, 5vw, 60px); display: flex; flex-wrap: wrap; gap: 28px 48px; align-items: center; justify-content: space-between;">
 <div style="flex: 1 1 480px; min-width: 0;">
@@ -304,6 +307,42 @@ function frame(now){
  ctx.globalAlpha=1;requestAnimationFrame(frame);
 }
 requestAnimationFrame(frame);
+})();
+</script>
+<script>
+(function(){
+var cols=['#A9B6FF','#FFB877','#C6EE1F','#0E1222'],dpr=Math.min(window.devicePixelRatio||1,2);
+var slow=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches?0.4:1;
+[].forEach.call(document.querySelectorAll('canvas.threads'),function(cv){
+ var ctx=cv.getContext('2d'),mode=cv.dataset.mode,W,H,vis=false,L=[];
+ function size(){var r=cv.getBoundingClientRect();W=r.width;H=r.height;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0)}
+ for(var i=0;i<12;i++)L.push({b:i%4,p:Math.random()*100,f:.7+Math.random()*.8});
+ size();addEventListener('resize',size);
+ new IntersectionObserver(function(e){vis=e[0].isIntersecting}).observe(cv);
+ var t0=performance.now();
+ function frame(now){
+  requestAnimationFrame(frame);if(!vis)return;
+  var s=(now-t0)/1000*slow;ctx.clearRect(0,0,W,H);
+  L.forEach(function(l,i){
+   ctx.beginPath();
+   for(var x=0;x<=W;x+=6){
+    var u=x/W,y;
+    if(mode==='braid'){ // four colour bundles weaving around the centre line
+     var lane=(l.b-1.5)*H*.12;
+     y=H/2+lane*Math.cos(u*6.28*1.5+s*.6+l.b)+Math.sin(u*9*l.f+s*.8+l.p)*H*.09;
+    }else{ // spread on the left, converge to one point on the right
+     var spread=(i-5.5)/5.5*H*.42,k=Math.pow(u,1.6);
+     y=H/2+spread*(1-k)+Math.sin(u*7*l.f-s*.7+l.p)*H*.06*(1-k);
+    }
+    x?ctx.lineTo(x,y):ctx.moveTo(x,y);
+   }
+   ctx.strokeStyle=cols[l.b];ctx.globalAlpha=l.b==3?.5:.85;ctx.lineWidth=1.1;ctx.stroke();
+  });
+  if(mode==='converge'){ctx.globalAlpha=1;ctx.fillStyle='#0E1222';ctx.beginPath();ctx.arc(W-4,H/2,3.5+Math.sin(s*2)*.8,0,6.283);ctx.fill()}
+  ctx.globalAlpha=1;
+ }
+ requestAnimationFrame(frame);
+});
 })();
 </script>
 </body>
