@@ -379,6 +379,12 @@ a.btn.lime.gumroad-button,.reframe a.btn.gumroad-button{background:var(--lime)!i
 .also b{color:var(--navy);font-weight:700}
 .also:hover b{text-decoration:underline;text-underline-offset:3px}
 #also{padding-block:clamp(24px,4vw,40px)}
+
+.talks{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:clamp(28px,4vw,44px)}
+.talks figure{margin:0;display:flex;flex-direction:column;gap:10px;min-width:0}
+.talks img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:18px;display:block}
+.talks figcaption{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+@media (max-width:760px){.talks{grid-template-columns:1fr 1fr}.talks figure:first-child{grid-column:span 2}}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 <script data-goatcounter="https://annaambrozevich.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
@@ -473,6 +479,11 @@ a.btn.lime.gumroad-button,.reframe a.btn.gumroad-button{background:var(--lime)!i
   <div class="head">
     <div><p class="eyebrow">Tested live</p><h2 class="h2">From the people who tried it</h2></div>
     <p class="lead">Before it became a report, the Self-Learning Stack was tested live with more than 600 people, in person and online: students, young and experienced professionals, and an international scientific conference on education.<span class="stat" style="display:block">600+ people · 15+ countries · students, professionals, academia</span></p>
+  </div>
+  <div class="talks">
+    <figure class="rv"><img src="../img/talks/talk-students.jpg" alt="Anna presenting Learning FOMO to a full room of students" loading="lazy" width="1200" height="900"><figcaption>Live talk · students and young professionals</figcaption></figure>
+    <figure class="rv"><img src="../img/talks/talk-roadshow.jpg" alt="Anna on stage under the slide: the question is not what to learn, it is how" loading="lazy" width="1200" height="900"><figcaption>IT Roadshow · main stage</figcaption></figure>
+    <figure class="rv"><img src="../img/talks/talk-mmit26.jpg" alt="Anna presenting at the MMIT'26 international conference on education" loading="lazy" width="1200" height="900"><figcaption>MMIT’26 · International conference on education</figcaption></figure>
   </div>
   <div class="vgrid">
     <figure class="vq big rv" style="margin:0"><p>“The way you taught me how to learn on my own using AI genuinely changed the way I study. It wasn’t just a skill — it was a whole new mindset.”</p><span>Zuhriddin · Uzbekistan</span></figure>
