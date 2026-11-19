@@ -22,7 +22,9 @@ a{color:#0E1222}a:hover{color:#3F51C4}
  .burger{display:flex!important}
  .navlinks.open{display:flex!important;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0!important;background:#F6F3EC;border-top:1px solid #D9D3C6;border-bottom:1px solid #D9D3C6;padding:6px 16px 14px;z-index:20}
  .navlinks.open a{padding:14px 0;font-size:18px!important;border-bottom:1px solid #E6E1D6}
- .hero{padding-top:24px!important;gap:40px!important}
+ .hero{padding-top:16px!important;padding-bottom:56px!important;gap:40px!important}
+ div[style*="padding: 88px 32px"],div[style*="padding: 96px 32px"]{padding-top:56px!important;padding-bottom:56px!important}
+ #join{padding-top:32px!important}
 }
 .burger{display:none;width:44px;height:44px;border:1.5px solid #0E1222;border-radius:999px;background:transparent;align-items:center;justify-content:center;cursor:pointer;padding:0}
 .burger span,.burger span::before,.burger span::after{display:block;width:18px;height:2px;background:#0E1222;position:relative;transition:transform .25s,opacity .25s}
@@ -218,11 +220,11 @@ function frame(now){
  var tt=(now-t0)*slow,ph=(tt%T)/T,calm;
  if(ph<.3)calm=0;else if(ph<.5)calm=ease((ph-.3)/.2);else if(ph<.8)calm=1;else calm=1-ease((ph-.8)/.2);
  var s=tt/1000;ctx.clearRect(0,0,W,H);
- var top=H*.06,span=H*.88,per=Math.ceil(n/4);
+ var top=H*.2,span=H*.6,per=Math.ceil(n/4);
  L.forEach(function(l,i){
   var y0=top+span*(i+.5)/n; // spread evenly (noise)
   var band=top+span*(l.b+.5)/4,y1=band+(l.k-(per-1)/2)*5; // packed into 4 layers
-  var base=y0+(y1-y0)*calm,amp=(1-calm)*(H*.16)+calm*1.0;
+  var base=y0+(y1-y0)*calm,amp=(1-calm)*(H*.14)+calm*1.0;
   ctx.beginPath();
   for(var x=0;x<=W;x+=8){
    var u=x/W,y=base+amp*(Math.sin(u*6.2*l.f+s*.55+l.p)*.6+Math.sin(u*13*l.f-s*.35+l.p*1.7)*.4);
