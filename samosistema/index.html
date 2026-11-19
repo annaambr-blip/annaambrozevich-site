@@ -137,17 +137,12 @@ a{color:#0E1222}a:hover{color:#3F51C4}
 <p style="margin: 12px 0 0; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #5C606C;">Источник: Анна Амброзевич, The Self-Learning Stack, 2025–2026</p>
 </div>
 
-<div style="max-width: 1240px; margin: 0 auto; padding: 0 32px;"><canvas class="threads" data-mode="braid" aria-hidden="true" style="width: 100%; height: 70px; display: block;"></canvas></div>
 <!-- PROGRAM -->
 <div id="program" style="background: #FBFAF6;">
 <div style="max-width: 1240px; margin: 0 auto; padding: 96px 32px;">
 <p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #5C606C;">Программа</p>
 <h2 style="margin: 14px 0 0; font-size: clamp(34px, 4.4vw, 56px); font-weight: 800; letter-spacing: -0.045em; line-height: 1.02;">Шесть недель, один слой за раз</h2>
 <p style="margin: 18px 0 0; font-size: 19px; line-height: 1.55; color: #3E414C; max-width: 62ch;">Когнитивная нагрузка — реальное ограничение, поэтому не всё сразу. Каждую неделю — один слой, одно короткое видео, один рабочий лист и разговор с партнёром по паре. И главное правило: к концу недели у вас должно появиться что-то сделанное, а не просмотренное.</p>
-<div style="margin-top: 36px;">
-<canvas class="threads" data-mode="progress" aria-hidden="true" style="width: 100%; height: clamp(110px, 16vw, 160px); display: block;"></canvas>
-<div style="display: flex; justify-content: space-between; margin-top: 10px;"><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #5C606C;">Неделя 1 · шум</span><span style="font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #5C606C;">Неделя 6 · система</span></div>
-</div>
 <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 44px;">
 
 <div style="display: flex; flex-wrap: wrap; border-radius: 18px; overflow: hidden; background: #E3E7FB;">
@@ -256,7 +251,7 @@ a{color:#0E1222}a:hover{color:#3F51C4}
 </div>
 
 <!-- JOIN -->
-<div style="max-width: 1240px; margin: 0 auto; padding: 40px 32px 0;"><canvas class="threads" data-mode="converge" aria-hidden="true" style="width: 100%; height: clamp(90px, 14vw, 140px); display: block;"></canvas></div>
+<div style="max-width: 1240px; margin: 0 auto; padding: 40px 32px 0;"><canvas class="threads" data-mode="final" aria-hidden="true" style="width: 100%; height: clamp(90px, 14vw, 140px); display: block;"></canvas></div>
 
 <div id="join" style="max-width: 1240px; margin: 0 auto; padding: 96px 32px 72px;">
 <div style="background: #D4FF3A; border-radius: 22px; padding: clamp(28px, 5vw, 60px); display: flex; flex-wrap: wrap; gap: 28px 48px; align-items: center; justify-content: space-between;">
@@ -327,6 +322,7 @@ var slow=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').match
  function frame(now){
   requestAnimationFrame(frame);if(!vis)return;
   var s=(now-t0)/1000*slow;ctx.clearRect(0,0,W,H);
+  if(vis&&!cv._st)cv._st=now;var g=cv._st?Math.min(1,(now-cv._st)/3200):0;g=g<.5?4*g*g*g:1-Math.pow(-2*g+2,3)/2;
   L.forEach(function(l,i){
    ctx.beginPath();
    for(var x=0;x<=W;x+=6){
@@ -334,6 +330,10 @@ var slow=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').match
     if(mode==='braid'){ // four colour bundles weaving around the centre line
      var lane=(l.b-1.5)*H*.12;
      y=H/2+lane*Math.cos(u*6.28*1.5+s*.6+l.b)+Math.sin(u*9*l.f+s*.8+l.p)*H*.09;
+    }else if(mode==='final'){ // tangled lines settle into four calm layers and stay
+     var tgt=H*(.5+(l.b-1.5)*.22)+((i/4|0)-1)*3.5;
+     var loose=H/2+Math.sin(u*7*l.f+s*.7+l.p)*H*.34+Math.sin(u*15-s*.5+l.p)*H*.05;
+     y=loose*(1-g)+(tgt+Math.sin(u*4+s*.6+l.p)*1.2)*g;
     }else if(mode==='progress'){ // tangled on the left, four straight layers on the right
      var v=Math.min(1,u/.78),c=v*v*(3-2*v),tgt=H*(.5+(l.b-1.5)*.2)+((i/4|0)-1)*3;
      var loose=H/2+Math.sin(u*8*l.f+s*.7+l.p)*H*.32*(1-c)+Math.sin(u*17-s*.5+l.p)*H*.05*(1-c);
@@ -346,7 +346,6 @@ var slow=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').match
    }
    ctx.strokeStyle=cols[l.b];ctx.globalAlpha=l.b==3?.5:.85;ctx.lineWidth=1.1;ctx.stroke();
   });
-  if(mode==='converge'){ctx.globalAlpha=1;ctx.fillStyle='#0E1222';ctx.beginPath();ctx.arc(W-4,H/2,3.5+Math.sin(s*2)*.8,0,6.283);ctx.fill()}
   ctx.globalAlpha=1;
  }
  requestAnimationFrame(frame);
