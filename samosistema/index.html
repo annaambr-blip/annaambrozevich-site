@@ -58,6 +58,7 @@ a{color:#0E1222}a:hover{color:#3F51C4}
 <!-- HERO -->
 <div class="hero" style="max-width: 1240px; margin: 0 auto; padding: 48px 32px 96px; display: flex; flex-direction: column; gap: 64px; align-items: stretch;">
 <div style="width: 100%; max-width: 860px; display: flex; flex-direction: column; align-items: flex-start;">
+<canvas id="lines" aria-hidden="true" style="width: 100%; height: clamp(150px, 22vw, 230px); display: block; margin: 0 0 18px;"></canvas>
 <h1 style="margin: 0; font-size: clamp(44px, 7.5vw, 104px); font-weight: 800; letter-spacing: -0.05em; line-height: 0.95;">Самосистема</h1>
 <p style="margin: 14px 0 0; font-size: clamp(18px, 1.8vw, 22px); font-weight: 700; color: #3F51C4;">Собрать себя в эпоху ИИ: обучение, стратегия и капитал мозга в одной системе</p>
 <p style="margin: 22px 0 0; font-size: clamp(20px, 2.1vw, 25px); font-weight: 500; line-height: 1.38; color: #3E414C; max-width: 40ch;">У меня есть папка с курсами, которые я так и не открыла. Скорее всего, у вас тоже. Эта программа не добавит в неё ещё один курс. Она про то, как перестать её пополнять и собрать систему, которая учится вместе с вами</p>
@@ -68,8 +69,6 @@ a{color:#0E1222}a:hover{color:#3F51C4}
 <p style="margin: 22px 0 0; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #5C606C;">6 недель · онлайн · в парах · на русском</p>
 </div>
 <div id="stackviz" style="width: 100%; display: flex; flex-direction: column; gap: 10px; align-items: center;">
-<canvas id="selfsys" aria-hidden="true" style="width: 100%; max-width: 860px; height: 230px; display: block;"></canvas>
-<p id="selfsys-cap" style="margin: 0 0 18px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #5C606C; transition: opacity .6s;">шум</p>
 <p style="margin: 0 0 6px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #3F51C4;">The Self-Learning Stack</p>
 <div class="layer" style="width: 60%; background: #A9B6FF; border-radius: 12px; padding: 14px 20px; box-sizing: border-box;"><p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;">Слой 1 · меняется за месяцы</p><p style="margin: 4px 0 0; font-size: 22px; font-weight: 800;">Инструменты</p><p style="margin: 2px 0 0; font-size: 14px;">Держат в курсе</p></div>
 <div class="layer" style="width: 77%; background: #FFB877; border-radius: 12px; padding: 14px 20px; box-sizing: border-box;"><p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;">Слой 2 · служит годами</p><p style="margin: 4px 0 0; font-size: 22px; font-weight: 800;">Метанавыки</p><p style="margin: 2px 0 0; font-size: 14px;">Делают лучше</p></div>
@@ -78,6 +77,7 @@ a{color:#0E1222}a:hover{color:#3F51C4}
 <div class="layer" style="width: 94%; border: 2px solid #0E1222; border-radius: 12px; padding: 14px 20px; box-sizing: border-box;"><p style="margin: 0; font-size: 22px; font-weight: 800;">= Капитал мозга</p><p style="margin: 2px 0 0; font-size: 14px;">Актив, который ИИ усиливает, но не заменяет</p></div>
 </div>
 </div>
+
 
 <!-- DATA -->
 <div style="background: #FBFAF6;">
@@ -268,44 +268,41 @@ a{color:#0E1222}a:hover{color:#3F51C4}
 
 <script>
 (function(){
-var cv=document.getElementById('selfsys'),cap=document.getElementById('selfsys-cap');
-var layers=[].slice.call(document.querySelectorAll('#stackviz .layer'));
-var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
 // layers assemble from the foundation up
-var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){layers.slice().reverse().forEach(function(l,i){setTimeout(function(){l.classList.add('in')},reduce?0:i*140)});io.disconnect()}})},{threshold:.2});
+var layers=[].slice.call(document.querySelectorAll('#stackviz .layer'));
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){layers.slice().reverse().forEach(function(l,i){setTimeout(function(){l.classList.add('in')},i*140)});io.disconnect()}})},{threshold:.15});
 io.observe(document.getElementById('stackviz'));
-if(!cv.getContext)return;
-var ctx=cv.getContext('2d'),W,H,dpr=Math.min(window.devicePixelRatio||1,2),P=[];
-var bands=[{w:.6,c:'#A9B6FF'},{w:.77,c:'#FFB877'},{w:.94,c:'#D4FF3A'},{w:.94,c:'#0E1222'}];
-function size(){var r=cv.getBoundingClientRect();W=r.width;H=r.height;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);targets()}
-function targets(){var n=P.length,per=Math.ceil(n/4),bh=H/4*0.42;P.forEach(function(p,i){var b=Math.min(3,Math.floor(i/per)),k=i%per,bw=W*bands[b].w,cols=Math.ceil(per/3),row=Math.floor(k/cols),col=k%cols;
-p.tx=(W-bw)/2+(col+.5)*bw/cols;p.ty=H*(b+.5)/4+(row-1)*bh/2.2;p.c=bands[b].c})}
-var N=window.innerWidth<720?96:156;
-for(var i=0;i<N;i++)P.push({x:Math.random(),y:Math.random(),vx:0,vy:0,ph:Math.random()*6.28,r:1.6+Math.random()*1.6});
-size();P.forEach(function(p){p.x*=W;p.y*=H});
-window.addEventListener('resize',size);
-var T=11000,t0=performance.now(),last='';
+// thin lines: noise that settles into layers and loosens again
+var cv=document.getElementById('lines');if(!cv.getContext)return;
+var ctx=cv.getContext('2d'),W,H,dpr=Math.min(window.devicePixelRatio||1,2);
+var slow=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches?0.4:1;
+var cols=['#A9B6FF','#FFB877','#D4FF3A','#0E1222'],L=[];
+function size(){var r=cv.getBoundingClientRect();W=r.width;H=r.height;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0)}
+var n=window.innerWidth<720?18:26;
+for(var i=0;i<n;i++)L.push({b:Math.floor(i/n*4),k:i%Math.ceil(n/4),p:Math.random()*100,f:.6+Math.random()*.9});
+size();addEventListener('resize',size);
 function ease(x){return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2}
-function mix(a,b,u){return a+(b-a)*u}
+var T=14000,t0=performance.now();
 function frame(now){
- var t=((now-t0)%T)/T,k; // 0-.25 noise, .25-.45 assemble, .45-.8 hold, .8-1 dissolve
- if(t<.25)k=0;else if(t<.45)k=ease((t-.25)/.2);else if(t<.8)k=1;else k=1-ease((t-.8)/.2);
- var label=k>.85?'система':(k<.15?'шум':last);if(label!==last){cap.textContent=label;last=label}
- ctx.clearRect(0,0,W,H);
- var s=now/1000;
- P.forEach(function(p){
-  p.ph+=.01;var nx=p.x+Math.cos(p.ph*1.3+p.r)*0.6,ny=p.y+Math.sin(p.ph)*0.6;
-  if(nx<0||nx>W)p.ph+=1.5;if(ny<0||ny>H)p.ph+=1.5;
-  p.x=Math.max(0,Math.min(W,nx));p.y=Math.max(0,Math.min(H,ny));
-  var bx=p.tx+Math.sin(s*1.4+p.ph)*1.2,by=p.ty+Math.cos(s*1.1+p.ph)*1.2;
-  var x=mix(p.x,bx,k),y=mix(p.y,by,k);
-  ctx.globalAlpha=mix(.35,1,k);ctx.fillStyle=k>.05?p.c:'#0E1222';
-  ctx.beginPath();ctx.arc(x,y,mix(p.r,2.6,k),0,6.283);ctx.fill();
+ var tt=(now-t0)*slow,ph=(tt%T)/T,calm;
+ if(ph<.3)calm=0;else if(ph<.5)calm=ease((ph-.3)/.2);else if(ph<.8)calm=1;else calm=1-ease((ph-.8)/.2);
+ var s=tt/1000;ctx.clearRect(0,0,W,H);
+ var top=H*.06,span=H*.88,per=Math.ceil(n/4);
+ L.forEach(function(l,i){
+  var y0=top+span*(i+.5)/n; // spread evenly (noise)
+  var band=top+span*(l.b+.5)/4,y1=band+(l.k-(per-1)/2)*5; // packed into 4 layers
+  var base=y0+(y1-y0)*calm,amp=(1-calm)*(H*.16)+calm*1.0;
+  ctx.beginPath();
+  for(var x=0;x<=W;x+=8){
+   var u=x/W,y=base+amp*(Math.sin(u*6.2*l.f+s*.55+l.p)*.6+Math.sin(u*13*l.f-s*.35+l.p*1.7)*.4);
+   x?ctx.lineTo(x,y):ctx.moveTo(x,y);
+  }
+  ctx.strokeStyle=calm>.02?cols[l.b]:'#0E1222';
+  ctx.globalAlpha=(l.b==3?.55:.85)*calm+.42*(1-calm);
+  ctx.lineWidth=1.1;ctx.stroke();
  });
- ctx.globalAlpha=1;
- if(!reduce)requestAnimationFrame(frame);
+ ctx.globalAlpha=1;requestAnimationFrame(frame);
 }
-if(reduce){t0=performance.now()-T*.6}
 requestAnimationFrame(frame);
 })();
 </script>
